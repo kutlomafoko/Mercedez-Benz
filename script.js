@@ -130,15 +130,15 @@ const vehicles = {
     },
 
     gla: {
-        name: "GLA",
-        category: "ELECTRIC COLLECTION",
-        subtitle: "The future moves differently.",
-        speed: "Model dependent",
-        engine: "Electric",
-        power: "Version dependent",
-        top: "Version dependent",
-        model: "mercedes-benz_gla-class_2020-v1.glb"
-    }
+    name: "GLA",
+    category: "COMPACT SUV COLLECTION",
+    subtitle: "Compact elegance. Unmistakable presence.",
+    speed: "8.9 s",
+    engine: "1.3L Turbo Petrol",
+    power: "163 hp",
+    top: "210 km/h",
+    model: "models/gla-class.glb"
+}
 
 };
 
