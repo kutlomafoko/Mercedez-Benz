@@ -227,105 +227,130 @@ src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.j
 <script>
 
 // VEHICLE INFORMATION
-const vehicles = {
 
+   
+
+// ALL MERCEDES VEHICLES
+const vehicles = {
     sl: {
         name: "SL-CLASS",
         category: "PERFORMANCE COLLECTION",
         subtitle: "Pure driving pleasure.",
+        model: "models/sl-class.glb",
         speed: "4.1 s",
         engine: "V8",
         power: "449 hp",
-        top: "155 mph",
-
-        images: [
-            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
-        ]
+        top: "155 mph"
     },
 
     cls: {
         name: "CLS-CLASS",
         category: "LUXURY COLLECTION",
         subtitle: "Elegance in every detail.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
-
-        images: [
-            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
-        ]
+        model: "models/cls-class.glb",
+        speed: "—",
+        engine: "—",
+        power: "—",
+        top: "—"
     },
 
     c: {
         name: "C-CLASS",
         category: "LUXURY SEDAN",
         subtitle: "Designed around you.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
-
-        images: [
-            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90"
-        ]
+        model: "models/c-class.glb",
+        speed: "—",
+        engine: "—",
+        power: "—",
+        top: "—"
     },
 
     g: {
         name: "G-CLASS",
         category: "OFF-ROAD COLLECTION",
         subtitle: "Strong character. Unmistakable presence.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
-
-        images: [
-            "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
-        ]
+        model: "models/g-class.glb",
+        speed: "—",
+        engine: "—",
+        power: "—",
+        top: "—"
     },
 
     s: {
         name: "S-CLASS",
         category: "FLAGSHIP COLLECTION",
         subtitle: "The essence of luxury.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
-
-        images: [
-            "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
-        ]
+        model: "models/s-class.glb",
+        speed: "—",
+        engine: "—",
+        power: "—",
+        top: "—"
     },
 
     eq: {
         name: "EQE",
         category: "ELECTRIC COLLECTION",
         subtitle: "The future moves differently.",
-        speed: "Model dependent",
+        model: "models/eqe.glb",
+        speed: "—",
         engine: "Electric",
-        power: "Version dependent",
-        top: "Version dependent",
-
-        images: [
-            "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
-            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
-        ]
+        power: "—",
+        top: "—"
     }
-
 };
+
+
+// GET HTML ELEMENTS
+const viewer = document.getElementById("car-viewer");
+const modelOptions = document.querySelectorAll(".model-option");
+
+
+// DISPLAY SELECTED VEHICLE
+function displayVehicle(id) {
+
+    const vehicle = vehicles[id];
+
+    if (!vehicle) return;
+
+    // Change the actual 3D car
+    viewer.src = vehicle.model;
+    viewer.alt = "Mercedes-Benz " + vehicle.name;
+
+    // Change model information
+    document.getElementById("model-name").textContent = vehicle.name;
+    document.getElementById("model-category").textContent = vehicle.category;
+    document.getElementById("model-subtitle").textContent = vehicle.subtitle;
+
+    // Change specifications
+    document.getElementById("spec-speed").textContent = vehicle.speed;
+    document.getElementById("spec-engine").textContent = vehicle.engine;
+    document.getElementById("spec-power").textContent = vehicle.power;
+    document.getElementById("spec-top").textContent = vehicle.top;
+
+    // Highlight selected model
+    modelOptions.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.model === id
+        );
+    });
+}
+
+
+// CLICK A MODEL TO DISPLAY ITS 3D CAR
+modelOptions.forEach(button => {
+
+    button.addEventListener("click", () => {
+        displayVehicle(button.dataset.model);
+    });
+
+});
+
+
+// LOAD SL-CLASS WHEN PAGE OPENS
+displayVehicle("sl");
+
+    
 
 
 // ELEMENTS
