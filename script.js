@@ -82,7 +82,7 @@ const vehicles = {
         engine: "V8",
         power: "449 hp",
         top: "155 mph",
-        model: ""
+        model: "2022_mercedes-benz_sl_63_amg-v3.glb"
     },
 
     cls: {
