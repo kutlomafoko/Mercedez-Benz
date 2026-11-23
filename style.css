@@ -632,3 +632,17 @@ footer p {
         padding-right: 6%;
     }
 }
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    transition: 0.3s ease;
+}
+
+.logo img:hover {
+    border-color: #00aaff;
+    transform: scale(1.08);
+}
