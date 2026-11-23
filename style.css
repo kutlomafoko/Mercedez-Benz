@@ -693,130 +693,292 @@ footer p {
     color: white;
 }
 
-/* =================================
-   MERCEDES MODELS PAGE
-   BLACK, SILVER AND BLUE
-================================= */
+/* =====================================
+   MERCEDES INTERACTIVE SHOWROOM
+===================================== */
 
-html {
-    scroll-behavior: smooth;
+* {
+    box-sizing: border-box;
 }
 
-.models-hero {
-    min-height: 90vh;
+body {
+    margin: 0;
+    background: #070a0d;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+
+.showroom-nav {
+    height: 75px;
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #080b0e;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    position: relative;
+    z-index: 20;
+}
+
+.showroom-nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.showroom-nav .logo img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+.showroom-nav .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.showroom-nav .nav-links a {
+    color: #b8bdc5;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.showroom-nav .nav-links a:hover,
+.showroom-nav .nav-links a.active {
+    color: #168cff;
+}
+
+.showroom-nav .menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   MAIN SHOWROOM
+===================================== */
+
+.showroom {
+    min-height: calc(100vh - 110px);
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr) 150px;
+    padding: 25px 4% 15px;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(
+            ellipse at 52% 70%,
+            rgba(25,39,56,.3),
+            transparent 55%
+        ),
+        #070a0d;
+}
+
+
+/* =====================================
+   LEFT MODEL SELECTOR
+===================================== */
+
+.model-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+}
+
+.side-label {
+    color: #168cff;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.model-selector {
+    border-left: 1px solid #39424c;
+    display: flex;
+    flex-direction: column;
+}
+
+.model-option {
     position: relative;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    background: #05070b;
-    padding: 100px 7%;
-}
-
-.hero-background {
-    position: absolute;
-    inset: 0;
-    background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90");
-    background-size: cover;
-    background-position: center;
-    animation: heroZoom 15s ease-in-out infinite alternate;
-}
-
-.hero-dark-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(3,6,11,.96) 0%,
-        rgba(3,6,11,.78) 48%,
-        rgba(3,6,11,.20) 100%
-    );
-}
-
-.models-hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 720px;
-    color: white;
-    animation: fadeUp 1.2s ease;
-}
-
-.models-label {
-    color: #168cff;
+    gap: 14px;
+    background: transparent;
+    border: none;
+    color: #9299a3;
+    padding: 20px 0;
+    text-align: left;
     font-size: 11px;
-    letter-spacing: 4px;
-    font-weight: 700;
-    margin-bottom: 22px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.models-hero h1 {
+.model-option:hover {
+    color: #fff;
+    padding-left: 8px;
+}
+
+.model-option.active {
+    color: white;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.selector-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #59616b;
+    position: absolute;
+    left: -4px;
+    transition: .3s;
+}
+
+.model-option.active .selector-dot {
+    background: #168cff;
+    box-shadow: 0 0 12px #168cff;
+}
+
+
+/* =====================================
+   CENTRE SHOWROOM
+===================================== */
+
+.showroom-main {
+    min-width: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.model-heading {
+    text-align: center;
+    position: relative;
+    z-index: 4;
+    margin-top: 0;
+}
+
+.model-heading .side-label {
+    margin-bottom: 9px;
+}
+
+.model-heading h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 7vw, 90px);
+    font-size: clamp(35px, 4vw, 53px);
     font-weight: 500;
-    line-height: 1.05;
-    margin-bottom: 25px;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
+    color: #f4f6fa;
 }
 
-.models-hero h1 span,
-.models-intro h2 span,
-.models-cta h2 span {
-    color: #168cff;
+.model-heading > p:not(.side-label) {
+    font-size: 12px;
+    color: #aab0b9;
+    margin: 10px 0 18px;
 }
 
-.models-hero-content > p:not(.models-label) {
-    color: #c0c6d0;
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 480px;
-    margin-bottom: 35px;
-}
-
-.models-hero-btn {
+.order-btn {
     display: inline-block;
-    padding: 16px 28px;
+    padding: 11px 35px;
+    background: #f4f5f7;
+    color: #10151b;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.order-btn:hover {
     background: #168cff;
     color: white;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    border: 1px solid #168cff;
-    transition: .4s;
+    transform: scale(1.05);
 }
 
-.models-hero-btn:hover {
-    background: transparent;
-    color: #168cff;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(22,140,255,.2);
-}
 
-.hero-bottom-text {
-    position: absolute;
-    bottom: 30px;
-    left: 7%;
-    right: 7%;
+/* =====================================
+   CAR DISPLAY STAGE
+===================================== */
+
+.car-stage {
+    width: 100%;
+    height: 340px;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    color: #a7adb7;
-    font-size: 10px;
-    letter-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.stage-glow {
+    position: absolute;
+    width: 75%;
+    height: 170px;
+    background: rgba(22,140,255,.10);
+    filter: blur(65px);
+    border-radius: 50%;
+    bottom: 35px;
+}
+
+.stage-floor {
+    position: absolute;
+    width: 85%;
+    height: 115px;
+    bottom: 20px;
+    border-radius: 50%;
+    background: radial-gradient(
+        ellipse,
+        rgba(255,255,255,.14),
+        rgba(22,140,255,.08) 40%,
+        transparent 72%
+    );
+    border-bottom: 2px solid rgba(255,255,255,.12);
+    box-shadow: 0 20px 35px rgba(0,0,0,.8);
+}
+
+.main-car-image {
+    position: relative;
     z-index: 2;
+    width: 105%;
+    max-width: 850px;
+    max-height: 330px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,.8));
+    transition: opacity .3s, transform .5s;
+    animation: carEntrance 1s ease;
 }
 
-@keyframes heroZoom {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
-    }
+.main-car-image.changing {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
 }
 
-@keyframes fadeUp {
+@keyframes carEntrance {
     from {
         opacity: 0;
-        transform: translateY(35px);
+        transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -824,371 +986,301 @@ html {
 }
 
 
-/* =================================
-   INTRODUCTION
-================================= */
+/* =====================================
+   BOTTOM GALLERY
+===================================== */
 
-.models-intro {
-    background: #080b10;
-    text-align: center;
-    padding: 100px 7%;
-}
-
-.models-intro h2 {
-    font-family: 'Cormorant Garamond', serif;
-    color: #f4f6fa;
-    font-size: clamp(38px, 5vw, 60px);
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.models-intro > p:last-child {
-    max-width: 650px;
-    margin: auto;
-    color: #9da7b5;
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-
-/* =================================
-   MODEL COLLECTION
-================================= */
-
-.model-collection {
-    padding: 90px 7%;
-    background: #05070b;
-}
-
-.collection-heading {
+.showroom-gallery {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 25px;
-    margin-bottom: 35px;
-}
-
-.collection-heading h2 {
-    color: white;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 52px);
-    font-weight: 500;
-}
-
-.collection-description {
-    color: #929ba8;
-    font-size: 13px;
-    max-width: 300px;
-    line-height: 1.8;
-}
-
-
-/* CATEGORY FILTERS */
-
-.model-filters {
-    display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #222b36;
-    padding-bottom: 25px;
+    margin-top: auto;
+    padding: 5px 0;
 }
 
-.filter-btn {
-    background: transparent;
-    border: 1px solid #303b49;
-    color: #aab3c0;
-    padding: 12px 22px;
-    font-size: 10px;
-    letter-spacing: 1px;
+.gallery-images {
+    display: flex;
+    gap: 10px;
+    width: min(100%, 440px);
+}
+
+.gallery-thumb {
+    flex: 1;
+    min-width: 0;
+    height: 85px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #343b44;
+    background: #111820;
     cursor: pointer;
     transition: .3s;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    background: #168cff;
-    border-color: #168cff;
-    color: white;
-}
-
-
-/* =================================
-   VEHICLE CARDS
-================================= */
-
-.models-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
-}
-
-.model-card {
-    background: #0d121a;
-    border: 1px solid #202a36;
-    overflow: hidden;
-    transition: transform .4s, border-color .4s, box-shadow .4s;
-    animation: fadeUp .7s ease both;
-}
-
-.model-card:hover {
-    transform: translateY(-10px);
-    border-color: #168cff;
-    box-shadow: 0 15px 40px rgba(22,140,255,.13);
-}
-
-.model-card.hidden {
-    display: none;
-}
-
-
-/* VEHICLE IMAGE */
-
-.model-image {
-    height: 230px;
-    overflow: hidden;
-    position: relative;
-    background: #151b24;
-}
-
-.model-image img {
+.gallery-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .7s;
+    opacity: .65;
+    transition: .4s;
 }
 
-.model-card:hover .model-image img {
-    transform: scale(1.09);
-}
-
-.model-image::after {
-    content: "";
+.gallery-thumb span {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        transparent 55%
-    );
-}
-
-.model-category {
-    position: absolute;
-    z-index: 2;
-    bottom: 17px;
-    left: 20px;
+    bottom: 7px;
+    left: 7px;
+    font-size: 8px;
+    letter-spacing: 1px;
     color: white;
-    font-size: 9px;
-    letter-spacing: 2px;
-    font-weight: 700;
+}
+
+.gallery-thumb:hover img,
+.gallery-thumb.active img {
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+.gallery-thumb.active {
+    border-color: #168cff;
+}
+
+.gallery-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #59616b;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.gallery-arrow:hover {
+    background: #168cff;
+    border-color: #168cff;
 }
 
 
-/* CARD CONTENT */
+/* =====================================
+   RIGHT SPECIFICATIONS
+===================================== */
 
-.model-details {
-    padding: 25px;
-}
-
-.model-number {
-    color: #168cff;
-    font-size: 9px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-.model-details h3 {
-    color: #f2f4f8;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.model-description {
-    color: #9da7b5;
-    font-size: 12px;
-    line-height: 1.8;
-    min-height: 65px;
-}
-
-
-/* SPECIFICATIONS */
-
-.specifications {
-    border-top: 1px solid #29313c;
-    border-bottom: 1px solid #29313c;
-    padding: 17px 0;
-    margin: 20px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.specifications div {
+.model-specs {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+    gap: 30px;
+    position: relative;
+    z-index: 3;
 }
 
-.specifications div span {
-    color: #748092;
+.spec-item h2 {
+    color: #f2f4f8;
+    font-size: 29px;
+    font-weight: 500;
+    margin: 0 0 5px;
+    white-space: nowrap;
+}
+
+.spec-item span {
+    color: #8993a0;
+    font-size: 9px;
+}
+
+.spec-link {
+    text-decoration: none;
+    color: #168cff;
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-bottom: 1px solid #168cff;
+    padding-bottom: 7px;
+    transition: .3s;
+}
+
+.spec-link:hover {
+    color: white;
+    border-color: white;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.showroom-footer {
+    min-height: 35px;
+    padding: 10px 4%;
+    display: flex;
+    justify-content: space-between;
+    color: #69727e;
+    background: #070a0d;
+    border-top: 1px solid #202832;
     font-size: 8px;
     letter-spacing: 1px;
 }
 
-.specifications div strong {
-    color: #e0e5ec;
-    font-size: 11px;
-    font-weight: 500;
-}
 
+/* =====================================
+   TABLET
+===================================== */
 
-/* CARD BUTTON */
+@media(max-width: 1050px) {
 
-.model-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    color: #168cff;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    padding-top: 5px;
-    transition: .3s;
-}
+    .showroom {
+        grid-template-columns: 145px minmax(0,1fr) 115px;
+        gap: 12px;
+    }
 
-.model-link span {
-    font-size: 20px;
-    transition: transform .3s;
-}
+    .model-option {
+        font-size: 10px;
+    }
 
-.model-link:hover {
-    color: white;
-}
+    .spec-item h2 {
+        font-size: 23px;
+    }
 
-.model-link:hover span {
-    transform: translate(5px, -5px);
-}
+    .main-car-image {
+        width: 115%;
+    }
 
-
-/* =================================
-   CALL TO ACTION
-================================= */
-
-.models-cta {
-    background: linear-gradient(
-        120deg,
-        #0c1420,
-        #080b10,
-        #101a29
-    );
-    text-align: center;
-    padding: 100px 7%;
-    border-top: 1px solid #202a36;
-}
-
-.models-cta h2 {
-    color: white;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(42px, 6vw, 70px);
-    font-weight: 500;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.models-cta > p:not(.models-label) {
-    color: #a5afbd;
-    font-size: 13px;
-    line-height: 1.8;
-    max-width: 480px;
-    margin: 0 auto 30px;
-}
-
-
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
-
-@media (max-width: 1000px) {
-
-    .models-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .showroom-nav .nav-links {
+        gap: 12px;
     }
 
 }
 
-@media (max-width: 650px) {
 
-    .models-hero {
-        min-height: 75vh;
-        padding: 80px 6%;
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width: 700px) {
+
+    .showroom-nav {
+        height: 65px;
     }
 
-    .hero-dark-overlay {
-        background: rgba(3,6,11,.72);
-    }
-
-    .models-intro {
-        padding: 70px 6%;
-    }
-
-    .model-collection {
-        padding: 65px 6%;
-    }
-
-    .collection-heading {
+    .showroom-nav .menu-toggle {
         display: block;
     }
 
-    .collection-description {
+    .showroom-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #090d12;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+        gap: 22px;
+    }
+
+    .showroom-nav .nav-links.show {
+        display: flex;
+    }
+
+    .showroom {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 5%;
+        gap: 20px;
+        overflow: visible;
+    }
+
+    .model-sidebar {
+        order: 2;
+    }
+
+    .model-sidebar .side-label {
+        margin-bottom: 12px;
+    }
+
+    .model-selector {
+        border-left: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .model-option {
+        border: 1px solid #303b49;
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    .model-option:hover,
+    .model-option.active {
+        padding: 10px;
+    }
+
+    .selector-dot {
+        display: none;
+    }
+
+    .showroom-main {
+        order: 1;
+    }
+
+    .model-heading {
         margin-top: 15px;
     }
 
-    .models-grid {
-        grid-template-columns: 1fr;
+    .car-stage {
+        height: 240px;
+        margin-top: 10px;
     }
 
-    .model-image {
-        height: 250px;
+    .main-car-image {
+        width: 115%;
+        max-height: 240px;
     }
 
-    .models-cta {
-        padding: 75px 6%;
+    .stage-floor {
+        height: 80px;
     }
 
-    .hero-bottom-text {
-        font-size: 8px;
+    .showroom-gallery {
+        margin-top: 10px;
     }
 
-    .filter-btn {
-        padding: 10px 14px;
+    .gallery-thumb {
+        height: 70px;
+    }
+
+    .model-specs {
+        order: 3;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-top: 1px solid #26313d;
+    }
+
+    .spec-item h2 {
+        font-size: 23px;
+    }
+
+    .spec-link {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    .showroom-footer {
+        gap: 10px;
+        font-size: 7px;
     }
 
 }
-
-@media (prefers-reduced-motion: reduce) {
-
-    .hero-background,
-    .models-hero-content,
-    .model-card {
-        animation: none;
-    }
-
-    .model-card,
-    .model-image img,
-    .models-hero-btn {
-        transition: none;
-    }
-
-    html {
-        scroll-behavior: auto;
-    }
-
-}
-
 
 
 
