@@ -646,3 +646,16 @@ footer p {
     border-color: #00aaff;
     transform: scale(1.08);
 }
+.logo img {
+    animation: logoSpin 8s linear infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
