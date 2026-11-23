@@ -101,21 +101,45 @@
         </div>
 
 
-        <!-- MAIN CAR IMAGE -->
-        <div class="car-stage">
+       
+<!-- REAL 3D SHOWROOM -->
 
-            <div class="stage-glow"></div>
+<div class="car-stage">
 
-            <div class="stage-floor"></div>
+    <div class="showroom-light"></div>
 
-            <img
-                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
-                alt="Mercedes-Benz vehicle"
-                id="main-car-image"
-                class="main-car-image"
-            >
+    <model-viewer
+        id="car-viewer"
+        src="models/sl-class.glb"
+        alt="Mercedes-Benz SL-Class 3D vehicle"
+        camera-controls
+        auto-rotate
+        rotation-per-second="12deg"
+        interaction-prompt="none"
+        shadow-intensity="1.5"
+        shadow-softness="1"
+        exposure="1.15"
+        environment-image="neutral"
+        camera-orbit="0deg 75deg 105%"
+        field-of-view="30deg"
+        min-camera-orbit="auto 45deg auto"
+        max-camera-orbit="auto 110deg auto"
+        touch-action="pan-y"
+        loading="eager">
 
+        <div slot="progress-bar" class="loading-bar">
+            LOADING SHOWROOM...
         </div>
+
+    </model-viewer>
+
+    <div class="rotation-hint">
+        <span>↔</span>
+        DRAG TO EXPLORE 360°
+    </div>
+
+</div>
+
 
 
         <!-- BOTTOM IMAGE GALLERY -->
