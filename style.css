@@ -1374,15 +1374,6 @@ model-viewer:active {
     font-size: 20px;
 }
 
-/* Remove the old gallery */
-
-.showroom-gallery,
-.gallery-images,
-.gallery-thumb,
-.gallery-arrow {
-    display: none !important;
-}
-
 /* Mobile */
 
 @media(max-width: 700px) {
