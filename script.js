@@ -126,7 +126,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: ""
+        model: "mersedes-benz_s-class_w221-v1.glb"
     },
 
     eq: {
