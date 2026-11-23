@@ -72,15 +72,6 @@ setupForm("contactForm", "Mercedes-Benz Customer Enquiry");
 
 setupForm("bookingForm", "Mercedes-Benz Test Drive Booking");
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-    });
-}
-
 const vehicles = {
 
     sl: {
