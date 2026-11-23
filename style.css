@@ -1411,6 +1411,57 @@ model-viewer {
     justify-content: center;
     overflow: hidden;
 }
+/* COLOUR SELECTOR */
+
+.color-selector {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+    z-index: 5;
+}
+
+.color-selector p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #aab0b9;
+    margin-bottom: 15px;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.color-option {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: var(--car-color);
+    border: 2px solid #777;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.2);
+}
+
+.color-option.active {
+    outline: 2px solid #168cff;
+    outline-offset: 4px;
+    border-color: white;
+}
+
+#selected-color {
+    display: block;
+    margin-top: 13px;
+    color: #c4c9d1;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
 
 
 
