@@ -93,7 +93,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: ""
+        model: "mercedes-benz_cls53_amg_2022-v1.glb"
     },
 
     c: {
