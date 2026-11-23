@@ -2,122 +2,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Models | Mercedes-Benz</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mercedes-Benz | Our Models</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="models.css">
 </head>
+
 <body>
 
+<!-- NAVIGATION -->
 <nav>
-<a href="index.html" class="logo"> <img src="logo.jpg" alt="Mercedes-Benz Logo"></a>
-<button class="menu-toggle" id="menuToggle">☰</button>
-<div class="nav-links" id="navLinks">
-<a href="index.html">HOME</a>
-<a href="models.html" class="active">OUR MODELS</a>
-<a href="collections.html">COLLECTIONS</a>
-<a href="technology.html">TECHNOLOGY</a>
-<a href="about.html">ABOUT US</a>
-<a href="contact.html">CONTACT</a>
-<a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
-</div>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz Logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <a href="models.html" class="active">OUR MODELS</a>
+        <a href="collections.html">COLLECTIONS</a>
+        <a href="technology.html">TECHNOLOGY</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
+    </div>
 </nav>
 
-<header class="page-hero" style="--hero-image:url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=85')">
-<div>
-<p class="section-label">DISCOVER THE RANGE</p>
-<h1>Our <span>Models.</span></h1>
-<p>Explore a collection of vehicles created for elegance, comfort, innovation and performance.</p>
-</div>
+
+<!-- HERO SECTION -->
+<header class="models-hero">
+
+    <div class="hero-background"></div>
+    <div class="hero-dark-overlay"></div>
+
+    <div class="models-hero-content">
+
+        <p class="models-label">THE WORLD OF MERCEDES-BENZ</p>
+
+        <h1>Discover Our<br><span>Exceptional</span> Models.</h1>
+
+        <p>
+            Explore a collection where luxury meets innovation.
+            Discover the perfect Mercedes-Benz designed around you.
+        </p>
+
+        <a href="#model-collection" class="models-hero-btn">
+            EXPLORE OUR MODELS ↓
+        </a>
+
+    </div>
+
+    <div class="hero-bottom-text">
+        <span>ENGINEERED FOR EXCELLENCE</span>
+        <span>01 — 06</span>
+    </div>
+
 </header>
 
-<section class="content-section">
-<p class="section-label">THE VEHICLE COLLECTION</p>
-<h2 class="section-title">Find Your Mercedes-Benz</h2>
-<p class="section-intro">A class for every journey. Discover the model that matches your lifestyle.</p>
 
-<div class="car-grid">
+<!-- INTRODUCTION -->
+<section class="models-intro">
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=900&q=80" alt="C-Class">
-<div class="car-info">
-<h3>C-Class</h3>
-<p>Modern elegance, comfort and intelligent performance.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
+    <p class="models-label">THE MERCEDES COLLECTION</p>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80" alt="E-Class">
-<div class="car-info">
-<h3>E-Class</h3>
-<p>Advanced comfort and sophisticated technology.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
+    <h2>Luxury Has Many <span>Forms.</span></h2>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=900&q=80" alt="S-Class">
-<div class="car-info">
-<h3>S-Class</h3>
-<p>The ultimate expression of luxury and refinement.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
+    <p>
+        From elegant sedans to powerful SUVs and innovative electric
+        vehicles, discover a Mercedes-Benz that reflects your lifestyle.
+    </p>
 
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80" alt="GLE SUV">
-<div class="car-info">
-<h3>GLE SUV</h3>
-<p>Versatility, space and commanding road presence.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
-
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" alt="AMG">
-<div class="car-info">
-<h3>AMG Collection</h3>
-<p>Dynamic styling and exhilarating performance.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
-
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1598843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" alt="EQ">
-<div class="car-info">
-<h3>EQ Collection</h3>
-<p>Explore electric mobility and forward-thinking design.</p>
-<div class="price">Price on enquiry</div>
-<a href="booking.html" class="details-link">ENQUIRE NOW →</a>
-</div>
-</div>
-
-</div>
 </section>
 
-<section>
-<h2 class="section-title">Found Your Favourite?</h2>
-<p class="section-intro">Get in touch with our team or arrange a personal test drive.</p>
-<br>
-<a href="booking.html" class="primary-btn">BOOK A TEST DRIVE →</a>
+
+<!-- MODEL COLLECTION -->
+<section class="model-collection" id="model-collection">
+
+    <div class="collection-heading">
+
+        <div>
+            <p class="models-label">FIND YOUR PERFECT DRIVE</p>
+            <h2>Explore Our Models</h2>
+        </div>
+
+        <p class="collection-description">
+            Discover performance, comfort and sophistication.
+        </p>
+
+    </div>
+
+
+    <!-- CATEGORY FILTERS -->
+    <div class="model-filters">
+
+        <button class="filter-btn active" data-filter="all">ALL MODELS</button>
+
+        <button class="filter-btn" data-filter="sedan">SEDANS</button>
+
+        <button class="filter-btn" data-filter="suv">SUVs</button>
+
+        <button class="filter-btn" data-filter="electric">ELECTRIC</button>
+
+    </div>
+
+
+    <!-- CAR GRID -->
+    <div class="models-grid">
+
+
+        <!-- C CLASS -->
+        <div class="model-card" data-category="sedan">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-Benz luxury sedan">
+
+                <span class="model-category">LUXURY SEDAN</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">01 / SEDAN COLLECTION</p>
+
+                <h3>C-Class</h3>
+
+                <p class="model-description">
+                    Modern elegance, intelligent technology
+                    and exceptional everyday comfort.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>Sedan</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Multiple options</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Model dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- E CLASS -->
+        <div class="model-card" data-category="sedan">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-Benz executive car">
+
+                <span class="model-category">EXECUTIVE SEDAN</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">02 / SEDAN COLLECTION</p>
+
+                <h3>E-Class</h3>
+
+                <p class="model-description">
+                    Experience refined sophistication,
+                    comfort and advanced digital innovation.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>Sedan</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Multiple options</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Model dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- S CLASS -->
+        <div class="model-card" data-category="sedan">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=85"
+                     alt="Luxury Mercedes-style sedan">
+
+                <span class="model-category">FLAGSHIP LUXURY</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">03 / SEDAN COLLECTION</p>
+
+                <h3>S-Class</h3>
+
+                <p class="model-description">
+                    The ultimate expression of comfort,
+                    prestigious design and innovation.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>Luxury Sedan</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Multiple options</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Model dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GLC -->
+        <div class="model-card" data-category="suv">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
+                     alt="Luxury SUV">
+
+                <span class="model-category">LUXURY SUV</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">04 / SUV COLLECTION</p>
+
+                <h3>GLC SUV</h3>
+
+                <p class="model-description">
+                    A perfect balance of versatility,
+                    elegance and everyday practicality.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>SUV</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Multiple options</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Model dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GLE -->
+        <div class="model-card" data-category="suv">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=85"
+                     alt="Premium performance SUV">
+
+                <span class="model-category">PERFORMANCE SUV</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">05 / SUV COLLECTION</p>
+
+                <h3>GLE SUV</h3>
+
+                <p class="model-description">
+                    Powerful presence, spacious comfort
+                    and advanced driving technology.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>SUV</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Multiple options</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Model dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EQE -->
+        <div class="model-card" data-category="electric">
+
+            <div class="model-image">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=85"
+                     alt="Modern electric vehicle">
+
+                <span class="model-category">ELECTRIC LUXURY</span>
+            </div>
+
+            <div class="model-details">
+
+                <p class="model-number">06 / ELECTRIC COLLECTION</p>
+
+                <h3>EQE</h3>
+
+                <p class="model-description">
+                    Discover electric mobility through
+                    intelligent design and modern luxury.
+                </p>
+
+                <div class="specifications">
+
+                    <div>
+                        <span>BODY STYLE</span>
+                        <strong>Electric Sedan</strong>
+                    </div>
+
+                    <div>
+                        <span>POWERTRAIN</span>
+                        <strong>Fully electric</strong>
+                    </div>
+
+                    <div>
+                        <span>DRIVE</span>
+                        <strong>Version dependent</strong>
+                    </div>
+
+                </div>
+
+                <a href="contact.html" class="model-link">
+                    ENQUIRE NOW <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </section>
 
+
+<!-- CALL TO ACTION -->
+<section class="models-cta">
+
+    <p class="models-label">YOUR JOURNEY STARTS HERE</p>
+
+    <h2>Experience the<br><span>Extraordinary.</span></h2>
+
+    <p>
+        The perfect Mercedes-Benz is waiting for you.
+        Take the first step towards your next journey.
+    </p>
+
+    <a href="booking.html" class="models-hero-btn">
+        BOOK A TEST DRIVE ↗
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-<div class="footer-top">
-<div><h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3><p>The Best or Nothing.</p></div>
-<div class="footer-links">
-<a href="index.html">Home</a><a href="models.html">Models</a><a href="collections.html">Collections</a><a href="technology.html">Technology</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-</div>
-</div>
-<div class="copyright"><p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p></div>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3>
+            <p>The Best or Nothing.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="collections.html">Collections</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
+        <p>Independent dealership website concept. Not an official Mercedes-Benz website.</p>
+    </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+
+<!-- CATEGORY FILTER FUNCTION -->
+<script>
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const modelCards = document.querySelectorAll(".model-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const selectedCategory = button.dataset.filter;
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        modelCards.forEach(card => {
+
+            const category = card.dataset.category;
+
+            if (selectedCategory === "all" ||
+                selectedCategory === category) {
+
+                card.classList.remove("hidden");
+
+            } else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
 </body>
 </html>
+
