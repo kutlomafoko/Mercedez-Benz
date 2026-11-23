@@ -202,3 +202,44 @@ modelOptions.forEach(button => {
 
 // Start with SL-Class
 displayVehicle("sl");
+// INTERACTIVE CAR COLOURS
+
+const colorOptions = document.querySelectorAll(".color-option");
+const selectedColor = document.getElementById("selected-color");
+
+const colorNames = {
+    "#111111": "Obsidian Black",
+    "#c0c0c0": "High-Tech Silver",
+    "#142b50": "Nautic Blue",
+    "#800d18": "Patagonia Red"
+};
+
+colorOptions.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const color = button.dataset.color;
+
+        colorOptions.forEach(option => {
+            option.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        selectedColor.textContent = colorNames[color];
+
+        const viewer = document.getElementById("car-viewer");
+
+        // Change the 3D model's material colour
+        viewer.model?.materials.forEach(material => {
+            material.pbrMetallicRoughness.setBaseColorFactor(
+                color === "#111111" ? [0.07, 0.07, 0.07, 1] :
+                color === "#c0c0c0" ? [0.65, 0.65, 0.65, 1] :
+                color === "#142b50" ? [0.04, 0.12, 0.28, 1] :
+                [0.35, 0.02, 0.06, 1]
+            );
+        });
+
+    });
+
+});
