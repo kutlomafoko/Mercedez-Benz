@@ -80,3 +80,134 @@ if (menuToggle && navLinks) {
         navLinks.classList.toggle("show");
     });
 }
+
+const vehicles = {
+
+    sl: {
+        name: "SL-CLASS",
+        category: "PERFORMANCE COLLECTION",
+        subtitle: "Pure driving pleasure.",
+        speed: "4.1 s",
+        engine: "V8",
+        power: "449 hp",
+        top: "155 mph",
+        model: "models/sl-class.glb"
+    },
+
+    cls: {
+        name: "CLS-CLASS",
+        category: "LUXURY COLLECTION",
+        subtitle: "Elegance in every detail.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
+        model: "models/cls-class.glb"
+    },
+
+    c: {
+        name: "C-CLASS",
+        category: "LUXURY SEDAN",
+        subtitle: "Designed around you.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
+        model: "models/c-class.glb"
+    },
+
+    g: {
+        name: "G-CLASS",
+        category: "OFF-ROAD COLLECTION",
+        subtitle: "Unmistakable presence.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
+        model: "models/g-class.glb"
+    },
+
+    s: {
+        name: "S-CLASS",
+        category: "FLAGSHIP COLLECTION",
+        subtitle: "The essence of luxury.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
+        model: "models/s-class.glb"
+    },
+
+    eq: {
+        name: "EQE",
+        category: "ELECTRIC COLLECTION",
+        subtitle: "The future moves differently.",
+        speed: "Model dependent",
+        engine: "Electric",
+        power: "Version dependent",
+        top: "Version dependent",
+        model: "models/eqe.glb"
+    }
+
+};
+
+const modelOptions = document.querySelectorAll(".model-option");
+const viewer = document.getElementById("car-viewer");
+
+function displayVehicle(id) {
+
+    const vehicle = vehicles[id];
+
+    if (!vehicle) return;
+
+    // Update vehicle name
+    document.getElementById("model-name").textContent =
+        vehicle.name;
+
+    document.getElementById("model-category").textContent =
+        vehicle.category;
+
+    document.getElementById("model-subtitle").textContent =
+        vehicle.subtitle;
+
+    // Update specifications
+    document.getElementById("spec-speed").textContent =
+        vehicle.speed;
+
+    document.getElementById("spec-engine").textContent =
+        vehicle.engine;
+
+    document.getElementById("spec-power").textContent =
+        vehicle.power;
+
+    document.getElementById("spec-top").textContent =
+        vehicle.top;
+
+    // Load selected 3D vehicle
+    viewer.src = vehicle.model;
+
+    // Update selected model on the left
+    modelOptions.forEach(button => {
+
+        button.classList.toggle(
+            "active",
+            button.dataset.model === id
+        );
+
+    });
+
+}
+
+// Model selection
+modelOptions.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        displayVehicle(button.dataset.model);
+
+    });
+
+});
+
+// Start with SL-Class
+displayVehicle("sl");
