@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mercedes-Benz | Our Models</title>
+    <title>Mercedes-Benz | Models</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="models.css">
@@ -14,496 +14,411 @@
 <body>
 
 <!-- NAVIGATION -->
-<nav>
-    <a href="index.html" class="logo">
-        <img src="logo.jpg" alt="Mercedes-Benz Logo">
-    </a>
+<nav class="showroom-nav">
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz">
+        <span>Mercedes-Benz</span>
+    </a>
 
     <div class="nav-links" id="navLinks">
         <a href="index.html">HOME</a>
-        <a href="models.html" class="active">OUR MODELS</a>
+        <a href="models.html" class="active">MODELS</a>
         <a href="collections.html">COLLECTIONS</a>
         <a href="technology.html">TECHNOLOGY</a>
-        <a href="about.html">ABOUT US</a>
+        <a href="about.html">ABOUT</a>
         <a href="contact.html">CONTACT</a>
         <a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
     </div>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
 </nav>
 
 
-<!-- HERO SECTION -->
-<header class="models-hero">
+<!-- INTERACTIVE SHOWROOM -->
+<main class="showroom">
 
-    <div class="hero-background"></div>
-    <div class="hero-dark-overlay"></div>
+    <!-- LEFT MODEL SELECTOR -->
+    <aside class="model-sidebar">
 
-    <div class="models-hero-content">
+        <p class="side-label">EXPLORE MODELS</p>
 
-        <p class="models-label">THE WORLD OF MERCEDES-BENZ</p>
+        <div class="model-selector">
 
-        <h1>Discover Our<br><span>Exceptional</span> Models.</h1>
+            <button class="model-option active" data-model="sl">
+                <span class="selector-dot"></span>
+                SL-CLASS
+            </button>
 
-        <p>
-            Explore a collection where luxury meets innovation.
-            Discover the perfect Mercedes-Benz designed around you.
-        </p>
+            <button class="model-option" data-model="cls">
+                <span class="selector-dot"></span>
+                CLS-CLASS
+            </button>
 
-        <a href="#model-collection" class="models-hero-btn">
-            EXPLORE OUR MODELS ↓
+            <button class="model-option" data-model="c">
+                <span class="selector-dot"></span>
+                C-CLASS
+            </button>
+
+            <button class="model-option" data-model="g">
+                <span class="selector-dot"></span>
+                G-CLASS
+            </button>
+
+            <button class="model-option" data-model="s">
+                <span class="selector-dot"></span>
+                S-CLASS
+            </button>
+
+            <button class="model-option" data-model="eq">
+                <span class="selector-dot"></span>
+                EQE
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CENTRE SHOWROOM -->
+    <section class="showroom-main">
+
+        <div class="model-heading">
+
+            <p class="side-label" id="model-category">
+                PERFORMANCE COLLECTION
+            </p>
+
+            <h1 id="model-name">SL-CLASS</h1>
+
+            <p id="model-subtitle">Pure driving pleasure.</p>
+
+            <a href="booking.html" class="order-btn">
+                BOOK A TEST DRIVE
+            </a>
+
+        </div>
+
+
+        <!-- MAIN CAR IMAGE -->
+        <div class="car-stage">
+
+            <div class="stage-glow"></div>
+
+            <div class="stage-floor"></div>
+
+            <img
+                src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
+                alt="Mercedes-Benz vehicle"
+                id="main-car-image"
+                class="main-car-image"
+            >
+
+        </div>
+
+
+        <!-- BOTTOM IMAGE GALLERY -->
+        <div class="showroom-gallery">
+
+            <button class="gallery-arrow" id="previous-image">
+                ↑
+            </button>
+
+            <div class="gallery-images" id="gallery-images">
+
+                <button class="gallery-thumb active">
+                    <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=400&q=80" alt="Exterior">
+                    <span>EXTERIOR</span>
+                </button>
+
+                <button class="gallery-thumb">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="Interior">
+                    <span>INTERIOR</span>
+                </button>
+
+                <button class="gallery-thumb">
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=400&q=80" alt="Details">
+                    <span>DETAILS</span>
+                </button>
+
+            </div>
+
+            <button class="gallery-arrow" id="next-image">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RIGHT SPECIFICATIONS -->
+    <aside class="model-specs">
+
+        <div class="spec-item">
+            <h2 id="spec-speed">4.1 s</h2>
+            <span>0–60 mph</span>
+        </div>
+
+        <div class="spec-item">
+            <h2 id="spec-engine">V8</h2>
+            <span>Engine</span>
+        </div>
+
+        <div class="spec-item">
+            <h2 id="spec-power">449 hp</h2>
+            <span>Peak power</span>
+        </div>
+
+        <div class="spec-item">
+            <h2 id="spec-top">155 mph</h2>
+            <span>Top speed</span>
+        </div>
+
+        <a href="contact.html" class="spec-link">
+            VIEW DETAILS ↗
         </a>
 
-    </div>
+    </aside>
 
-    <div class="hero-bottom-text">
-        <span>ENGINEERED FOR EXCELLENCE</span>
-        <span>01 — 06</span>
-    </div>
+</main>
 
-</header>
 
+<!-- BOTTOM FOOTER -->
+<footer class="showroom-footer">
 
-<!-- INTRODUCTION -->
-<section class="models-intro">
+    <p>© 2026 MERCEDES-BENZ DEALERSHIP CONCEPT</p>
 
-    <p class="models-label">THE MERCEDES COLLECTION</p>
-
-    <h2>Luxury Has Many <span>Forms.</span></h2>
-
-    <p>
-        From elegant sedans to powerful SUVs and innovative electric
-        vehicles, discover a Mercedes-Benz that reflects your lifestyle.
-    </p>
-
-</section>
-
-
-<!-- MODEL COLLECTION -->
-<section class="model-collection" id="model-collection">
-
-    <div class="collection-heading">
-
-        <div>
-            <p class="models-label">FIND YOUR PERFECT DRIVE</p>
-            <h2>Explore Our Models</h2>
-        </div>
-
-        <p class="collection-description">
-            Discover performance, comfort and sophistication.
-        </p>
-
-    </div>
-
-
-    <!-- CATEGORY FILTERS -->
-    <div class="model-filters">
-
-        <button class="filter-btn active" data-filter="all">ALL MODELS</button>
-
-        <button class="filter-btn" data-filter="sedan">SEDANS</button>
-
-        <button class="filter-btn" data-filter="suv">SUVs</button>
-
-        <button class="filter-btn" data-filter="electric">ELECTRIC</button>
-
-    </div>
-
-
-    <!-- CAR GRID -->
-    <div class="models-grid">
-
-
-        <!-- C CLASS -->
-        <div class="model-card" data-category="sedan">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=85"
-                     alt="Mercedes-Benz luxury sedan">
-
-                <span class="model-category">LUXURY SEDAN</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">01 / SEDAN COLLECTION</p>
-
-                <h3>C-Class</h3>
-
-                <p class="model-description">
-                    Modern elegance, intelligent technology
-                    and exceptional everyday comfort.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>Sedan</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Multiple options</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Model dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- E CLASS -->
-        <div class="model-card" data-category="sedan">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1000&q=85"
-                     alt="Mercedes-Benz executive car">
-
-                <span class="model-category">EXECUTIVE SEDAN</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">02 / SEDAN COLLECTION</p>
-
-                <h3>E-Class</h3>
-
-                <p class="model-description">
-                    Experience refined sophistication,
-                    comfort and advanced digital innovation.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>Sedan</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Multiple options</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Model dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- S CLASS -->
-        <div class="model-card" data-category="sedan">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=85"
-                     alt="Luxury Mercedes-style sedan">
-
-                <span class="model-category">FLAGSHIP LUXURY</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">03 / SEDAN COLLECTION</p>
-
-                <h3>S-Class</h3>
-
-                <p class="model-description">
-                    The ultimate expression of comfort,
-                    prestigious design and innovation.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>Luxury Sedan</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Multiple options</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Model dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- GLC -->
-        <div class="model-card" data-category="suv">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1000&q=85"
-                     alt="Luxury SUV">
-
-                <span class="model-category">LUXURY SUV</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">04 / SUV COLLECTION</p>
-
-                <h3>GLC SUV</h3>
-
-                <p class="model-description">
-                    A perfect balance of versatility,
-                    elegance and everyday practicality.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>SUV</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Multiple options</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Model dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- GLE -->
-        <div class="model-card" data-category="suv">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=85"
-                     alt="Premium performance SUV">
-
-                <span class="model-category">PERFORMANCE SUV</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">05 / SUV COLLECTION</p>
-
-                <h3>GLE SUV</h3>
-
-                <p class="model-description">
-                    Powerful presence, spacious comfort
-                    and advanced driving technology.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>SUV</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Multiple options</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Model dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- EQE -->
-        <div class="model-card" data-category="electric">
-
-            <div class="model-image">
-                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1000&q=85"
-                     alt="Modern electric vehicle">
-
-                <span class="model-category">ELECTRIC LUXURY</span>
-            </div>
-
-            <div class="model-details">
-
-                <p class="model-number">06 / ELECTRIC COLLECTION</p>
-
-                <h3>EQE</h3>
-
-                <p class="model-description">
-                    Discover electric mobility through
-                    intelligent design and modern luxury.
-                </p>
-
-                <div class="specifications">
-
-                    <div>
-                        <span>BODY STYLE</span>
-                        <strong>Electric Sedan</strong>
-                    </div>
-
-                    <div>
-                        <span>POWERTRAIN</span>
-                        <strong>Fully electric</strong>
-                    </div>
-
-                    <div>
-                        <span>DRIVE</span>
-                        <strong>Version dependent</strong>
-                    </div>
-
-                </div>
-
-                <a href="contact.html" class="model-link">
-                    ENQUIRE NOW <span>↗</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- CALL TO ACTION -->
-<section class="models-cta">
-
-    <p class="models-label">YOUR JOURNEY STARTS HERE</p>
-
-    <h2>Experience the<br><span>Extraordinary.</span></h2>
-
-    <p>
-        The perfect Mercedes-Benz is waiting for you.
-        Take the first step towards your next journey.
-    </p>
-
-    <a href="booking.html" class="models-hero-btn">
-        BOOK A TEST DRIVE ↗
-    </a>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-top">
-
-        <div>
-            <h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3>
-            <p>The Best or Nothing.</p>
-        </div>
-
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="models.html">Models</a>
-            <a href="collections.html">Collections</a>
-            <a href="technology.html">Technology</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
-        <p>Independent dealership website concept. Not an official Mercedes-Benz website.</p>
-    </div>
+    <p>THE BEST OR NOTHING.</p>
 
 </footer>
 
 
 <script src="script.js"></script>
 
-<!-- CATEGORY FILTER FUNCTION -->
 <script>
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const modelCards = document.querySelectorAll(".model-card");
+// VEHICLE INFORMATION
+const vehicles = {
 
-filterButtons.forEach(button => {
+    sl: {
+        name: "SL-CLASS",
+        category: "PERFORMANCE COLLECTION",
+        subtitle: "Pure driving pleasure.",
+        speed: "4.1 s",
+        engine: "V8",
+        power: "449 hp",
+        top: "155 mph",
 
-    button.addEventListener("click", () => {
+        images: [
+            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
+        ]
+    },
 
-        const selectedCategory = button.dataset.filter;
+    cls: {
+        name: "CLS-CLASS",
+        category: "LUXURY COLLECTION",
+        subtitle: "Elegance in every detail.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
 
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+        images: [
+            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
+        ]
+    },
 
-        button.classList.add("active");
+    c: {
+        name: "C-CLASS",
+        category: "LUXURY SEDAN",
+        subtitle: "Designed around you.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
 
-        modelCards.forEach(card => {
+        images: [
+            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90"
+        ]
+    },
 
-            const category = card.dataset.category;
+    g: {
+        name: "G-CLASS",
+        category: "OFF-ROAD COLLECTION",
+        subtitle: "Strong character. Unmistakable presence.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
 
-            if (selectedCategory === "all" ||
-                selectedCategory === category) {
+        images: [
+            "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
+        ]
+    },
 
-                card.classList.remove("hidden");
+    s: {
+        name: "S-CLASS",
+        category: "FLAGSHIP COLLECTION",
+        subtitle: "The essence of luxury.",
+        speed: "Model dependent",
+        engine: "Multiple options",
+        power: "Model dependent",
+        top: "Model dependent",
 
-            } else {
+        images: [
+            "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1400&q=90"
+        ]
+    },
 
-                card.classList.add("hidden");
+    eq: {
+        name: "EQE",
+        category: "ELECTRIC COLLECTION",
+        subtitle: "The future moves differently.",
+        speed: "Model dependent",
+        engine: "Electric",
+        power: "Version dependent",
+        top: "Version dependent",
 
-            }
+        images: [
+            "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=90",
+            "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1400&q=90"
+        ]
+    }
 
+};
+
+
+// ELEMENTS
+const modelOptions = document.querySelectorAll(".model-option");
+const mainImage = document.getElementById("main-car-image");
+const gallery = document.getElementById("gallery-images");
+
+let currentVehicle = "sl";
+let currentImage = 0;
+
+
+// UPDATE SHOWROOM
+function displayVehicle(id) {
+
+    const vehicle = vehicles[id];
+
+    if (!vehicle) return;
+
+    currentVehicle = id;
+    currentImage = 0;
+
+    document.getElementById("model-name").textContent = vehicle.name;
+    document.getElementById("model-category").textContent = vehicle.category;
+    document.getElementById("model-subtitle").textContent = vehicle.subtitle;
+
+    document.getElementById("spec-speed").textContent = vehicle.speed;
+    document.getElementById("spec-engine").textContent = vehicle.engine;
+    document.getElementById("spec-power").textContent = vehicle.power;
+    document.getElementById("spec-top").textContent = vehicle.top;
+
+    modelOptions.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.model === id
+        );
+    });
+
+    updateGallery();
+}
+
+
+// UPDATE MAIN IMAGE AND THUMBNAILS
+function updateGallery() {
+
+    const images = vehicles[currentVehicle].images;
+
+    mainImage.classList.add("changing");
+
+    setTimeout(() => {
+
+        mainImage.src = images[currentImage];
+
+        mainImage.onload = () => {
+            mainImage.classList.remove("changing");
+        };
+
+        mainImage.onerror = () => {
+            mainImage.classList.remove("changing");
+        };
+
+    }, 180);
+
+    gallery.innerHTML = images.map((image, index) => `
+        <button class="gallery-thumb ${index === currentImage ? "active" : ""}"
+                data-index="${index}">
+            <img src="${image}" alt="Vehicle view ${index + 1}">
+            <span>${["EXTERIOR", "INTERIOR", "DETAILS"][index]}</span>
+        </button>
+    `).join("");
+
+    document.querySelectorAll(".gallery-thumb").forEach(button => {
+
+        button.addEventListener("click", () => {
+            currentImage = Number(button.dataset.index);
+            updateGallery();
         });
 
     });
 
+}
+
+
+// CLICK MODEL NAMES
+modelOptions.forEach(button => {
+
+    button.addEventListener("click", () => {
+        displayVehicle(button.dataset.model);
+    });
+
 });
+
+
+// GALLERY NAVIGATION
+document.getElementById("previous-image").addEventListener("click", () => {
+
+    const total = vehicles[currentVehicle].images.length;
+
+    currentImage = (currentImage - 1 + total) % total;
+
+    updateGallery();
+
+});
+
+document.getElementById("next-image").addEventListener("click", () => {
+
+    const total = vehicles[currentVehicle].images.length;
+
+    currentImage = (currentImage + 1) % total;
+
+    updateGallery();
+
+});
+
+
+// INITIAL DISPLAY
+displayVehicle("sl");
 
 </script>
 
 </body>
 </html>
+
 
