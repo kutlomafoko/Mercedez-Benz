@@ -144,38 +144,46 @@ src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.j
 </div>
 
 
+       <!-- CAR COLOUR SELECTOR -->
+<div class="color-selector">
 
-        <!-- BOTTOM IMAGE GALLERY -->
-        <div class="showroom-gallery">
+    <p>CHOOSE YOUR COLOUR</p>
 
-            <button class="gallery-arrow" id="previous-image">
-                ↑
-            </button>
+    <div class="color-options">
 
-            <div class="gallery-images" id="gallery-images">
+        <button class="color-option active"
+            data-color="#111111"
+            style="--car-color: #111111"
+            aria-label="Obsidian Black"
+            title="Obsidian Black">
+        </button>
 
-                <button class="gallery-thumb active">
-                    <img src="" alt="Exterior">
-                    <span>EXTERIOR</span>
-                </button>
+        <button class="color-option"
+            data-color="#c0c0c0"
+            style="--car-color: #c0c0c0"
+            aria-label="High-Tech Silver"
+            title="High-Tech Silver">
+        </button>
 
-                <button class="gallery-thumb">
-                    <img src="" alt="Interior">
-                    <span>INTERIOR</span>
-                </button>
+        <button class="color-option"
+            data-color="#142b50"
+            style="--car-color: #142b50"
+            aria-label="Nautic Blue"
+            title="Nautic Blue">
+        </button>
 
-                <button class="gallery-thumb">
-                    <img src="" alt="Details">
-                    <span>DETAILS</span>
-                </button>
+        <button class="color-option"
+            data-color="#800d18"
+            style="--car-color: #800d18"
+            aria-label="Patagonia Red"
+            title="Patagonia Red">
+        </button>
 
-            </div>
+    </div>
 
-            <button class="gallery-arrow" id="next-image">
-                ↓
-            </button>
+    <span id="selected-color">Obsidian Black</span>
 
-        </div>
+</div>
 
     </section>
 
