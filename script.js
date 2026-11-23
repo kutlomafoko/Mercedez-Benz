@@ -104,7 +104,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: ""
+        model: "mercedes-benz_c-class_w206_amg-line_2022-v3.glb"
     },
 
     g: {
