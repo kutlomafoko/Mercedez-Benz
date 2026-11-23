@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Test Drive | Mercedes-Benz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<a href="index.html" class="logo">MERCEDES<span>.</span>BENZ</a>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">HOME</a>
+<a href="models.html">OUR MODELS</a>
+<a href="collections.html">COLLECTIONS</a>
+<a href="technology.html">TECHNOLOGY</a>
+<a href="about.html">ABOUT US</a>
+<a href="contact.html">CONTACT</a>
+<a href="booking.html" class="nav-btn active">BOOK A TEST DRIVE ↗</a>
+</div>
+</nav>
+
+<header class="page-hero" style="--hero-image:url('https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1800&q=85')">
+<div>
+<p class="section-label">YOUR NEXT JOURNEY STARTS HERE</p>
+<h1>Experience <span>Mercedes-Benz.</span></h1>
+<p>Get behind the wheel and discover the luxury, comfort and performance for yourself.</p>
+</div>
+</header>
+
+<section class="booking-background">
+<div class="booking-container">
+
+<p class="section-label">BOOK YOUR EXPERIENCE</p>
+<h2 class="section-title">Schedule Your Test Drive</h2>
+<p class="section-intro">
+Complete the form below. Our dealership team can
+contact you to discuss your preferred appointment.
+</p>
+
+<form class="contact-form" id="bookingForm">
+
+<h3>Test Drive Request</h3>
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" name="name" placeholder="Enter your full name" required>
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" name="phone" placeholder="+267 ..." required>
+</div>
+
+<div class="form-group">
+<label>Select Your Preferred Model</label>
+<select name="model" required>
+<option value="">Choose a Mercedes-Benz model</option>
+<option>C-Class</option>
+<option>E-Class</option>
+<option>S-Class</option>
+<option>GLE SUV</option>
+<option>AMG Collection</option>
+<option>EQ Collection</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Preferred Date</label>
+<input type="date" name="date" id="bookingDate" required>
+</div>
+
+<div class="form-group">
+<label>Preferred Time</label>
+<select name="time" required>
+<option value="">Choose a time</option>
+<option>09:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>02:00 PM</option>
+<option>03:00 PM</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Additional Requests</label>
+<textarea name="message" placeholder="Tell us anything else we should know..."></textarea>
+</div>
+
+<button type="submit" class="primary-btn">
+REQUEST A TEST DRIVE →
+</button>
+
+</form>
+</div>
+</section>
+
+<footer>
+<div class="footer-top">
+<div><h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3><p>The Best or Nothing.</p></div>
+<div class="footer-links">
+<a href="index.html">Home</a><a href="models.html">Models</a><a href="collections.html">Collections</a><a href="technology.html">Technology</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+</div>
+<div class="copyright"><p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
