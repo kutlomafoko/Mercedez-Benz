@@ -82,7 +82,7 @@ const vehicles = {
         engine: "V8",
         power: "449 hp",
         top: "155 mph",
-        model: "models/sl-class.glb"
+        model: ""
     },
 
     cls: {
@@ -93,7 +93,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: "models/cls-class.glb"
+        model: ""
     },
 
     c: {
@@ -104,7 +104,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: "models/c-class.glb"
+        model: ""
     },
 
     g: {
@@ -115,7 +115,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: "models/g-class.glb"
+        model: ""
     },
 
     s: {
@@ -126,7 +126,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: "models/s-class.glb"
+        model: ""
     },
 
     eq: {
@@ -137,7 +137,7 @@ const vehicles = {
         engine: "Electric",
         power: "Version dependent",
         top: "Version dependent",
-        model: "models/eqe.glb"
+        model: ""
     }
 
 };
