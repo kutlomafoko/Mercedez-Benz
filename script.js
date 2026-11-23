@@ -129,15 +129,15 @@ const vehicles = {
         model: "mersedes-benz_s-class_w221-v1.glb"
     },
 
-    eq: {
-        name: "EQE",
+    gla: {
+        name: "GLA",
         category: "ELECTRIC COLLECTION",
         subtitle: "The future moves differently.",
         speed: "Model dependent",
         engine: "Electric",
         power: "Version dependent",
         top: "Version dependent",
-        model: ""
+        model: "mercedes-benz_gla-class_2020-v1.glb"
     }
 
 };
