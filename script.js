@@ -115,7 +115,7 @@ const vehicles = {
         engine: "Multiple options",
         power: "Model dependent",
         top: "Model dependent",
-        model: ""
+        model: "2025_mercedes-benz_g-class_amg_g_63-v1.glb"
     },
 
     s: {
