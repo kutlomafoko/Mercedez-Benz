@@ -89,10 +89,10 @@ const vehicles = {
         name: "CLS-CLASS",
         category: "LUXURY COLLECTION",
         subtitle: "Elegance in every detail.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
+        speed: "",
+        engine: "",
+        power: "",
+        top: "",
         model: "mercedes-benz_cls53_amg_2022-v1.glb"
     },
 
@@ -100,10 +100,10 @@ const vehicles = {
         name: "C-CLASS",
         category: "LUXURY SEDAN",
         subtitle: "Designed around you.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
+        speed: "",
+        engine: "",
+        power: "",
+        top: "",
         model: "mercedes-benz_c-class_w206_amg-line_2022-v3.glb"
     },
 
@@ -111,10 +111,10 @@ const vehicles = {
         name: "G-CLASS",
         category: "OFF-ROAD COLLECTION",
         subtitle: "Unmistakable presence.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
+        speed: "",
+        engine: "s",
+        power: "",
+        top: "t",
         model: "2025_mercedes-benz_g-class_amg_g_63-v1.glb"
     },
 
@@ -122,10 +122,10 @@ const vehicles = {
         name: "S-CLASS",
         category: "FLAGSHIP COLLECTION",
         subtitle: "The essence of luxury.",
-        speed: "Model dependent",
-        engine: "Multiple options",
-        power: "Model dependent",
-        top: "Model dependent",
+        speed: "",
+        engine: "",
+        power: "",
+        top: "",
         model: "mersedes-benz_s-class_w221-v1.glb"
     },
 
