@@ -1546,8 +1546,8 @@ model-viewer {
 
     overflow: hidden;
 
-    opacity: 0;
-    animation: panelReveal 0.8s 1.1s ease forwards;
+    opacity: 1;
+    animation: panelReveal 0.8s ease both;
 }
 
 /* Soft blue reflections */
