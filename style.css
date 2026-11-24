@@ -4602,6 +4602,38 @@ footer {
 
 }
 
+
+/* FEATURE PANEL FIX */
+
+.feature-details {
+    display: none;
+    width: 100%;
+    margin-top: 18px;
+    padding: 25px;
+    background: #10191f;
+    border: 1px solid #12c9ef;
+    border-radius: 8px;
+}
+
+.feature-details.open {
+    display: block !important;
+}
+
+.feature-btn.active {
+    background: #155064;
+    border-color: #12c9ef;
+    color: white;
+}
+
+#mainCar {
+    transition: opacity 0.3s ease;
+}
+
+#mainCar:not([src]) {
+    display: none;
+}
+
+
    
 
 
