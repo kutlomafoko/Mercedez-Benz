@@ -4129,297 +4129,641 @@ model-viewer {
 }
 
 
-/* =================================
-   COLLECTION PAGE - CYAN THEME
-================================= */
 
-.collection-page {
-    background: #111c22;
-    color: #f5f7f8;
+/* =====================================
+   COLLECTIONS PAGE ONLY
+===================================== */
+
+body.collection-page {
+    background: #03070c;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-/* HERO SECTION */
+body.collection-page *,
+body.collection-page *::before,
+body.collection-page *::after {
+    box-sizing: border-box;
+}
 
-.collection-hero {
-    min-height: 340px;
+/* NAVIGATION */
+
+body.collection-page .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #03080e;
+    border-bottom: 1px solid #12364a;
+    position: relative;
+    z-index: 100;
+}
+
+body.collection-page .logo {
     display: flex;
     align-items: center;
-    padding: 70px 8%;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+body.collection-page .logo img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+body.collection-page .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+body.collection-page .nav-links a {
+    color: #c4d0d9;
+    font-size: 10px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+body.collection-page .nav-links a:hover,
+body.collection-page .nav-links a.active {
+    color: #35caff;
+}
+
+body.collection-page .nav-links .nav-btn {
+    background: #079fdf;
+    padding: 12px 16px;
+    border-radius: 25px;
+    color: white;
+}
+
+body.collection-page .menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* MAIN LAYOUT */
+
+body.collection-page .model-showcase {
+    max-width: 1600px;
+    margin: auto;
+    padding: 35px 5%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 265px;
+    gap: 25px;
     background:
-        linear-gradient(90deg, rgba(13,28,35,.95),
-        rgba(13,28,35,.65)),
-        url('https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1800&q=85');
-
-    background-size: cover;
-    background-position: center;
-    border-bottom: 1px solid rgba(18,201,239,.3);
+        radial-gradient(ellipse at 40% 10%, #063451, transparent 50%),
+        #03070c;
 }
 
-.collection-hero .hero-content {
-    max-width: 650px;
+body.collection-page .showcase-main {
+    min-width: 0;
 }
 
-.collection-page .section-label {
-    color: #12c9ef;
-    font-size: 12px;
-    font-weight: 700;
+body.collection-page .section-label {
+    color: #35caff;
+    font-size: 10px;
     letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.collection-hero h1 {
-    font-size: clamp(38px, 5vw, 65px);
-    margin-bottom: 15px;
-    color: white;
-}
-
-.collection-hero h1 span,
-.collection-heading h2 span {
-    color: #12c9ef;
-}
-
-.collection-hero p:not(.section-label) {
-    color: #c3d1d6;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-
-/* COLLECTIONS SECTION */
-
-.collections-section {
-    padding: 75px 8%;
-}
-
-.collection-heading {
-    margin-bottom: 40px;
-}
-
-.collection-heading h2 {
-    font-size: clamp(27px, 4vw, 38px);
     margin-bottom: 12px;
-    color: white;
 }
 
-.collection-heading > p:last-child {
-    color: #aebfc6;
+
+/* HEADING */
+
+body.collection-page .showcase-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+body.collection-page .showcase-heading h1 {
+    font-size: clamp(30px, 4vw, 48px);
+    margin-bottom: 10px;
+}
+
+body.collection-page .showcase-heading h1 span,
+body.collection-page .interior-heading h2 span,
+body.collection-page .sidebar-heading h2 span {
+    color: #35caff;
+}
+
+body.collection-page .heading-description {
+    color: #aab8c5;
+    font-size: 12px;
     line-height: 1.7;
 }
 
-
-/* HORIZONTAL CARDS */
-
-.horizontal-collections {
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
+body.collection-page .edition-label {
+    text-align: right;
 }
 
-.horizontal-card {
-    display: grid;
-    grid-template-columns: 42% 58%;
-    background: linear-gradient(
-        120deg,
-        #203943,
-        #17272e
-    );
-
-    border: 1px solid rgba(18,201,239,.25);
-    border-radius: 15px;
-    overflow: hidden;
-    min-height: 280px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,.2);
-
-    transition: .4s ease;
+body.collection-page .edition-label span {
+    color: #35caff;
+    font-size: 13px;
 }
 
-.horizontal-card:hover {
-    transform: translateY(-5px);
-    border-color: #12c9ef;
-    box-shadow: 0 10px 30px rgba(18,201,239,.12);
-}
-
-
-/* IMAGE */
-
-.collection-image {
-    overflow: hidden;
-    min-height: 280px;
-}
-
-.collection-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    object-fit: cover;
-    display: block;
-    transition: transform .5s ease;
-}
-
-.horizontal-card:hover .collection-image img {
-    transform: scale(1.06);
-}
-
-
-/* CARD INFORMATION */
-
-.collection-info {
-    padding: 32px 38px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.collection-number {
-    color: #12c9ef;
-    font-size: 11px;
-    font-weight: bold;
+body.collection-page .edition-label p {
+    font-size: 8px;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    color: #91a5b4;
 }
 
-.collection-info h3 {
-    font-size: 27px;
-    color: #fff;
-    margin-bottom: 14px;
+
+/* MAIN CAR */
+
+body.collection-page .main-car-display {
+    position: relative;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(53,202,255,.4);
+    border-radius: 14px;
+
+    background:
+        linear-gradient(transparent, rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 0 25px rgba(0,150,255,.15);
 }
 
-.collection-description {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #bdcbd0;
-    margin-bottom: 20px;
+body.collection-page .car-background-glow {
+    position: absolute;
+    width: 65%;
+    height: 100px;
+    bottom: 40px;
+    background: #008cff;
+    filter: blur(90px);
+    opacity: .35;
+}
+
+body.collection-page .main-car {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    height: 100%;
+    object-fit: contain;
+    transition: .5s;
+    filter: drop-shadow(0 15px 25px rgba(0,150,255,.35));
+}
+
+body.collection-page .car-top-label {
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    right: 22px;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    color: #c4d4df;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .car-bottom-info {
+    position: absolute;
+    bottom: 22px;
+    left: 25px;
+    right: 25px;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+body.collection-page .car-bottom-info p {
+    color: #35caff;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+body.collection-page .car-bottom-info h2 {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+body.collection-page .car-bottom-info > div > span {
+    color: #a7bac7;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .car-model-number {
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 
 /* FEATURES */
 
-.collection-features {
+body.collection-page .car-features {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-    margin-bottom: 25px;
-}
-
-.collection-features span {
-    font-size: 11px;
-    color: #b9d2da;
-}
-
-
-/* BUTTON */
-
-.collection-btn {
-    display: inline-flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 25px;
-    width: fit-content;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 22px 10px;
+    border-bottom: 1px solid rgba(53,202,255,.25);
+}
 
-    padding: 13px 20px;
-    border: 1px solid #12c9ef;
-    border-radius: 6px;
+body.collection-page .feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    color: #12c9ef;
+body.collection-page .feature-icon {
+    color: #35caff;
+    font-size: 23px;
+}
+
+body.collection-page .feature h4 {
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+body.collection-page .feature p {
+    font-size: 9px;
+    color: #91a5b4;
+}
+
+body.collection-page .test-drive-btn {
+    background: #079fdf;
+    color: white;
+    padding: 13px 18px;
+    border-radius: 30px;
+    font-size: 9px;
     text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    transition: .3s ease;
-}
-
-.collection-btn:hover {
-    background: #12c9ef;
-    color: #111c22;
-    box-shadow: 0 0 18px rgba(18,201,239,.35);
-}
-
-.collection-btn span {
-    font-size: 17px;
-}
-
-
-/* FOOTER COLOURS */
-
-.collection-page footer {
-    background: #101b21;
-    border-top: 1px solid rgba(18,201,239,.25);
-}
-
-.collection-page .footer-top h3 span {
-    color: #12c9ef !important;
-}
-
-.collection-page .footer-links a {
     transition: .3s;
 }
 
-.collection-page .footer-links a:hover {
-    color: #12c9ef;
-}
-
-.collection-page .copyright {
-    border-top: 1px solid rgba(18,201,239,.15);
+body.collection-page .test-drive-btn:hover {
+    background: white;
+    color: #00111b;
 }
 
 
-/* RESPONSIVE DESIGN */
+/* INTERIOR */
 
-@media (max-width: 850px) {
-
-    .collections-section {
-        padding: 55px 5%;
-    }
-
-    .horizontal-card {
-        grid-template-columns: 1fr;
-    }
-
-    .collection-image,
-    .collection-image img {
-        height: 260px;
-        min-height: 260px;
-    }
-
-    .collection-info {
-        padding: 28px;
-    }
-
+body.collection-page .interior-section {
+    padding-top: 35px;
 }
 
-@media (max-width: 500px) {
+body.collection-page .interior-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 15px;
+    margin-bottom: 20px;
+}
 
-    .collection-hero {
-        min-height: 280px;
-        padding: 50px 6%;
+body.collection-page .interior-heading h2 {
+    font-size: 28px;
+}
+
+body.collection-page .interior-heading > p {
+    color: #91a5b4;
+    font-size: 11px;
+}
+
+body.collection-page .interior-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    grid-template-rows: 155px 155px;
+    gap: 12px;
+}
+
+body.collection-page .interior-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 9px;
+    border: 1px solid rgba(53,202,255,.25);
+}
+
+body.collection-page .interior-large {
+    grid-row: span 2;
+}
+
+body.collection-page .interior-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+body.collection-page .interior-card:hover img {
+    transform: scale(1.08);
+}
+
+body.collection-page .interior-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.9));
+}
+
+body.collection-page .interior-caption {
+    position: absolute;
+    z-index: 2;
+    bottom: 13px;
+    left: 13px;
+}
+
+body.collection-page .interior-caption span {
+    color: #35caff;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .interior-caption h3 {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* SIDEBAR */
+
+body.collection-page .models-sidebar {
+    padding: 22px 17px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(53,202,255,.3);
+    border-radius: 13px;
+    background: linear-gradient(155deg,#0b1d2b,#040b12 70%);
+    min-width: 0;
+}
+
+body.collection-page .sidebar-heading {
+    margin-bottom: 20px;
+}
+
+body.collection-page .sidebar-heading h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+body.collection-page .sidebar-heading > p:last-child {
+    color: #91a5b4;
+    font-size: 11px;
+}
+
+body.collection-page .model-list {
+    display: flex;
+    flex-direction: column;
+}
+
+body.collection-page .model-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 10px;
+    background: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.09);
+    text-align: left;
+    cursor: pointer;
+    transition: .3s;
+}
+
+body.collection-page .model-text > span {
+    color: #35caff;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .model-text h3 {
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+body.collection-page .model-text p {
+    color: #91a5b4;
+    font-size: 10px;
+}
+
+body.collection-page .model-arrow {
+    color: #35caff;
+    font-size: 19px;
+    transition: .3s;
+}
+
+body.collection-page .model-link:hover,
+body.collection-page .model-link.active {
+    background: rgba(0,162,255,.12);
+    border-left: 2px solid #35caff;
+    padding-left: 15px;
+}
+
+body.collection-page .model-link:hover .model-arrow {
+    transform: translate(4px,-4px);
+}
+
+
+/* SIDEBAR BOTTOM */
+
+body.collection-page .sidebar-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+body.collection-page .sidebar-line {
+    height: 1px;
+    background: linear-gradient(to right,#35caff,transparent);
+    margin-bottom: 18px;
+}
+
+body.collection-page .sidebar-bottom p {
+    color: #9aabb8;
+    font-size: 9px;
+    margin-bottom: 13px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .sidebar-bottom a {
+    color: #35caff;
+    font-size: 10px;
+}
+
+
+/* FOOTER */
+
+body.collection-page .main-footer {
+    padding: 35px 5% 15px;
+    background: #02060a;
+    border-top: 1px solid rgba(53,202,255,.2);
+}
+
+body.collection-page .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 30px;
+}
+
+body.collection-page .footer-brand h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+body.collection-page .footer-brand h2 span {
+    color: #35caff;
+}
+
+body.collection-page .footer-brand p {
+    color: #91a5b4;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+body.collection-page .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+body.collection-page .footer-links a {
+    color: #9caab5;
+    font-size: 10px;
+}
+
+body.collection-page .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+body.collection-page .footer-bottom p {
+    color: #778894;
+    font-size: 9px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:750px) {
+
+    body.collection-page .navbar {
+        padding: 12px 5%;
     }
 
-    .collection-info {
-        padding: 23px 20px;
+    body.collection-page .menu-toggle {
+        display: block;
     }
 
-    .collection-info h3 {
-        font-size: 23px;
-    }
-
-    .collection-features {
+    body.collection-page .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 22px 5%;
+        background: #050d15;
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 22px;
     }
 
-    .collection-btn {
+    body.collection-page .nav-links.show {
+        display: flex;
+    }
+
+    body.collection-page .model-showcase {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    body.collection-page .edition-label {
+        display: none;
+    }
+
+    body.collection-page .main-car-display {
+        height: 300px;
+    }
+
+    body.collection-page .car-features {
+        justify-content: flex-start;
+    }
+
+    body.collection-page .interior-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body.collection-page .interior-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 190px 145px 145px;
+    }
+
+    body.collection-page .interior-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    body.collection-page .model-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+
+    body.collection-page .model-link {
+        padding: 15px 10px;
+        border: 1px solid rgba(255,255,255,.08);
+    }
+
+    body.collection-page .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media(max-width:420px) {
+
+    body.collection-page .showcase-heading h1 {
+        font-size: 31px;
+    }
+
+    body.collection-page .main-car-display {
+        height: 250px;
+    }
+
+    body.collection-page .car-bottom-info h2 {
+        font-size: 18px;
+    }
+
+    body.collection-page .interior-grid {
+        grid-template-rows: 155px 125px 125px;
+    }
+
+    body.collection-page .feature {
         width: 100%;
     }
 
+    body.collection-page .test-drive-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
-
-
-
-
-
-
-
 
 
