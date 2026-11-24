@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eqs: {
             name: "EQS",
             tagline: "A NEW ERA OF ELECTRIC LUXURY.",
-            image: ""
+            image: "EQS 53 AMG 4MATIC+ 761 HP_.jpg"
         }
     };
 
