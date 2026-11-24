@@ -1108,6 +1108,66 @@ body {
     border-color: white;
 }
 
+/* =====================================
+   FIX: THREE-COLUMN MODELS SHOWROOM
+===================================== */
+
+@media (min-width: 701px) {
+
+    main.showroom {
+        display: grid !important;
+
+        grid-template-columns: 190px minmax(0, 1fr) 150px !important;
+
+        align-items: stretch;
+        gap: 20px;
+
+        width: 100%;
+        min-height: calc(100vh - 110px);
+
+        padding: 25px 4% 15px;
+        overflow: hidden;
+    }
+
+    .model-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+    }
+
+    .showroom-main {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .model-specs {
+        grid-column: 3;
+        grid-row: 1;
+
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        min-width: 0;
+        width: 100%;
+
+        text-align: right;
+        gap: 30px;
+    }
+
+    .spec-item {
+        width: 100%;
+    }
+
+    .spec-item h2 {
+        white-space: nowrap;
+    }
+
+}
+
 
 /* =====================================
    FOOTER
