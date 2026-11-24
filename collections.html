@@ -7,82 +7,237 @@
 <title>Collections | Mercedes-Benz</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body class="collection-page">
+
+<!-- NAVIGATION -->
 <nav>
-<a href="index.html" class="logo"> <img src="logo.jpg" alt="Mercedes-Benz Logo"></a>
-<button class="menu-toggle" id="menuToggle">☰</button>
-<div class="nav-links" id="navLinks">
-<a href="index.html">HOME</a>
-<a href="models.html">OUR MODELS</a>
-<a href="collections.html" class="active">COLLECTIONS</a>
-<a href="technology.html">TECHNOLOGY</a>
-<a href="about.html">ABOUT US</a>
-<a href="contact.html">CONTACT</a>
-<a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
-</div>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz Logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <a href="models.html">OUR MODELS</a>
+        <a href="collections.html" class="active">COLLECTIONS</a>
+        <a href="technology.html">TECHNOLOGY</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
+    </div>
 </nav>
 
-<header class="page-hero" style="--hero-image:url('https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1800&q=85')">
-<div>
-<p class="section-label">EXPLORE THE EXPERIENCE</p>
-<h1>Our <span>Collections.</span></h1>
-<p>Discover carefully crafted collections that combine sophistication, power and innovation.</p>
-</div>
+
+<!-- HERO SECTION -->
+<header class="collection-hero">
+
+    <div class="hero-content">
+        <p class="section-label">EXPLORE THE EXPERIENCE</p>
+
+        <h1>Our <span>Collections.</span></h1>
+
+        <p>
+            Discover carefully crafted collections that combine
+            sophistication, power and innovation.
+        </p>
+    </div>
+
 </header>
 
-<section>
-<p class="section-label">THE MERCEDES EXPERIENCE</p>
-<h2 class="section-title">Designed for Every Ambition</h2>
-<p class="section-intro">Explore our collections and discover your perfect driving experience.</p>
 
-<div class="collection-grid">
+<!-- COLLECTIONS SECTION -->
+<section class="collections-section">
 
-<div class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1000&q=80')">
-<div>
-<h3>Luxury Collection</h3>
-<p>Elegance, comfort and refined craftsmanship.</p>
-<a href="models.html" class="details-link">EXPLORE MODELS →</a>
-</div>
-</div>
+    <div class="collection-heading">
+        <p class="section-label">THE MERCEDES EXPERIENCE</p>
 
-<div class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80')">
-<div>
-<h3>AMG Performance</h3>
-<p>Precision engineering and powerful performance.</p>
-<a href="models.html" class="details-link">EXPLORE MODELS →</a>
-</div>
-</div>
+        <h2>Designed for Every <span>Ambition.</span></h2>
 
-<div class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1000&q=80')">
-<div>
-<h3>Electric Collection</h3>
-<p>Discover the future of electric mobility.</p>
-<a href="models.html" class="details-link">EXPLORE MODELS →</a>
-</div>
-</div>
+        <p>
+            Explore our exclusive collections and discover
+            the perfect Mercedes-Benz for your lifestyle.
+        </p>
+    </div>
 
-<div class="collection-card" style="background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=80')">
-<div>
-<h3>SUV Collection</h3>
-<p>Confidence, versatility and premium comfort.</p>
-<a href="models.html" class="details-link">EXPLORE MODELS →</a>
-</div>
-</div>
 
-</div>
+    <div class="horizontal-collections">
+
+
+        <!-- LUXURY COLLECTION -->
+        <div class="horizontal-card">
+
+            <div class="collection-image">
+                <img src="https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-Benz Luxury Collection">
+            </div>
+
+            <div class="collection-info">
+
+                <p class="collection-number">01 / LUXURY SERIES</p>
+
+                <h3>Luxury Collection</h3>
+
+                <p class="collection-description">
+                    Experience exceptional elegance, outstanding
+                    comfort and refined craftsmanship. Every detail
+                    is designed to make every journey special.
+                </p>
+
+                <div class="collection-features">
+                    <span>✦ Premium Comfort</span>
+                    <span>✦ Elegant Design</span>
+                    <span>✦ Advanced Technology</span>
+                </div>
+
+                <a href="models.html" class="collection-btn">
+                    EXPLORE COLLECTION <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- AMG COLLECTION -->
+        <div class="horizontal-card">
+
+            <div class="collection-image">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-AMG Performance">
+            </div>
+
+            <div class="collection-info">
+
+                <p class="collection-number">02 / PERFORMANCE SERIES</p>
+
+                <h3>AMG Performance</h3>
+
+                <p class="collection-description">
+                    Discover the excitement of Mercedes-AMG.
+                    Experience bold styling, precision engineering
+                    and performance-inspired driving.
+                </p>
+
+                <div class="collection-features">
+                    <span>✦ Sporty Design</span>
+                    <span>✦ Dynamic Performance</span>
+                    <span>✦ AMG Engineering</span>
+                </div>
+
+                <a href="models.html" class="collection-btn">
+                    EXPLORE COLLECTION <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ELECTRIC COLLECTION -->
+        <div class="horizontal-card">
+
+            <div class="collection-image">
+                <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-Benz Electric Collection">
+            </div>
+
+            <div class="collection-info">
+
+                <p class="collection-number">03 / ELECTRIC SERIES</p>
+
+                <h3>Electric Collection</h3>
+
+                <p class="collection-description">
+                    Step into the future of mobility with
+                    innovative electric vehicles that combine
+                    modern luxury with forward-thinking technology.
+                </p>
+
+                <div class="collection-features">
+                    <span>✦ Electric Mobility</span>
+                    <span>✦ Intelligent Technology</span>
+                    <span>✦ Modern Innovation</span>
+                </div>
+
+                <a href="models.html" class="collection-btn">
+                    EXPLORE COLLECTION <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUV COLLECTION -->
+        <div class="horizontal-card">
+
+            <div class="collection-image">
+                <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=85"
+                     alt="Mercedes-Benz SUV Collection">
+            </div>
+
+            <div class="collection-info">
+
+                <p class="collection-number">04 / SUV SERIES</p>
+
+                <h3>SUV Collection</h3>
+
+                <p class="collection-description">
+                    Enjoy versatility, confidence and exceptional
+                    comfort. Discover SUVs designed for both
+                    everyday journeys and extraordinary adventures.
+                </p>
+
+                <div class="collection-features">
+                    <span>✦ Spacious Interiors</span>
+                    <span>✦ Versatile Design</span>
+                    <span>✦ Premium Comfort</span>
+                </div>
+
+                <a href="models.html" class="collection-btn">
+                    EXPLORE COLLECTION <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-<div class="footer-top">
-<div><h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3><p>The Best or Nothing.</p></div>
-<div class="footer-links">
-<a href="index.html">Home</a><a href="models.html">Models</a><a href="collections.html">Collections</a><a href="technology.html">Technology</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-</div>
-</div>
-<div class="copyright"><p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p></div>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>MERCEDES<span>.</span>BENZ</h3>
+            <p>The Best or Nothing.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="collections.html">Collections</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
+    </div>
+
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
+
