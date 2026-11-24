@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collections | Mercedes-Benz</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="collections.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collections | Mercedes-Benz</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="collections.css">
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
     <a href="index.html" class="logo">
         <img src="logo.jpg" alt="Mercedes-Benz Logo">
@@ -28,181 +32,203 @@
     </div>
 </nav>
 
+
 <!-- INTRODUCTION -->
 <section class="collection-intro">
+
     <p class="section-label">THE MERCEDES-BENZ EXPERIENCE</p>
+
     <h1>Explore Every <span>Detail.</span></h1>
+
     <p>
-        Discover the beauty of Mercedes-Benz. Select any glowing point
-        on the vehicle to explore its interior, technology and design.
+        Discover our exclusive Mercedes-Benz collection.
+        Select your favourite class and explore its features.
     </p>
+
 </section>
 
-<!-- INTERACTIVE SHOWROOM -->
+
+<!-- COLLECTION SHOWROOM -->
 <section class="showroom">
 
-    <div class="showroom-header">
-        <span>INTERACTIVE VEHICLE EXPERIENCE</span>
-        <span id="modelNumber">01 / 08</span>
-    </div>
+    <!-- LEFT SIDEBAR -->
+    <aside class="class-sidebar">
 
-    <div class="car-display" id="carDisplay">
-
-        <!-- MAIN CAR IMAGE -->
-        <div class="car-image">
-            <img id="mainCar"
-            src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
-            alt="Mercedes-Benz S-Class">
+        <div class="sidebar-brand">
+            MERCEDES-BENZ
         </div>
 
-        <!-- CAR TITLE -->
-        <div class="car-heading">
-            <p>DISCOVER THE COLLECTION</p>
-            <h2 id="carName">Mercedes-Benz S-Class</h2>
-            <span id="carTagline">THE ART OF LUXURY.</span>
-        </div>
+        <h3>CLASSES</h3>
 
-        <!-- CLICKABLE HOTSPOTS -->
-        <div class="hotspots" id="hotspots">
+        <div class="class-list">
 
-            <button class="hotspot" style="--x:20%;--y:58%"
-            data-feature="lights" aria-label="Lighting">
-                <span>01</span>
+            <button class="class-btn active" data-model="sclass">
+                S-Class
             </button>
 
-            <button class="hotspot" style="--x:35%;--y:70%"
-            data-feature="wheels" aria-label="Wheels">
-                <span>02</span>
+            <button class="class-btn" data-model="cclass">
+                C-Class
             </button>
 
-            <button class="hotspot" style="--x:47%;--y:48%"
-            data-feature="dashboard" aria-label="Dashboard">
-                <span>03</span>
+            <button class="class-btn" data-model="eclass">
+                E-Class
             </button>
 
-            <button class="hotspot" style="--x:57%;--y:59%"
-            data-feature="seats" aria-label="Seats">
-                <span>04</span>
+            <button class="class-btn" data-model="gclass">
+                G-Class
             </button>
 
-            <button class="hotspot" style="--x:67%;--y:34%"
-            data-feature="roof" aria-label="Panoramic roof">
-                <span>05</span>
+            <button class="class-btn" data-model="gle">
+                GLE
             </button>
 
-            <button class="hotspot" style="--x:80%;--y:58%"
-            data-feature="rear" aria-label="Rear design">
-                <span>06</span>
+            <button class="class-btn" data-model="amg">
+                AMG GT
             </button>
 
-            <button class="hotspot" style="--x:43%;--y:57%"
-            data-feature="steering" aria-label="Steering wheel">
-                <span>07</span>
+            <button class="class-btn" data-model="gls">
+                GLS
             </button>
 
-            <button class="hotspot" style="--x:54%;--y:77%"
-            data-feature="performance" aria-label="Performance">
-                <span>08</span>
+            <button class="class-btn" data-model="eqs">
+                EQS
             </button>
 
         </div>
 
-        <!-- SLIDING SIDEBAR -->
-        <aside class="feature-sidebar" id="featureSidebar">
+    </aside>
 
-            <button class="close-sidebar" id="closeSidebar">×</button>
 
-            <div class="feature-image">
-                <img id="featureImage" src="" alt="Mercedes-Benz feature">
+    <!-- RIGHT MAIN AREA -->
+    <main class="showroom-content">
+
+        <!-- VEHICLE DISPLAY -->
+        <div class="car-display">
+
+            <div class="car-image">
+
+                <img
+                    id="mainCar"
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
+                    alt="Mercedes-Benz S-Class"
+                >
+
+                <span class="image-label">
+                    MERCEDES-BENZ COLLECTION
+                </span>
+
             </div>
 
-            <div class="feature-content">
+            <div class="car-information">
 
-                <p class="section-label" id="featureCategory">
-                    INTERIOR EXPERIENCE
+                <h2 id="carName">S-Class</h2>
+
+                <p id="carTagline">
+                    THE ART OF LUXURY.
                 </p>
 
-                <h2 id="featureTitle">Luxury Dashboard</h2>
+            </div>
 
-                <p id="featureDescription">
-                    Discover the advanced technology and elegant
-                    design inside your Mercedes-Benz.
-                </p>
+        </div>
 
-                <div class="feature-specs">
-                    <div>
-                        <span>FEATURE</span>
-                        <h4 id="specOne">Digital Display</h4>
-                    </div>
 
-                    <div>
-                        <span>EXPERIENCE</span>
-                        <h4 id="specTwo">Premium Comfort</h4>
-                    </div>
+        <!-- FEATURE SECTION -->
+        <div class="feature-section">
+
+            <p class="feature-heading">
+                SELECT A FEATURE TO EXPLORE
+            </p>
+
+            <div class="feature-grid">
+
+                <button class="feature-btn" data-feature="dashboard">
+                    <span>⊕</span>
+                    Dashboard
+                </button>
+
+                <button class="feature-btn" data-feature="steering">
+                    <span>⊕</span>
+                    Steering
+                </button>
+
+                <button class="feature-btn" data-feature="seats">
+                    <span>⊕</span>
+                    Seats
+                </button>
+
+                <button class="feature-btn" data-feature="sunroof">
+                    <span>⊕</span>
+                    Sunroof
+                </button>
+
+                <button class="feature-btn" data-feature="wheels">
+                    <span>⊕</span>
+                    Wheels
+                </button>
+
+                <button class="feature-btn" data-feature="lighting">
+                    <span>⊕</span>
+                    Lighting
+                </button>
+
+                <button class="feature-btn" data-feature="exterior">
+                    <span>⊕</span>
+                    Exterior
+                </button>
+
+                <button class="feature-btn" data-feature="engine">
+                    <span>⊕</span>
+                    Engine
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURE DETAILS -->
+        <div class="feature-details" id="featureDetails">
+
+            <button class="close-feature" id="closeFeature">
+                ×
+            </button>
+
+            <p class="section-label" id="featureCategory">
+                VEHICLE FEATURE
+            </p>
+
+            <h2 id="featureTitle">Dashboard</h2>
+
+            <p id="featureDescription">
+                Explore the advanced technology of Mercedes-Benz.
+            </p>
+
+            <div class="feature-specs">
+
+                <div>
+                    <span>FEATURE</span>
+                    <h4 id="specOne">Digital Display</h4>
                 </div>
 
-                <p class="sidebar-hint">
-                    EXPLORE MORE FEATURES USING THE POINTS ON THE VEHICLE
-                </p>
+                <div>
+                    <span>EXPERIENCE</span>
+                    <h4 id="specTwo">Premium Comfort</h4>
+                </div>
 
             </div>
-        </aside>
-
-    </div>
-
-    <!-- VEHICLE SELECTOR -->
-    <div class="model-selector">
-
-        <div class="selector-heading">
-            <div>
-                <p class="section-label">OUR COLLECTION</p>
-                <h3>Choose Your Mercedes.</h3>
-            </div>
-            <span>08 SIGNATURE MODELS</span>
-        </div>
-
-        <div class="model-list">
-
-            <button class="model-btn active" data-model="sclass">
-                <span>01</span>S-Class
-            </button>
-
-            <button class="model-btn" data-model="cclass">
-                <span>02</span>C-Class
-            </button>
-
-            <button class="model-btn" data-model="eclass">
-                <span>03</span>E-Class
-            </button>
-
-            <button class="model-btn" data-model="gclass">
-                <span>04</span>G-Class
-            </button>
-
-            <button class="model-btn" data-model="gle">
-                <span>05</span>GLE
-            </button>
-
-            <button class="model-btn" data-model="amg">
-                <span>06</span>AMG GT
-            </button>
-
-            <button class="model-btn" data-model="gls">
-                <span>07</span>GLS
-            </button>
-
-            <button class="model-btn" data-model="eqs">
-                <span>08</span>EQS
-            </button>
 
         </div>
-    </div>
+
+    </main>
 
 </section>
+
 
 <!-- FOOTER -->
 <footer>
+
     <div class="footer-top">
+
         <div>
             <h3>MERCEDES<span style="color:#12c9ef">.</span>BENZ</h3>
             <p>The Best or Nothing.</p>
@@ -216,18 +242,23 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
+
     </div>
 
     <div class="copyright">
         <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
     </div>
+
 </footer>
 
+
+<!-- JAVASCRIPT -->
 <script src="script.js"></script>
 <script src="collections.js"></script>
 
 </body>
 </html>
+
 
 
 
