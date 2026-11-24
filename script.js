@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sclass: {
             name: "S-Class",
             tagline: "THE ART OF LUXURY.",
-            image: ""
+            image: "MERCEDES BENZ S 580 4MATIC ▪️YEAR_ 2023 ▪️MILEAGE_ BRAND NEW ▪️SPECS_ EURO ⠀ In stock & ready to ship worldwide 🌎 For any inquiry Contact us ☎️ +971 42 84 66 77 📧 Info@autolandmotor_ae 🌐 www.autolandmotor.jpg"
         },
 
         cclass: {
