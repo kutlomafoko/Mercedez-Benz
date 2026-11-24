@@ -257,49 +257,51 @@ document.addEventListener("DOMContentLoaded", function () {
         sclass: {
             name: "S-Class",
             tagline: "THE ART OF LUXURY.",
-            image: "images/s-class.jpg"
+            image: ""
         },
 
         cclass: {
             name: "C-Class",
             tagline: "DESIGNED FOR YOUR DRIVE.",
-            image: "images/c-class.jpg"
+            image: "
+                "
         },
 
         eclass: {
             name: "E-Class",
             tagline: "INTELLIGENCE IN MOTION.",
-            image: "images/e-class.jpg"
+            image: ""
         },
 
         gclass: {
             name: "G-Class",
             tagline: "STRONGER THAN EVER.",
-            image: "images/g-class.jpg"
+            image: ""
         },
 
         gle: {
             name: "GLE",
             tagline: "THE POWER OF PRESENCE.",
-            image: "images/gle.jpg"
+            image: ""
         },
 
         amg: {
             name: "AMG GT",
             tagline: "BORN TO PERFORM.",
-            image: "images/amg-gt.jpg"
+            image: ""
         },
 
         gls: {
             name: "GLS",
             tagline: "THE SUV OF EXCELLENCE.",
-            image: "images/gls.jpg"
+            image: "
+                "
         },
 
         eqs: {
             name: "EQS",
             tagline: "A NEW ERA OF ELECTRIC LUXURY.",
-            image: "images/eqs.jpg"
+            image: ""
         }
     };
 
