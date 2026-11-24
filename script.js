@@ -32,7 +32,7 @@ if (bookingDate) {
 // EMAIL CONFIGURATION
 
 // Replace with your actual dealership email.
-const dealershipEmail = "YOUR_EMAIL@example.com";
+const dealershipEmail = "kutlomafoko415@gmail.com";
 
 // CONTACT AND BOOKING FORMS
 
