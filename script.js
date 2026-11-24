@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gclass: {
             name: "G-Class",
             tagline: "STRONGER THAN EVER.",
-            image: ""
+            image: "Mercedes-benz G500.jpg"
         },
 
         gle: {
