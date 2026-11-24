@@ -246,12 +246,13 @@ colorOptions.forEach(button => {
 });
 
 
-
+   
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // MERCEDES CLASSES
-    // Add the corresponding pictures to your images folder.
+    // =====================================
+    // 1. MERCEDES-BENZ MODELS
+    // =====================================
 
     const models = {
         sclass: {
@@ -293,8 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gls: {
             name: "GLS",
             tagline: "THE SUV OF EXCELLENCE.",
-            image: "
-                "
+            image: ""
         },
 
         eqs: {
@@ -305,14 +305,16 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // FEATURES
+    // =====================================
+    // 2. VEHICLE FEATURES
+    // =====================================
 
     const features = {
 
         dashboard: {
             category: "INTERIOR TECHNOLOGY",
             title: "Luxury Dashboard",
-            description: "Experience the intelligent Mercedes-Benz cockpit with modern digital displays, elegant materials and advanced vehicle controls.",
+            description: "Explore the " + "MODEL" + " dashboard, its digital displays, elegant materials and vehicle controls.",
             specOne: "Digital Display",
             specTwo: "Smart Technology"
         },
@@ -320,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
         steering: {
             category: "DRIVING EXPERIENCE",
             title: "Multifunction Steering",
-            description: "Discover a beautifully designed steering wheel with convenient controls that help create a comfortable driving experience.",
+            description: "Discover the steering design and convenient driving controls of this Mercedes-Benz.",
             specOne: "Multifunction Controls",
             specTwo: "Driver Comfort"
         },
@@ -328,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
         seats: {
             category: "INTERIOR COMFORT",
             title: "Premium Seats",
-            description: "Explore the carefully designed seating, premium materials and comfort-focused features inside your Mercedes-Benz.",
+            description: "Explore the seating design, cabin materials and comfort features of this vehicle.",
             specOne: "Premium Materials",
             specTwo: "Comfort Design"
         },
@@ -336,15 +338,15 @@ document.addEventListener("DOMContentLoaded", function () {
         sunroof: {
             category: "INTERIOR EXPERIENCE",
             title: "Panoramic Sunroof",
-            description: "Enjoy an open cabin atmosphere with the elegant panoramic glass roof design.",
-            specOne: "Panoramic Glass",
+            description: "Discover the roof design and the open cabin atmosphere of this Mercedes-Benz.",
+            specOne: "Glass Roof Design",
             specTwo: "Open Cabin Feel"
         },
 
         wheels: {
             category: "EXTERIOR DESIGN",
             title: "Alloy Wheels",
-            description: "Explore distinctive Mercedes-Benz wheel designs that combine elegant styling with engineering.",
+            description: "Explore the wheel styling and exterior details of this vehicle.",
             specOne: "Alloy Design",
             specTwo: "Road Presence"
         },
@@ -352,15 +354,15 @@ document.addEventListener("DOMContentLoaded", function () {
         lighting: {
             category: "LIGHTING TECHNOLOGY",
             title: "Advanced Lighting",
-            description: "Discover the distinctive Mercedes-Benz lighting signature and modern headlight technology.",
-            specOne: "LED Lighting",
-            specTwo: "Modern Visibility"
+            description: "Discover the lighting design and distinctive Mercedes-Benz appearance.",
+            specOne: "Modern Lighting",
+            specTwo: "Exterior Styling"
         },
 
         exterior: {
             category: "EXTERIOR DESIGN",
             title: "Exterior Styling",
-            description: "Explore the curves, bodywork and carefully finished details that create the Mercedes-Benz appearance.",
+            description: "Explore the body shape, curves, grille and exterior finishing of this vehicle.",
             specOne: "Premium Finish",
             specTwo: "Elegant Styling"
         },
@@ -368,14 +370,16 @@ document.addEventListener("DOMContentLoaded", function () {
         engine: {
             category: "ENGINEERING",
             title: "Engine & Performance",
-            description: "Discover the engineering, performance technology and driving dynamics behind the Mercedes-Benz experience.",
+            description: "Explore the engineering and performance characteristics of this Mercedes-Benz model.",
             specOne: "Engine Technology",
             specTwo: "Driving Dynamics"
         }
     };
 
 
-    // HTML ELEMENTS
+    // =====================================
+    // 3. GET HTML ELEMENTS
+    // =====================================
 
     const mainCar = document.getElementById("mainCar");
     const carName = document.getElementById("carName");
@@ -396,99 +400,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeFeatureBtn = document.getElementById("closeFeature");
 
 
-    // SELECT A MERCEDES CLASS
-
-    function changeModel(modelKey) {
-
-        const model = models[modelKey];
-
-        if (!model) return;
-
-        // Change car name and tagline
-        carName.textContent = model.name;
-        carTagline.textContent = model.tagline;
-
-        // Change car photograph
-        mainCar.src = model.image;
-        mainCar.alt = "Mercedes-Benz " + model.name;
-
-        // Highlight selected class
-        classButtons.forEach(button => {
-            button.classList.toggle(
-                "active",
-                button.dataset.model === modelKey
-            );
-        });
-
-        // Close previous feature
-        closeFeature();
-    }
+    // Keep track of the selected vehicle
+    let selectedModel = "sclass";
 
 
-    // CLASS BUTTON CLICK EVENTS
-
-    classButtons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            changeModel(this.dataset.model);
-
-        });
-
-    });
-
-
-    // SELECT A FEATURE
-
-    function openFeature(featureKey, selectedButton) {
-
-        const feature = features[featureKey];
-
-        if (!feature) return;
-
-        // Update feature information
-        featureCategory.textContent = feature.category;
-
-        featureTitle.textContent = feature.title;
-
-        featureDescription.textContent = feature.description;
-
-        specOne.textContent = feature.specOne;
-
-        specTwo.textContent = feature.specTwo;
-
-        // Display feature panel
-        featureDetails.classList.add("open");
-
-        // Highlight selected feature
-        featureButtons.forEach(button => {
-            button.classList.remove("active");
-        });
-
-        selectedButton.classList.add("active");
-
-        // Scroll to the details
-        featureDetails.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
-    }
-
-
-    // FEATURE BUTTON EVENTS
-
-    featureButtons.forEach(button => {
-
-        button.addEventListener("click", function () {
-
-            openFeature(this.dataset.feature, this);
-
-        });
-
-    });
-
-
-    // CLOSE FEATURE DETAILS
+    // =====================================
+    // 4. CLOSE FEATURE PANEL
+    // =====================================
 
     function closeFeature() {
 
@@ -497,15 +415,140 @@ document.addEventListener("DOMContentLoaded", function () {
         featureButtons.forEach(button => {
             button.classList.remove("active");
         });
+    }
+
+
+    // =====================================
+    // 5. CHANGE VEHICLE
+    // =====================================
+
+    function changeModel(modelKey) {
+
+        const model = models[modelKey];
+
+        if (!model) {
+            console.error("Model not found:", modelKey);
+            return;
+        }
+
+        selectedModel = modelKey;
+
+        // Update vehicle name
+        carName.textContent = model.name;
+
+        // Update tagline
+        carTagline.textContent = model.tagline;
+
+        // Update vehicle image
+        mainCar.style.opacity = "0";
+
+        setTimeout(() => {
+
+            if (model.image) {
+                mainCar.src = model.image;
+                mainCar.style.display = "block";
+            } else {
+                mainCar.removeAttribute("src");
+                mainCar.style.display = "none";
+            }
+
+            mainCar.alt = "Mercedes-Benz " + model.name;
+
+            mainCar.style.opacity = "1";
+
+        }, 200);
+
+        // Highlight selected model
+        classButtons.forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.model === modelKey
+            );
+
+        });
+
+        // Close old feature information
+        closeFeature();
 
     }
 
 
+    // =====================================
+    // 6. MODEL BUTTON EVENTS
+    // =====================================
+
+    classButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const modelKey = this.dataset.model;
+
+            changeModel(modelKey);
+
+        });
+
+    });
+
+
+    // =====================================
+    // 7. FEATURE BUTTON EVENTS
+    // =====================================
+
+    featureButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const featureKey = this.dataset.feature;
+            const feature = features[featureKey];
+
+            if (!feature) return;
+
+            // Show selected feature
+            featureCategory.textContent = feature.category;
+
+            featureTitle.textContent =
+                selectedModel.toUpperCase() + " — " + feature.title;
+
+            featureDescription.textContent =
+                feature.description.replace("MODEL", models[selectedModel].name);
+
+            specOne.textContent = feature.specOne;
+            specTwo.textContent = feature.specTwo;
+
+            // Open feature panel
+            featureDetails.classList.add("open");
+
+            // Highlight selected feature button
+            featureButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            // Bring details into view
+            featureDetails.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+
+        });
+
+    });
+
+
+    // =====================================
+    // 8. CLOSE BUTTON EVENT
+    // =====================================
+
     closeFeatureBtn.addEventListener("click", closeFeature);
 
 
-    // SHOW FIRST CLASS WHEN PAGE LOADS
+    // =====================================
+    // 9. INITIAL VEHICLE
+    // =====================================
 
     changeModel("sclass");
 
 });
+
