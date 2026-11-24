@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eclass: {
             name: "E-Class",
             tagline: "INTELLIGENCE IN MOTION.",
-            image: ""
+            image: "🚗 Mercedes-Benz E-Class EV Launch Date Revealed! ⚡️__Exciting news for luxury EV enthusiasts! Mercedes-Benz has announced the launch date for their highly anticipated E-Class EV_ Discover all the details about this luxurious .jpg"
         },
 
         gclass: {
