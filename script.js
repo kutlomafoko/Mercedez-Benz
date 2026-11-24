@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gle: {
             name: "GLE",
             tagline: "THE POWER OF PRESENCE.",
-            image: ""
+            image: "jpg(4)"
         },
 
         amg: {
