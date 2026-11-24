@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
         amg: {
             name: "AMG GT",
             tagline: "BORN TO PERFORM.",
-            image: ""
+            image: "Mercedes-AMG GLS63 Gets Extreme Carbon-Fiber Makeover.jpg"
         },
 
         gls: {
