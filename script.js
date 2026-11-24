@@ -244,268 +244,211 @@ colorOptions.forEach(button => {
 
 });
 
-// =====================================
-// MERCEDES-BENZ INTERACTIVE SHOWROOM
-// =====================================
 
-// VEHICLE COLLECTION
 
-const vehicles = {
+/* =================================
+   MERCEDES-BENZ COLLECTIONS JS
+================================= */
+
+
+/* VEHICLE CLASSES */
+
+const models = {
 
     sclass: {
-        name: "Mercedes-Benz S-Class",
+        name: "S-Class",
         tagline: "THE ART OF LUXURY.",
         image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     cclass: {
-        name: "Mercedes-Benz C-Class",
-        tagline: "ELEGANCE IN MOTION.",
-        image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1800&q=90"
+        name: "C-Class",
+        tagline: "DESIGNED FOR YOUR DRIVE.",
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     eclass: {
-        name: "Mercedes-Benz E-Class",
-        tagline: "INTELLIGENCE MEETS LUXURY.",
-        image: "https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1800&q=90"
+        name: "E-Class",
+        tagline: "INTELLIGENCE IN MOTION.",
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     gclass: {
-        name: "Mercedes-Benz G-Class",
+        name: "G-Class",
         tagline: "STRONGER THAN EVER.",
-        image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1800&q=90"
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     gle: {
-        name: "Mercedes-Benz GLE",
-        tagline: "FREEDOM WITHOUT LIMITS.",
-        image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1800&q=90"
+        name: "GLE",
+        tagline: "THE POWER OF PRESENCE.",
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     amg: {
-        name: "Mercedes-AMG GT",
+        name: "AMG GT",
         tagline: "BORN TO PERFORM.",
-        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=90"
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     gls: {
-        name: "Mercedes-Benz GLS",
-        tagline: "SPACE. PRESENCE. PRESTIGE.",
-        image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1800&q=90"
+        name: "GLS",
+        tagline: "THE SUV OF EXCELLENCE.",
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     },
 
     eqs: {
-        name: "Mercedes-Benz EQS",
+        name: "EQS",
         tagline: "A NEW ERA OF ELECTRIC LUXURY.",
-        image: "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1800&q=90"
+        image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=90"
     }
 
 };
 
 
-// FEATURE INFORMATION
+/* FEATURE INFORMATION */
 
 const features = {
 
-    lights: {
-        category: "EXTERIOR DESIGN",
-        title: "Signature Lighting",
-        description: "Discover the distinctive lighting design that gives Mercedes-Benz vehicles their elegant and confident appearance.",
-        image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
-        specOne: "LED Lighting",
-        specTwo: "Modern Design"
-    },
-
-    wheels: {
-        category: "EXTERIOR DETAILS",
-        title: "Premium Alloy Wheels",
-        description: "Explore beautifully designed wheels that complement the vehicle's proportions and deliver a distinctive road presence.",
-        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=85",
-        specOne: "Alloy Styling",
-        specTwo: "Sporty Design"
-    },
-
     dashboard: {
-        category: "DIGITAL EXPERIENCE",
-        title: "Intelligent Dashboard",
-        description: "Experience a modern digital cockpit with intuitive controls, advanced displays and innovative entertainment technology.",
-        image: "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1000&q=85",
+        category: "INTERIOR TECHNOLOGY",
+        title: "Luxury Dashboard",
+        description: "Experience the intelligent Mercedes-Benz cockpit, featuring modern digital displays, elegant materials and advanced vehicle controls.",
         specOne: "Digital Display",
-        specTwo: "Smart Controls"
+        specTwo: "Smart Technology"
+    },
+
+    steering: {
+        category: "DRIVING EXPERIENCE",
+        title: "Multifunction Steering",
+        description: "Enjoy a refined driving experience with a beautifully designed steering wheel and convenient controls within easy reach.",
+        specOne: "Multifunction Controls",
+        specTwo: "Driver Comfort"
     },
 
     seats: {
         category: "INTERIOR COMFORT",
-        title: "Luxury Seating",
-        description: "Discover premium seating with carefully considered materials and comfort-focused design for an enjoyable journey.",
-        image: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1000&q=85",
-        specOne: "Premium Upholstery",
-        specTwo: "Luxury Comfort"
+        title: "Premium Seats",
+        description: "Discover carefully designed seating with premium materials and comfort-focused features for every journey.",
+        specOne: "Premium Materials",
+        specTwo: "Comfort Design"
     },
 
-    roof: {
-        category: "INTERIOR DESIGN",
+    sunroof: {
+        category: "INTERIOR EXPERIENCE",
         title: "Panoramic Sunroof",
-        description: "Enjoy an open and airy cabin atmosphere with panoramic roof designs available on selected Mercedes-Benz models.",
-        image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=85",
+        description: "Enjoy an open and spacious cabin atmosphere with the elegant panoramic roof design.",
         specOne: "Panoramic Glass",
         specTwo: "Open Cabin Feel"
     },
 
-    rear: {
+    wheels: {
         category: "EXTERIOR DESIGN",
-        title: "Distinctive Rear Design",
-        description: "Explore the carefully sculpted rear styling and refined finishing details that complete the vehicle's appearance.",
-        image: "https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1000&q=85",
-        specOne: "Modern Styling",
-        specTwo: "Elegant Finish"
+        title: "Alloy Wheels",
+        description: "Explore distinctive Mercedes-Benz wheel designs that combine elegant styling with engineering.",
+        specOne: "Alloy Design",
+        specTwo: "Road Presence"
     },
 
-    steering: {
-        category: "DRIVER EXPERIENCE",
-        title: "Multifunction Steering",
-        description: "Discover the driver-focused steering design and convenient controls that help make every journey more intuitive.",
-        image: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=1000&q=85",
-        specOne: "Driver Focus",
-        specTwo: "Easy Controls"
+    lighting: {
+        category: "LIGHTING TECHNOLOGY",
+        title: "Advanced Lighting",
+        description: "Discover the distinctive Mercedes-Benz lighting signature and modern headlight design.",
+        specOne: "LED Lighting",
+        specTwo: "Modern Visibility"
     },
 
-    performance: {
+    exterior: {
+        category: "EXTERIOR DESIGN",
+        title: "Exterior Styling",
+        description: "Every curve and carefully finished detail contributes to the unmistakable Mercedes-Benz appearance.",
+        specOne: "Premium Finish",
+        specTwo: "Elegant Styling"
+    },
+
+    engine: {
         category: "ENGINEERING",
-        title: "Power & Performance",
-        description: "Explore the engineering behind Mercedes-Benz performance. Engine specifications and performance vary by model and trim.",
-        image: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1000&q=85",
-        specOne: "Advanced Engineering",
-        specTwo: "Model Dependent"
+        title: "Engine & Performance",
+        description: "Explore the engineering, driving dynamics and performance technology behind the Mercedes-Benz experience.",
+        specOne: "Engine Technology",
+        specTwo: "Driving Dynamics"
     }
 
 };
 
 
-// GET HTML ELEMENTS
+/* GET HTML ELEMENTS */
 
 const mainCar = document.getElementById("mainCar");
+
 const carName = document.getElementById("carName");
+
 const carTagline = document.getElementById("carTagline");
 
-const sidebar = document.getElementById("featureSidebar");
-const carDisplay = document.getElementById("carDisplay");
+const classButtons = document.querySelectorAll(".class-btn");
+
+const featureButtons = document.querySelectorAll(".feature-btn");
+
+const featureDetails = document.getElementById("featureDetails");
+
+const featureCategory = document.getElementById("featureCategory");
+
+const featureTitle = document.getElementById("featureTitle");
+
+const featureDescription = document.getElementById("featureDescription");
+
+const specOne = document.getElementById("specOne");
+
+const specTwo = document.getElementById("specTwo");
+
+const closeFeatureBtn = document.getElementById("closeFeature");
 
 
-// OPEN SIDEBAR
+/* CHANGE SELECTED MERCEDES CLASS */
 
-function openFeature(featureName) {
+function changeModel(modelKey) {
 
-    const feature = features[featureName];
+    const selectedModel = models[modelKey];
 
-    if (!feature) return;
+    if (!selectedModel) return;
 
-    document.getElementById("featureImage").src = feature.image;
+    // Update vehicle information
 
-    document.getElementById("featureCategory").textContent =
-        feature.category;
+    carName.textContent = selectedModel.name;
 
-    document.getElementById("featureTitle").textContent =
-        feature.title;
+    carTagline.textContent = selectedModel.tagline;
 
-    document.getElementById("featureDescription").textContent =
-        feature.description;
-
-    document.getElementById("specOne").textContent =
-        feature.specOne;
-
-    document.getElementById("specTwo").textContent =
-        feature.specTwo;
-
-    sidebar.classList.add("active");
-
-    carDisplay.classList.add("sidebar-open");
-}
-
-
-// CLOSE SIDEBAR
-
-function closeFeature() {
-
-    sidebar.classList.remove("active");
-
-    carDisplay.classList.remove("sidebar-open");
-
-}
-
-
-// CLICK ON CAR HOTSPOTS
-
-document.querySelectorAll(".hotspot").forEach(button => {
-
-    button.addEventListener("click", function() {
-
-        const selectedFeature = this.dataset.feature;
-
-        openFeature(selectedFeature);
-
-    });
-
-});
-
-
-// CLOSE BUTTON
-
-document.getElementById("closeSidebar").addEventListener("click", function() {
-
-    closeFeature();
-
-});
-
-
-// ESCAPE KEY CLOSES SIDEBAR
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-
-        closeFeature();
-
-    }
-
-});
-
-
-// CHANGE VEHICLE
-
-function changeVehicle(model) {
-
-    const vehicle = vehicles[model];
-
-    if (!vehicle) return;
+    // Update vehicle picture
 
     mainCar.style.opacity = "0";
 
-    setTimeout(() => {
+    const newImage = new Image();
 
-        mainCar.src = vehicle.image;
+    newImage.onload = function () {
 
-        mainCar.onload = () => {
-            mainCar.style.opacity = "1";
-        };
+        mainCar.src = selectedModel.image;
 
-        mainCar.onerror = () => {
-            mainCar.style.opacity = "1";
-        };
+        mainCar.alt = "Mercedes-Benz " + selectedModel.name;
 
-    }, 200);
+        mainCar.style.opacity = "1";
 
-    carName.textContent = vehicle.name;
+    };
 
-    carTagline.textContent = vehicle.tagline;
+    newImage.onerror = function () {
 
-    // UPDATE ACTIVE BUTTON
+        mainCar.style.opacity = "1";
 
-    document.querySelectorAll(".model-btn").forEach(button => {
+    };
+
+    newImage.src = selectedModel.image;
+
+    // Highlight selected class
+
+    classButtons.forEach(button => {
 
         button.classList.remove("active");
 
-        if (button.dataset.model === model) {
+        if (button.dataset.model === modelKey) {
 
             button.classList.add("active");
 
@@ -513,37 +456,109 @@ function changeVehicle(model) {
 
     });
 
-    // UPDATE MODEL NUMBER
-
-    const modelNumbers = {
-        sclass: "01 / 08",
-        cclass: "02 / 08",
-        eclass: "03 / 08",
-        gclass: "04 / 08",
-        gle: "05 / 08",
-        amg: "06 / 08",
-        gls: "07 / 08",
-        eqs: "08 / 08"
-    };
-
-    document.getElementById("modelNumber").textContent =
-        modelNumbers[model];
+    // Close feature details
 
     closeFeature();
 
 }
 
 
-// MODEL SELECTION BUTTONS
+/* CLASS BUTTON EVENTS */
 
-document.querySelectorAll(".model-btn").forEach(button => {
+classButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
 
-        const selectedModel = this.dataset.model;
+        const modelKey = this.dataset.model;
 
-        changeVehicle(selectedModel);
+        changeModel(modelKey);
 
     });
 
 });
+
+
+/* OPEN FEATURE DETAILS */
+
+function openFeature(featureKey, selectedButton) {
+
+    const feature = features[featureKey];
+
+    if (!feature) return;
+
+    // Update information
+
+    featureCategory.textContent = feature.category;
+
+    featureTitle.textContent = feature.title;
+
+    featureDescription.textContent = feature.description;
+
+    specOne.textContent = feature.specOne;
+
+    specTwo.textContent = feature.specTwo;
+
+    // Display feature panel
+
+    featureDetails.classList.add("open");
+
+    // Highlight selected feature
+
+    featureButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+    selectedButton.classList.add("active");
+
+    // Scroll to feature information on mobile
+
+    if (window.innerWidth <= 600) {
+
+        featureDetails.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+
+    }
+
+}
+
+
+/* FEATURE BUTTON EVENTS */
+
+featureButtons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const featureKey = this.dataset.feature;
+
+        openFeature(featureKey, this);
+
+    });
+
+});
+
+
+/* CLOSE FEATURE PANEL */
+
+function closeFeature() {
+
+    featureDetails.classList.remove("open");
+
+    featureButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
+
+}
+
+closeFeatureBtn.addEventListener("click", closeFeature);
+
+
+/* DEFAULT SELECTED CLASS */
+
+changeModel("sclass");
+
