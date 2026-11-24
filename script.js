@@ -263,8 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cclass: {
             name: "C-Class",
             tagline: "DESIGNED FOR YOUR DRIVE.",
-            image: "
-                "
+            image: "Used Mercedes-Benz C Class C63 S Coupe for sale _ Romans International.jpg"
         },
 
         eclass: {
