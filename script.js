@@ -84,51 +84,52 @@ const vehicles = {
         top: "155 mph",
         model: "2022_mercedes-benz_sl_63_amg-v3.glb"
     },
+cls: {
+    name: "CLS-CLASS",
+    category: "LUXURY COLLECTION",
+    subtitle: "Elegance in every detail.",
+    speed: "4.5 seconds",
+    engine: "3.0L Inline-6 Turbo",
+    power: "435 HP",
+    top: "250 km/h",
+    model: "mercedes-benz_cls53_amg_2022-v1.glb"
+},
 
-    cls: {
-        name: "CLS-CLASS",
-        category: "LUXURY COLLECTION",
-        subtitle: "Elegance in every detail.",
-        speed: "",
-        engine: "",
-        power: "",
-        top: "",
-        model: "mercedes-benz_cls53_amg_2022-v1.glb"
-    },
+c: {
+    name: "C-CLASS",
+    category: "LUXURY SEDAN",
+    subtitle: "Designed around you.",
+    speed: "6.0 seconds",
+    engine: "2.0L Turbo Inline-4",
+    power: "258 HP",
+    top: "250 km/h",
+    model: "mercedes-benz_c-class_w206_amg-line_2022-v3.glb"
+},
 
-    c: {
-        name: "C-CLASS",
-        category: "LUXURY SEDAN",
-        subtitle: "Designed around you.",
-        speed: "",
-        engine: "",
-        power: "",
-        top: "",
-        model: "mercedes-benz_c-class_w206_amg-line_2022-v3.glb"
-    },
+g: {
+    name: "G-CLASS",
+    category: "OFF-ROAD COLLECTION",
+    subtitle: "Unmistakable presence.",
+    speed: "4.4 seconds",
+    engine: "4.0L V8 Biturbo",
+    power: "585 HP",
+    top: "220 km/h",
+    model: "2025_mercedes-benz_g-class_amg_g_63-v1.glb"
+},
 
-    g: {
-        name: "G-CLASS",
-        category: "OFF-ROAD COLLECTION",
-        subtitle: "Unmistakable presence.",
-        speed: "",
-        engine: "s",
-        power: "",
-        top: "t",
-        model: "2025_mercedes-benz_g-class_amg_g_63-v1.glb"
-    },
+s: {
+    name: "S-CLASS",
+    category: "FLAGSHIP COLLECTION",
+    subtitle: "The essence of luxury.",
+    speed: "5.4 seconds",
+    engine: "5.5L V8",
+    power: "388 HP",
+    top: "250 km/h",
+    model: "mersedes-benz_s-class_w221-v1.glb"
+},
 
-    s: {
-        name: "S-CLASS",
-        category: "FLAGSHIP COLLECTION",
-        subtitle: "The essence of luxury.",
-        speed: "",
-        engine: "",
-        power: "",
-        top: "",
-        model: "mersedes-benz_s-class_w221-v1.glb"
-    },
 
+  
     gla: {
     name: "GLA",
     category: "COMPACT SUV COLLECTION",
