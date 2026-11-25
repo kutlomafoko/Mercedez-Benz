@@ -4452,6 +4452,48 @@ model-viewer:active {
     cursor: grabbing;
 }
 
+/* =================================
+   NAVIGATION PRIORITY FIX
+================================= */
+
+/* Keep navigation above the 3D showroom */
+
+.showroom-nav {
+    position: relative;
+    z-index: 9999;
+    isolation: isolate;
+}
+
+/* Make the menu button clickable */
+
+.showroom-nav .menu-toggle {
+    position: relative;
+    z-index: 10001;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Keep navigation links above other content */
+
+.showroom-nav .nav-links {
+    position: relative;
+    z-index: 10000;
+}
+
+/* Keep the showroom underneath navigation */
+
+.showroom {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep 3D interactions inside the car stage */
+
+.car-stage {
+    position: relative;
+    z-index: 1;
+}
+
 /* Loading indicator */
 
 .loading-bar {
