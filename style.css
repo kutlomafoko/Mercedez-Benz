@@ -1336,6 +1336,14 @@ body {
     }
 }
 
+/* FIX FLOATING HOVER ANIMATION */
+
+.story-card:hover,
+.purpose-card:hover,
+.choose-item:hover {
+    animation-play-state: paused;
+}
+
 
 
 /* CONTACT AND BOOKING */
