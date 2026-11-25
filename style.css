@@ -418,6 +418,572 @@ section {
     letter-spacing: 1px;
 }
 
+/* =====================================
+   MERCEDES-BENZ ABOUT US
+   FUTURISTIC GLASSMORPHISM DESIGN
+===================================== */
+
+:root {
+    --about-cyan: #12c9ef;
+    --about-blue: #168cff;
+    --about-dark: #070b11;
+    --about-panel: rgba(16, 28, 42, 0.65);
+    --about-muted: #aab5c2;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--about-dark);
+    color: white;
+}
+
+/* COMMON LABEL */
+
+.about-label {
+    color: var(--about-cyan);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.about-hero {
+    min-height: 570px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(rgba(4, 9, 16, .72), rgba(4, 9, 16, .88)),
+        url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.hero-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(18, 201, 239, .14);
+    filter: blur(100px);
+    border-radius: 50%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: glowMove 7s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeUp 1s ease both;
+}
+
+.hero-content h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+
+.hero-content h1 span,
+.story-card h2 span,
+.section-heading h2 span,
+.choose-heading h2 span,
+.cta-glass h2 span {
+    color: var(--about-cyan);
+}
+
+.hero-content > p:not(.about-label) {
+    color: #c1cbd5;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 600px;
+    margin: 15px auto 30px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    color: #9daab7;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.about-button,
+.outline-button {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .35s ease;
+}
+
+.about-button {
+    background: var(--about-cyan);
+    color: #061019;
+    border: 1px solid var(--about-cyan);
+}
+
+.about-button:hover {
+    background: transparent;
+    color: white;
+    box-shadow: 0 0 25px rgba(18, 201, 239, .35);
+    transform: translateY(-4px);
+}
+
+.outline-button {
+    color: white;
+    border: 1px solid rgba(255,255,255,.4);
+}
+
+.outline-button:hover {
+    border-color: var(--about-cyan);
+    color: var(--about-cyan);
+    transform: translateY(-4px);
+}
+
+/* =====================================
+   STORY SECTION
+===================================== */
+
+.about-section {
+    max-width: 1250px;
+    width: 90%;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.story-image {
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .7s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.07);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,.9));
+    color: white;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* GLASS CARD */
+
+.glass-card {
+    background: rgba(255,255,255,.045);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 16px;
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.3),
+        inset 0 1px 1px rgba(255,255,255,.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-card {
+    padding: 38px;
+}
+
+.story-card::before,
+.purpose-card::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -100px;
+    right: -80px;
+    background: rgba(18,201,239,.16);
+    filter: blur(55px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.story-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.story-card h2 {
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 500;
+    margin: 0 0 20px;
+}
+
+.story-card p:not(.about-label) {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--about-cyan);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--about-cyan);
+    padding-bottom: 7px;
+}
+
+/* =====================================
+   PURPOSE CARDS
+===================================== */
+
+.purpose-section {
+    padding: 90px 6%;
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(18,201,239,.07), transparent 65%),
+        #0a111a;
+}
+
+.section-heading,
+.choose-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2,
+.choose-heading h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+    margin: 0 0 14px;
+}
+
+.section-heading > p:last-child,
+.choose-heading > p:last-child {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.purpose-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.purpose-card {
+    padding: 30px 25px;
+    min-height: 240px;
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+.purpose-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--about-cyan);
+    box-shadow: 0 15px 40px rgba(18,201,239,.13);
+}
+
+.card-icon {
+    font-size: 30px;
+    color: var(--about-cyan);
+    margin-bottom: 25px;
+}
+
+.card-number {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: rgba(255,255,255,.3);
+    font-size: 11px;
+}
+
+.purpose-card h3 {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.purpose-card p {
+    color: var(--about-muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* =====================================
+   WHY CHOOSE US
+===================================== */
+
+.choose-section {
+    padding: 100px 6%;
+    max-width: 1350px;
+    margin: auto;
+}
+
+.choose-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.choose-item {
+    text-align: center;
+    padding: 30px 17px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    transition: .35s;
+}
+
+.choose-item:hover {
+    background: rgba(18,201,239,.07);
+    border-color: var(--about-cyan);
+    transform: translateY(-7px);
+}
+
+.choose-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(18,201,239,.5);
+    color: var(--about-cyan);
+    font-size: 23px;
+    box-shadow: 0 0 18px rgba(18,201,239,.1);
+}
+
+.choose-item h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.choose-item p {
+    color: var(--about-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* =====================================
+   FINAL CTA
+===================================== */
+
+.about-cta {
+    padding: 90px 6%;
+    background:
+        linear-gradient(rgba(4,9,15,.78), rgba(4,9,15,.9)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+}
+
+.cta-glass {
+    max-width: 900px;
+    margin: auto;
+    padding: 55px 25px;
+    text-align: center;
+    background: rgba(10,20,32,.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 18px;
+    box-shadow: 0 0 35px rgba(18,201,239,.09);
+}
+
+.cta-glass h2 {
+    font-size: clamp(26px, 4vw, 43px);
+    font-weight: 500;
+    margin: 10px 0 15px;
+}
+
+.cta-glass > p:not(.about-label) {
+    color: var(--about-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowMove {
+    from {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    to {
+        transform: translateX(-50%) translateY(25px);
+    }
+}
+
+.story-card,
+.purpose-card,
+.choose-item {
+    animation: fadeUp .8s ease both;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .story-image {
+        height: 350px;
+    }
+
+    .purpose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .choose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .about-hero {
+        min-height: 500px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-bottom {
+        font-size: 7px;
+    }
+
+    .about-section {
+        width: 90%;
+        margin: 65px auto;
+    }
+
+    .story-image {
+        height: 250px;
+    }
+
+    .story-card {
+        padding: 25px 20px;
+    }
+
+    .purpose-section,
+    .choose-section {
+        padding: 65px 5%;
+    }
+
+    .purpose-grid,
+    .choose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purpose-card {
+        min-height: auto;
+    }
+
+    .cta-glass {
+        padding: 35px 18px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-button,
+    .outline-button {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+    }
+}
+
+/* ACCESSIBILITY: REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
 /* CONTACT AND BOOKING */
 
 .form-layout {
