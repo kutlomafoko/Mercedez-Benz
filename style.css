@@ -1652,7 +1652,7 @@ box-shadow: inset 0 -70px 100px #02070b;
     top: 0;
     left: 50%;
 
-    height: 83px;
+    height: 115px;
     width: 2px;
 
     background: linear-gradient(
@@ -1666,7 +1666,7 @@ box-shadow: inset 0 -70px 100px #02070b;
 .lamp-shade {
     position: absolute;
 
-    top: 77px;
+    top: 109px;
     left: 50%;
 
     transform: translateX(-50%);
@@ -1757,7 +1757,7 @@ box-shadow: inset 0 -70px 100px #02070b;
 .lamp-beam {
     position: absolute;
 
-    top: 116px;
+    top: 148px;
     left: 50%;
 
     width: 0;
