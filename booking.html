@@ -2,118 +2,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Test Drive | Mercedes-Benz</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Test Drive | Mercedes-Benz</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="booking.css">
 </head>
+
 <body>
 
-<nav>
-<a href="index.html" class="logo"> <img src="logo.jpg" alt="Mercedes-Benz Logo">
-<button class="menu-toggle" id="menuToggle">☰</button>
-<div class="nav-links" id="navLinks">
-<a href="index.html">HOME</a>
-<a href="models.html">OUR MODELS</a>
-<a href="collections.html">COLLECTIONS</a>
-<a href="technology.html">TECHNOLOGY</a>
-<a href="about.html">ABOUT US</a>
-<a href="contact.html">CONTACT</a>
-<a href="booking.html" class="nav-btn active">BOOK A TEST DRIVE ↗</a>
-</div>
+<!-- NAVIGATION -->
+<nav class="booking-nav">
+
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz Logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <a href="models.html">OUR MODELS</a>
+        <a href="collections.html">COLLECTIONS</a>
+        <a href="technology.html">TECHNOLOGY</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="booking.html" class="nav-btn active">
+            BOOK A TEST DRIVE ↗
+        </a>
+    </div>
+
 </nav>
 
-<header class="page-hero" style="--hero-image:url('https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1800&q=85')">
-<div>
-<p class="section-label">YOUR NEXT JOURNEY STARTS HERE</p>
-<h1>Experience <span>Mercedes-Benz.</span></h1>
-<p>Get behind the wheel and discover the luxury, comfort and performance for yourself.</p>
-</div>
-</header>
 
-<section class="booking-background">
-<div class="booking-container">
+<!-- CINEMATIC BOOKING EXPERIENCE -->
+<main class="booking-scene">
 
-<p class="section-label">BOOK YOUR EXPERIENCE</p>
-<h2 class="section-title">Schedule Your Test Drive</h2>
-<p class="section-intro">
-Complete the form below. Our dealership team can
-contact you to discuss your preferred appointment.
-</p>
+    <!-- BACKGROUND LIGHT -->
+    <div class="room-glow"></div>
 
-<form class="contact-form" id="bookingForm">
+    <!-- HANGING LAMP -->
+    <div class="lamp-scene">
 
-<h3>Test Drive Request</h3>
+        <div class="lamp-wire"></div>
 
-<div class="form-group">
-<label>Full Name</label>
-<input type="text" name="name" placeholder="Enter your full name" required>
-</div>
+        <div class="lamp-shade">
+            <div class="lamp-bulb"></div>
+        </div>
 
-<div class="form-group">
-<label>Email Address</label>
-<input type="email" name="email" placeholder="Enter your email" required>
-</div>
+        <div class="lamp-beam"></div>
 
-<div class="form-group">
-<label>Phone Number</label>
-<input type="tel" name="phone" placeholder="+267 ..." required>
-</div>
+    </div>
 
-<div class="form-group">
-<label>Select Your Preferred Model</label>
-<select name="model" required>
-<option value="">Choose a Mercedes-Benz model</option>
-<option>C-Class</option>
-<option>E-Class</option>
-<option>S-Class</option>
-<option>GLE SUV</option>
-<option>AMG Collection</option>
-<option>EQ Collection</option>
-</select>
-</div>
 
-<div class="form-group">
-<label>Preferred Date</label>
-<input type="date" name="date" id="bookingDate" required>
-</div>
+    <!-- LEFT SIDE INTRODUCTION -->
+    <section class="booking-intro">
 
-<div class="form-group">
-<label>Preferred Time</label>
-<select name="time" required>
-<option value="">Choose a time</option>
-<option>09:00 AM</option>
-<option>10:00 AM</option>
-<option>11:00 AM</option>
-<option>12:00 PM</option>
-<option>02:00 PM</option>
-<option>03:00 PM</option>
-</select>
-</div>
+        <p class="booking-eyebrow">
+            YOUR NEXT JOURNEY STARTS HERE
+        </p>
 
-<div class="form-group">
-<label>Additional Requests</label>
-<textarea name="message" placeholder="Tell us anything else we should know..."></textarea>
-</div>
+        <h1>
+            Experience<br>
+            <span>Mercedes-Benz.</span>
+        </h1>
 
-<button type="submit" class="primary-btn">
-REQUEST A TEST DRIVE →
-</button>
+        <p class="intro-description">
+            Get behind the wheel and discover the luxury,
+            comfort and performance for yourself.
+        </p>
 
-</form>
-</div>
-</section>
+        <div class="intro-line"></div>
 
+        <div class="hero-car">
+            <div class="car-glow"></div>
+
+            <img
+                src="https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=1200&q=90"
+                alt="Luxury Mercedes-Benz vehicle">
+        </div>
+
+        <p class="car-caption">
+            THE BEST OR NOTHING.
+        </p>
+
+    </section>
+
+
+    <!-- RIGHT SIDE BOOKING GLASS PANEL -->
+    <section class="booking-container">
+
+        <div class="glass-water water-one"></div>
+        <div class="glass-water water-two"></div>
+        <div class="glass-water water-three"></div>
+
+        <div class="booking-heading">
+
+            <p class="booking-eyebrow">
+                BOOK YOUR EXPERIENCE
+            </p>
+
+            <h2>Schedule Your Test Drive</h2>
+
+            <p>
+                Complete the form below. Our dealership team
+                can contact you to discuss your preferred appointment.
+            </p>
+
+        </div>
+
+
+        <form class="contact-form" id="bookingForm">
+
+            <h3>
+                <span class="form-heading-icon">✧</span>
+                Test Drive Request
+            </h3>
+
+
+            <div class="form-grid">
+
+                <!-- FULL NAME -->
+                <div class="form-group">
+                    <label>Full Name</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">♙</span>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+                    <label>Email Address</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">✉</span>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+                </div>
+
+
+                <!-- PHONE -->
+                <div class="form-group">
+                    <label>Phone Number</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">☎</span>
+                        <input
+                            type="tel"
+                            name="phone"
+                            placeholder="+267 ..."
+                            required>
+                    </div>
+                </div>
+
+
+                <!-- MODEL -->
+                <div class="form-group">
+                    <label>Select Your Preferred Model</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">🚘</span>
+
+                        <select name="model" required>
+                            <option value="">Choose a Mercedes-Benz model</option>
+                            <option>C-Class</option>
+                            <option>E-Class</option>
+                            <option>S-Class</option>
+                            <option>GLE SUV</option>
+                            <option>AMG Collection</option>
+                            <option>EQ Collection</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <!-- DATE -->
+                <div class="form-group">
+                    <label>Preferred Date</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">▦</span>
+
+                        <input
+                            type="date"
+                            name="date"
+                            id="bookingDate"
+                            required>
+                    </div>
+                </div>
+
+
+                <!-- TIME -->
+                <div class="form-group">
+                    <label>Preferred Time</label>
+
+                    <div class="input-wrap">
+                        <span class="field-icon">◷</span>
+
+                        <select name="time" required>
+                            <option value="">Choose a time</option>
+                            <option>09:00 AM</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>12:00 PM</option>
+                            <option>02:00 PM</option>
+                            <option>03:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ADDITIONAL REQUESTS -->
+            <div class="form-group additional-group">
+
+                <label>Additional Requests</label>
+
+                <div class="input-wrap textarea-wrap">
+                    <span class="field-icon">▤</span>
+
+                    <textarea
+                        name="message"
+                        placeholder="Tell us anything else we should know..."></textarea>
+                </div>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+            <button type="submit" class="primary-btn">
+
+                <span>▣</span>
+                REQUEST A TEST DRIVE
+                <span>↗</span>
+
+            </button>
+
+        </form>
+
+        <div class="panel-bottom">
+            MERCEDES-BENZ EXPERIENCE
+            <span>•</span>
+            EXCELLENCE IN EVERY DETAIL
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
 <footer>
-<div class="footer-top">
-<div><h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3><p>The Best or Nothing.</p></div>
-<div class="footer-links">
-<a href="index.html">Home</a><a href="models.html">Models</a><a href="collections.html">Collections</a><a href="technology.html">Technology</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-</div>
-</div>
-<div class="copyright"><p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p></div>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>MERCEDES<span style="color:#12c9ef">.</span>BENZ</h3>
+            <p>The Best or Nothing.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="collections.html">Collections</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
+    </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
+
