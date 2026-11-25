@@ -1634,7 +1634,12 @@ body {
     }
 }
 
+/* MOVE BOOKING PANEL SLIGHTLY RIGHT */
 
+.booking-container {
+    justify-self: end;
+    margin-right: -30px;
+}
 /* ================================================
    HANGING LAMP
 ================================================ */
@@ -1664,7 +1669,7 @@ body {
     top: 0;
     left: 50%;
 
-    height: 115px;
+    height: 110px;
     width: 2px;
 
     background: linear-gradient(
@@ -2011,20 +2016,22 @@ body {
 
     0% {
         opacity: 0;
-        transform: translate(70px, 90px) scale(0.88);
+        transform: translate(90px) scale(0.88);
         filter: blur(15px);
     }
 
     65% {
         opacity: 1;
-        transform: translate(70px, -5px) scale(1.015);
+        transform: translate(-5px) scale(1.015);
         filter: blur(0);
     }
 
     100% {
         opacity: 1;
-        transform: translate(30px, 0) scale(1);
+        transform: translate(0) scale(1);
         filter: blur(0);
+
+        margin-right: -30px;
     }
 }
 
