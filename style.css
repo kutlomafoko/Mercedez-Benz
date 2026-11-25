@@ -6184,7 +6184,13 @@ footer {
         transition: none;
     }
 }
+.liquid-indicator {
+    z-index: 0;
+}
 
+.dock-item {
+    z-index: 2;
+}
    
 
 
