@@ -1548,18 +1548,23 @@ body {
     overflow: hidden;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(0, 8, 15, 0.87),
-            rgba(0, 15, 27, 0.52),
-            rgba(0, 7, 14, 0.78)
-        ),
-        url("https://images.unsplash.com/photo-1618843479618-39b9f7d9b5d1?auto=format&fit=crop&w=2000&q=90");
+    radial-gradient(
+        ellipse at 50% 20%,
+        rgba(0, 130, 190, 0.20),
+        transparent 55%
+    ),
+    linear-gradient(
+        120deg,
+        #02070c,
+        #061827,
+        #010509
+    );
 
-    background-size: cover;
-    background-position: center;
+background-size: cover;
+background-position: center;
 
-    box-shadow: inset 0 -70px 100px #02070b;
+box-shadow: inset 0 -70px 100px #02070b;
+
 }
 
 /* WET FLOOR REFLECTION */
