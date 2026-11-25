@@ -983,6 +983,360 @@ body {
     }
 }
 
+/* =========================================
+   MERCEDES-BENZ — LIQUID GLASS UPGRADE
+========================================= */
+
+/* LIQUID GLASS BASE */
+
+.glass-card,
+.choose-item,
+.cta-glass {
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 115, 160, 0.20),
+            rgba(8, 20, 38, 0.48),
+            rgba(30, 100, 145, 0.12)
+        );
+
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+
+    border: 1px solid rgba(130, 220, 255, 0.24);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 2px rgba(255,255,255,0.20),
+        inset 0 -1px 2px rgba(80,180,255,0.10);
+
+    transition:
+        transform 0.6s ease,
+        border-color 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+/* GLASS REFLECTION */
+
+.glass-card::after,
+.choose-item::after,
+.cta-glass::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -60%;
+
+    width: 50%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        rgba(150,225,255,0.18),
+        transparent
+    );
+
+    transform: rotate(25deg) translateX(-200%);
+
+    pointer-events: none;
+
+    transition: transform 1.1s ease;
+}
+
+.glass-card:hover::after,
+.choose-item:hover::after,
+.cta-glass:hover::after {
+
+    transform: rotate(25deg) translateX(550%);
+}
+
+/* LIQUID LIGHT */
+
+.glass-card::before,
+.choose-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: -130px;
+    right: -100px;
+
+    background: radial-gradient(
+        circle,
+        rgba(20,190,255,0.22),
+        rgba(20,140,255,0.08) 40%,
+        transparent 70%
+    );
+
+    filter: blur(25px);
+
+    pointer-events: none;
+
+    animation: liquidGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes liquidGlow {
+
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-30px, 35px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(15px, 55px) scale(0.9);
+    }
+}
+
+/* FLOATING WATER MOTION */
+
+@keyframes liquidFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotateX(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotateX(1deg);
+    }
+}
+
+/* STORY GLASS */
+
+.story-card {
+
+    animation:
+        liquidFloat 7s ease-in-out infinite;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,100,145,0.24),
+            rgba(5,15,28,0.65)
+        );
+}
+
+.story-card:hover {
+
+    transform: translateY(-9px);
+
+    border-color: rgba(40,205,255,0.65);
+
+    box-shadow:
+        0 20px 55px rgba(0,130,255,0.18),
+        inset 0 1px 2px rgba(255,255,255,0.25);
+}
+
+/* MISSION, VISION & VALUES */
+
+.purpose-card {
+
+    border-radius: 22px;
+
+    animation:
+        liquidFloat 6s ease-in-out infinite;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        border-color 0.5s ease;
+}
+
+.purpose-card:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.purpose-card:nth-child(3) {
+    animation-delay: 2.4s;
+}
+
+.purpose-card:hover {
+
+    transform: translateY(-12px) scale(1.025);
+
+    border-color: rgba(18,201,239,0.8);
+
+    box-shadow:
+        0 20px 50px rgba(0,150,255,0.2),
+        0 0 25px rgba(18,201,239,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.25);
+}
+
+/* GLASS CARD CONTENT ABOVE EFFECTS */
+
+.glass-card > *,
+.choose-item > * {
+
+    position: relative;
+    z-index: 2;
+}
+
+/* CARD ICONS */
+
+.card-icon {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(18,201,239,0.09);
+
+    border: 1px solid rgba(18,201,239,0.35);
+
+    box-shadow:
+        0 0 20px rgba(18,201,239,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.2);
+
+    transition: 0.5s ease;
+}
+
+.purpose-card:hover .card-icon {
+
+    transform: rotateY(180deg) scale(1.08);
+
+    background: rgba(18,201,239,0.2);
+
+    box-shadow:
+        0 0 25px rgba(18,201,239,0.35);
+}
+
+/* WHY CHOOSE US GLASS TILES */
+
+.choose-item {
+
+    border-radius: 20px;
+
+    animation:
+        liquidFloat 7s ease-in-out infinite;
+
+    transition:
+        transform 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.choose-item:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.choose-item:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.choose-item:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.choose-item:hover {
+
+    transform: translateY(-10px) scale(1.035);
+
+    border-color: rgba(18,201,239,0.7);
+
+    background: rgba(15,90,130,0.22);
+
+    box-shadow:
+        0 15px 45px rgba(0,150,255,0.18),
+        inset 0 1px 2px rgba(255,255,255,0.22);
+}
+
+/* ICON GLASS CIRCLES */
+
+.choose-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,201,239,0.18),
+            rgba(10,50,90,0.30)
+        );
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(100,220,255,0.45);
+
+    box-shadow:
+        0 0 20px rgba(18,201,239,0.15),
+        inset 0 1px 3px rgba(255,255,255,0.25);
+
+    transition: 0.5s ease;
+}
+
+.choose-item:hover .choose-icon {
+
+    transform: translateY(-5px) scale(1.1);
+
+    box-shadow:
+        0 0 30px rgba(18,201,239,0.4),
+        inset 0 1px 4px rgba(255,255,255,0.3);
+}
+
+/* FINAL CTA GLASS */
+
+.cta-glass {
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15,80,120,0.30),
+            rgba(5,15,30,0.72)
+        );
+
+    animation: liquidFloat 8s ease-in-out infinite;
+}
+
+/* STORY IMAGE GLASS BORDER */
+
+.story-image {
+
+    border: 1px solid rgba(100,210,255,0.3);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.4),
+        0 0 25px rgba(18,201,239,0.08);
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .glass-card,
+    .purpose-card,
+    .choose-item,
+    .cta-glass,
+    .glass-card::before,
+    .choose-item::before {
+
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
 
 /* CONTACT AND BOOKING */
 
