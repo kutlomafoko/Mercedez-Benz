@@ -552,3 +552,79 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* =====================================
+   LIQUID GLASS DOCK INTERACTION
+===================================== */
+
+const liquidDock = document.querySelector(".liquid-dock");
+
+if (liquidDock) {
+
+    const indicator = liquidDock.querySelector(".liquid-indicator");
+    const dockItems = liquidDock.querySelectorAll(".dock-item");
+
+    let activeItem = liquidDock.querySelector(".dock-item.active");
+
+    function moveLiquid(item, ripple = false) {
+
+        if (!item) return;
+
+        indicator.style.left = item.offsetLeft + "px";
+        indicator.style.width = item.offsetWidth + "px";
+
+        if (ripple) {
+
+            indicator.classList.remove("morph");
+
+            // Restart the water ripple animation
+            void indicator.offsetWidth;
+
+            indicator.classList.add("morph");
+
+            setTimeout(() => {
+                indicator.classList.remove("morph");
+            }, 850);
+        }
+    }
+
+    // Initial position
+    moveLiquid(activeItem);
+
+    // Follow mouse and keyboard focus
+    dockItems.forEach(item => {
+
+        item.addEventListener("mouseenter", () => {
+            moveLiquid(item, true);
+        });
+
+        item.addEventListener("focus", () => {
+            moveLiquid(item, true);
+        });
+
+        item.addEventListener("click", () => {
+
+            dockItems.forEach(link => {
+                link.classList.remove("active");
+            });
+
+            item.classList.add("active");
+            activeItem = item;
+
+            moveLiquid(item, true);
+        });
+
+    });
+
+    // Return to selected icon when mouse leaves
+    liquidDock.addEventListener("mouseleave", () => {
+        moveLiquid(activeItem);
+    });
+
+    // Reposition on screen resize
+    window.addEventListener("resize", () => {
+        moveLiquid(activeItem);
+    });
+
+}
+
+
