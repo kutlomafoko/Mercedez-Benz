@@ -1559,7 +1559,7 @@ body {
         ),
         url("Futuristic Mercedes-Benz in Blue Mist.png");
 
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
 
