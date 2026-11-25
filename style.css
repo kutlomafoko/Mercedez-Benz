@@ -5742,6 +5742,449 @@ footer {
 }
 
 
+/* ==========================================
+   CYAN BLUE LIQUID GLASS SHOWROOM DOCK
+========================================== */
+
+.liquid-dock-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px 15px 30px;
+    position: relative;
+    z-index: 10;
+}
+
+/* THE GLASS NAVBAR */
+
+.liquid-dock {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+
+    width: min(620px, 95%);
+    min-height: 76px;
+
+    padding: 9px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(100, 220, 255, 0.15),
+            rgba(15, 75, 115, 0.24),
+            rgba(130, 225, 255, 0.08)
+        );
+
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+    border: 1px solid rgba(130, 225, 255, 0.35);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(0, 180, 255, 0.10),
+        inset 0 1px 2px rgba(255,255,255,0.35),
+        inset 0 -2px 5px rgba(0,150,255,0.12);
+
+    isolation: isolate;
+}
+
+/* GLASS REFLECTION */
+
+.liquid-dock::before {
+    content: "";
+
+    position: absolute;
+    inset: 1px;
+
+    border-radius: inherit;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.16),
+        transparent 35%,
+        rgba(80,210,255,0.08) 70%,
+        transparent
+    );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* MOVING LIQUID GLASS INDICATOR */
+
+.liquid-indicator {
+    position: absolute;
+
+    top: 8px;
+    bottom: 8px;
+    left: 9px;
+
+    width: 70px;
+
+    border-radius: 23px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(80, 220, 255, 0.40),
+        rgba(0, 140, 220, 0.20),
+        rgba(160, 240, 255, 0.25)
+    );
+
+    border: 1px solid rgba(150, 235, 255, 0.65);
+
+    box-shadow:
+        0 0 20px rgba(0, 190, 255, 0.30),
+        inset 0 1px 5px rgba(255,255,255,0.45);
+
+    backdrop-filter: blur(12px);
+
+    transform: translateX(0);
+
+    transition:
+        left 0.65s cubic-bezier(.22,1,.36,1),
+        width 0.65s cubic-bezier(.22,1,.36,1);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* WATER DROPLETS */
+
+.liquid-indicator::before,
+.liquid-indicator::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 11px;
+    height: 15px;
+
+    border-radius: 50% 50% 55% 45%;
+
+    background: linear-gradient(
+        145deg,
+        rgba(210,250,255,0.95),
+        rgba(0,180,255,0.65)
+    );
+
+    filter: drop-shadow(0 0 7px rgba(0,190,255,0.8));
+
+    opacity: 0;
+
+    top: 50%;
+    left: 50%;
+}
+
+/* FIRST DROPLET SPLITS LEFT */
+
+.liquid-indicator::before {
+    animation: dropletLeft 3.5s ease-in-out infinite;
+}
+
+/* SECOND DROPLET SPLITS RIGHT */
+
+.liquid-indicator::after {
+    animation: dropletRight 3.5s ease-in-out infinite;
+}
+
+/* WATER DROP SPLITTING */
+
+@keyframes dropletLeft {
+
+    0%, 65%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translate(-160%, -100%) scale(1);
+    }
+
+    82% {
+        opacity: 0.8;
+        transform: translate(-260%, -170%) scale(0.65);
+    }
+
+    92% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+@keyframes dropletRight {
+
+    0%, 65%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    72% {
+        opacity: 1;
+        transform: translate(60%, -100%) scale(1);
+    }
+
+    82% {
+        opacity: 0.8;
+        transform: translate(180%, -170%) scale(0.65);
+    }
+
+    92% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/* RIPPLE EFFECT */
+
+.liquid-ripple {
+    position: absolute;
+    inset: -2px;
+
+    border: 1px solid rgba(110,230,255,0.8);
+    border-radius: inherit;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.liquid-indicator.morph .liquid-ripple {
+    animation: waterRipple 0.8s ease-out;
+}
+
+@keyframes waterRipple {
+
+    0% {
+        transform: scale(0.85);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1.45);
+        opacity: 0;
+    }
+}
+
+/* DOCK ITEMS */
+
+.dock-item {
+    position: relative;
+
+    flex: 1;
+    min-width: 0;
+
+    height: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    text-decoration: none;
+
+    color: rgba(210,235,245,0.75);
+
+    border-radius: 20px;
+
+    z-index: 2;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.dock-item.active,
+.dock-item:hover,
+.dock-item:focus-visible {
+    color: #ffffff;
+}
+
+.dock-item:focus-visible {
+    outline: 2px solid #68e8ff;
+    outline-offset: 3px;
+}
+
+/* ICONS */
+
+.dock-icon {
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dock-icon svg {
+    width: 20px;
+    height: 20px;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+/* LABELS */
+
+.dock-label {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* INDIVIDUAL ICON MICRO ANIMATIONS */
+
+/* HOME - SMALL BOUNCE */
+
+.dock-item:nth-of-type(1):hover .dock-icon svg {
+    animation: homeBounce 0.55s ease;
+}
+
+@keyframes homeBounce {
+    0%, 100% { transform: translateY(0); }
+    35% { transform: translateY(-5px); }
+    65% { transform: translateY(1px); }
+}
+
+/* EXPLORE - COMPASS ROTATION */
+
+.dock-item:nth-of-type(2):hover .dock-icon svg {
+    animation: compassTurn 0.7s ease;
+}
+
+@keyframes compassTurn {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+/* 360 VIEW - ROTATION */
+
+.dock-item:nth-of-type(3):hover .dock-icon svg {
+    animation: spinView 0.8s ease;
+}
+
+@keyframes spinView {
+    to { transform: rotate(360deg); }
+}
+
+/* COLOURS - PALETTE PULSE */
+
+.dock-item:nth-of-type(4):hover .dock-icon svg {
+    animation: palettePulse 0.65s ease;
+}
+
+@keyframes palettePulse {
+    0%, 100% { transform: scale(1); }
+    50% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 7px #12c9ef);
+    }
+}
+
+/* BOOKING - CALENDAR FLIP */
+
+.dock-item:nth-of-type(5):hover .dock-icon svg {
+    animation: calendarFlip 0.6s ease;
+}
+
+@keyframes calendarFlip {
+    0%, 100% { transform: rotateX(0); }
+    50% { transform: rotateX(180deg); }
+}
+
+/* CAPTION */
+
+.dock-caption {
+    margin-top: 15px;
+
+    color: rgba(150,190,210,0.55);
+
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.dock-caption span {
+    color: #12c9ef;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .liquid-dock-wrapper {
+        padding: 18px 8px 25px;
+    }
+
+    .liquid-dock {
+        width: 100%;
+        gap: 1px;
+        padding: 7px;
+        min-height: 68px;
+        border-radius: 23px;
+    }
+
+    .dock-item {
+        height: 52px;
+    }
+
+    .dock-label {
+        font-size: 8px;
+        letter-spacing: 0;
+    }
+
+    .dock-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .liquid-indicator {
+        top: 7px;
+        bottom: 7px;
+    }
+
+    .dock-caption {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .liquid-indicator::before,
+    .liquid-indicator::after {
+        animation: none;
+    }
+
+    .dock-item:hover .dock-icon svg {
+        animation: none;
+    }
+
+    .liquid-indicator {
+        transition: none;
+    }
+}
+
    
 
 
