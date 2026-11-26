@@ -143,67 +143,63 @@ s: {
 
 };
 
+
+// =====================================
+// MERCEDES-BENZ INTERACTIVE SHOWROOM
+// =====================================
+
 const modelOptions = document.querySelectorAll(".model-option");
 const viewer = document.getElementById("car-viewer");
 
+const modelName = document.getElementById("model-name");
+const modelCategory = document.getElementById("model-category");
+const modelSubtitle = document.getElementById("model-subtitle");
+
+const specSpeed = document.getElementById("spec-speed");
+const specEngine = document.getElementById("spec-engine");
+const specPower = document.getElementById("spec-power");
+const specTop = document.getElementById("spec-top");
+
+// Selected vehicle
 function displayVehicle(id) {
 
     const vehicle = vehicles[id];
 
-    if (!vehicle) return;
+    if (!vehicle || !viewer) return;
 
-    // Update vehicle name
-    document.getElementById("model-name").textContent =
-        vehicle.name;
+    if (modelName) modelName.textContent = vehicle.name;
+    if (modelCategory) modelCategory.textContent = vehicle.category;
+    if (modelSubtitle) modelSubtitle.textContent = vehicle.subtitle;
 
-    document.getElementById("model-category").textContent =
-        vehicle.category;
+    if (specSpeed) specSpeed.textContent = vehicle.speed;
+    if (specEngine) specEngine.textContent = vehicle.engine;
+    if (specPower) specPower.textContent = vehicle.power;
+    if (specTop) specTop.textContent = vehicle.top;
 
-    document.getElementById("model-subtitle").textContent =
-        vehicle.subtitle;
-
-    // Update specifications
-    document.getElementById("spec-speed").textContent =
-        vehicle.speed;
-
-    document.getElementById("spec-engine").textContent =
-        vehicle.engine;
-
-    document.getElementById("spec-power").textContent =
-        vehicle.power;
-
-    document.getElementById("spec-top").textContent =
-        vehicle.top;
-
-    // Load selected 3D vehicle
+    // Load the selected 3D car
     viewer.src = vehicle.model;
 
-    // Update selected model on the left
+    // Highlight selected model
     modelOptions.forEach(button => {
-
         button.classList.toggle(
             "active",
             button.dataset.model === id
         );
-
     });
-
 }
 
-// Model selection
+// Model button events
 modelOptions.forEach(button => {
 
     button.addEventListener("click", () => {
-
         displayVehicle(button.dataset.model);
-
     });
 
 });
 
-// Start with SL-Class
-displayVehicle("sl");
+// =====================================
 // INTERACTIVE CAR COLOURS
+// =====================================
 
 const colorOptions = document.querySelectorAll(".color-option");
 const selectedColor = document.getElementById("selected-color");
@@ -215,35 +211,64 @@ const colorNames = {
     "#800d18": "Patagonia Red"
 };
 
+let currentColor = "#111111";
+
+function applyCarColor() {
+
+    if (!viewer || !viewer.model) return;
+
+    const colorFactors = {
+        "#111111": [0.07, 0.07, 0.07, 1],
+        "#c0c0c0": [0.65, 0.65, 0.65, 1],
+        "#142b50": [0.04, 0.12, 0.28, 1],
+        "#800d18": [0.35, 0.02, 0.06, 1]
+    };
+
+    const selectedFactor = colorFactors[currentColor];
+
+    viewer.model.materials.forEach(material => {
+
+        material.pbrMetallicRoughness.setBaseColorFactor(
+            selectedFactor
+        );
+
+    });
+}
+
+// Wait for the 3D vehicle to finish loading
+if (viewer) {
+    viewer.addEventListener("load", applyCarColor);
+}
+
+// Colour button events
 colorOptions.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const color = button.dataset.color;
+        currentColor = button.dataset.color;
 
         colorOptions.forEach(option => {
-            option.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        selectedColor.textContent = colorNames[color];
-
-        const viewer = document.getElementById("car-viewer");
-
-        // Change the 3D model's material colour
-        viewer.model?.materials.forEach(material => {
-            material.pbrMetallicRoughness.setBaseColorFactor(
-                color === "#111111" ? [0.07, 0.07, 0.07, 1] :
-                color === "#c0c0c0" ? [0.65, 0.65, 0.65, 1] :
-                color === "#142b50" ? [0.04, 0.12, 0.28, 1] :
-                [0.35, 0.02, 0.06, 1]
+            option.classList.toggle(
+                "active",
+                option === button
             );
         });
+
+        if (selectedColor) {
+            selectedColor.textContent = colorNames[currentColor];
+        }
+
+        applyCarColor();
 
     });
 
 });
+
+// Start with SL-Class
+if (viewer) {
+    displayVehicle("sl");
+}
+
 
 
    
