@@ -531,6 +531,66 @@ section {
     margin-bottom: 28px;
 }
 
+/* =================================
+   MOBILE NAVIGATION FIX
+================================= */
+
+@media (max-width: 850px) {
+
+    .home-page .home-nav {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hamburger button */
+    .home-page .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+        color: white;
+        background: transparent;
+        border: none;
+        font-size: 27px;
+        cursor: pointer;
+    }
+
+    /* Hide links by default */
+    .home-page .home-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        z-index: 1001;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 15px;
+        border: 1px solid rgba(123, 220, 255, 0.3);
+        border-radius: 18px;
+
+        background: rgba(3, 17, 30, 0.96);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+    }
+
+    /* Show links when clicked */
+    .home-page .home-nav .nav-links.active {
+        display: flex;
+    }
+
+    .home-page .home-nav .nav-links a {
+        padding: 14px 10px;
+        font-size: 11px;
+    }
+
+}
+
+
 /* BUTTON */
 
 .home-page .primary-btn {
