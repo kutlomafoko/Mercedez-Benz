@@ -7283,4 +7283,765 @@ footer {
 }
    
 
+/* =========================================
+   MERCEDES-BENZ TECHNOLOGY LAB
+   GLASSMORPHISM DESIGN
+========================================= */
+
+.tech-page {
+    --tech-cyan: #16d9f5;
+    --tech-blue: #168cff;
+    --tech-muted: #a9bac9;
+    --tech-glass: rgba(16, 36, 54, 0.48);
+    --tech-border: rgba(126, 219, 255, 0.19);
+
+    background: #030a12;
+    color: #f5f9ff;
+    overflow-x: hidden;
+}
+
+.tech-page * {
+    box-sizing: border-box;
+}
+
+.tech-page section {
+    position: relative;
+}
+
+.tech-page a {
+    text-decoration: none;
+}
+
+
+/* HERO */
+
+.tech-hero {
+    min-height: 790px;
+    padding: 155px 7% 100px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 55px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 75% 40%,
+        rgba(0, 153, 220, 0.19), transparent 45%),
+        radial-gradient(ellipse at 10% 90%,
+        rgba(0, 88, 160, 0.15), transparent 40%),
+        linear-gradient(135deg, #030912, #071b2b 55%, #02070d);
+}
+
+.tech-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.16;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(60, 185, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 185, 255, 0.09) 1px, transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.tech-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+}
+
+.tech-eyebrow {
+    color: var(--tech-cyan);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.tech-hero h1 {
+    font-size: clamp(42px, 5.5vw, 76px);
+    line-height: 1.06;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.tech-hero h1 span,
+.tech-intro h2 span,
+.lab-heading h2 span,
+.tech-future h2 span {
+    color: var(--tech-cyan);
+}
+
+.tech-description {
+    color: var(--tech-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 430px;
+    margin-bottom: 32px;
+}
+
+.tech-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 23px;
+
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    border: 1px solid rgba(22, 217, 245, 0.5);
+    border-radius: 8px;
+
+    background: rgba(22, 217, 245, 0.08);
+    backdrop-filter: blur(15px);
+    transition: 0.35s ease;
+}
+
+.tech-button:hover {
+    background: var(--tech-cyan);
+    color: #03111b;
+    box-shadow: 0 0 30px rgba(22, 217, 245, 0.35);
+    transform: translateY(-4px);
+}
+
+
+/* MOVING GLOWING ORBS */
+
+.tech-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(75px);
+    pointer-events: none;
+    animation: techOrb 8s ease-in-out infinite alternate;
+}
+
+.orb-one {
+    width: 260px;
+    height: 260px;
+    background: rgba(0, 183, 255, 0.18);
+    top: 12%;
+    left: 38%;
+}
+
+.orb-two {
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 220, 0.10);
+    bottom: 5%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+@keyframes techOrb {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+    to {
+        transform: translate(35px, -25px) scale(1.2);
+    }
+}
+
+
+/* GLASS DASHBOARD */
+
+.glass-dashboard {
+    position: relative;
+    z-index: 2;
+    padding: 22px;
+    width: 100%;
+    max-width: 590px;
+    justify-self: end;
+
+    border: 1px solid rgba(140, 220, 255, 0.28);
+    border-radius: 24px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(160, 220, 255, 0.15),
+        rgba(13, 39, 58, 0.48)
+    );
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+    animation: dashboardFloat 6s ease-in-out infinite;
+}
+
+@keyframes dashboardFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.dashboard-top,
+.dashboard-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-small,
+.widget-label,
+.dashboard-bottom,
+.car-caption span {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    color: #a8c4d7;
+}
+
+.dashboard-top h3 {
+    font-size: 19px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.live-indicator {
+    font-size: 9px;
+    color: #4af0b3;
+    letter-spacing: 1px;
+}
+
+.dashboard-car {
+    position: relative;
+    height: 230px;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #071724;
+}
+
+.dashboard-car img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.78;
+    transition: 0.7s ease;
+}
+
+.dashboard-car:hover img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.car-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 20px 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    background: linear-gradient(transparent, rgba(0, 8, 15, 0.9));
+}
+
+.car-caption strong {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.glass-widget {
+    min-height: 135px;
+    padding: 17px;
+    border-radius: 15px;
+    border: 1px solid rgba(160, 225, 255, 0.15);
+    background: rgba(5, 22, 36, 0.58);
+    transition: 0.35s ease;
+}
+
+.glass-widget:hover {
+    border-color: var(--tech-cyan);
+    background: rgba(14, 64, 85, 0.65);
+    transform: translateY(-5px);
+}
+
+.temperature {
+    font-size: 42px;
+    font-weight: 300;
+    margin-top: 6px;
+}
+
+.temperature span {
+    color: var(--tech-cyan);
+}
+
+.widget-note {
+    display: block;
+    font-size: 10px;
+    color: var(--tech-muted);
+}
+
+.temperature-bar {
+    width: 70%;
+    height: 3px;
+    margin-top: 13px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--tech-blue), var(--tech-cyan));
+    box-shadow: 0 0 12px var(--tech-cyan);
+}
+
+.drive-icon {
+    font-size: 35px;
+    color: var(--tech-cyan);
+    margin: 8px 0 2px;
+    text-shadow: 0 0 20px var(--tech-cyan);
+}
+
+.drive-widget strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.dashboard-bottom {
+    padding-top: 18px;
+    margin-top: 17px;
+    border-top: 1px solid rgba(160, 225, 255, 0.13);
+    font-size: 8px;
+}
+
+.connection-dot {
+    color: #4af0b3;
+}
+
+.hero-bottom-label {
+    position: absolute;
+    bottom: 25px;
+    left: 7%;
+    right: 7%;
+    display: flex;
+    justify-content: space-between;
+    color: #7593a9;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* INTRODUCTION */
+
+.tech-intro {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 70px;
+    align-items: end;
+    padding: 120px 9%;
+    background: #050e18;
+}
+
+.tech-intro h2,
+.lab-heading h2 {
+    font-size: clamp(32px, 4vw, 53px);
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.intro-description p {
+    color: var(--tech-muted);
+    font-size: 14px;
+    line-height: 2;
+    max-width: 480px;
+}
+
+
+/* TECHNOLOGY LAB */
+
+.technology-lab {
+    padding: 110px 7%;
+    background:
+        radial-gradient(ellipse at 50% 20%, rgba(0, 117, 180, 0.11), transparent 55%),
+        #030a12;
+}
+
+.lab-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.lab-number {
+    color: #66859a;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.technology-card {
+    position: relative;
+    min-height: 390px;
+    overflow: hidden;
+    border-radius: 19px;
+    border: 1px solid var(--tech-border);
+    background: var(--tech-glass);
+    isolation: isolate;
+    transition: 0.4s ease;
+}
+
+.technology-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(22, 217, 245, 0.65);
+    box-shadow: 0 20px 55px rgba(0, 170, 255, 0.12);
+}
+
+.card-image {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(2, 9, 17, 0.98),
+        rgba(2, 9, 17, 0.25) 75%
+    );
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.technology-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.card-glass-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+.card-number {
+    color: var(--tech-cyan);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.card-glass-content h3 {
+    font-size: 27px;
+    font-weight: 500;
+    margin: 13px 0;
+}
+
+.card-glass-content p {
+    color: #bdcbd6;
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 410px;
+}
+
+.tech-more {
+    margin-top: 20px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--tech-cyan);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tech-more:hover {
+    color: white;
+    letter-spacing: 2.5px;
+}
+
+.tech-more span {
+    margin-left: 8px;
+}
+
+
+/* INTERACTIVE DETAIL PANEL */
+
+.tech-detail-section {
+    padding: 30px 7% 110px;
+    background: #030a12;
+}
+
+.detail-glass {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 35px;
+    min-height: 310px;
+    padding: 45px;
+    border-radius: 22px;
+    border: 1px solid var(--tech-border);
+
+    background:
+        radial-gradient(circle at 80% 50%, rgba(0, 185, 255, 0.16), transparent 40%),
+        rgba(13, 34, 51, 0.55);
+
+    backdrop-filter: blur(20px);
+}
+
+.detail-heading h2 {
+    font-size: clamp(27px, 3vw, 40px);
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+
+.detail-heading > p:last-child {
+    color: var(--tech-muted);
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 500px;
+}
+
+.detail-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    position: relative;
+}
+
+.detail-ring {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgba(22, 217, 245, 0.55);
+    border-radius: 50%;
+    box-shadow: 0 0 35px rgba(22, 217, 245, 0.15),
+                inset 0 0 35px rgba(22, 217, 245, 0.12);
+    animation: ringRotate 12s linear infinite;
+}
+
+.detail-ring::before,
+.detail-ring::after {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border: 1px dashed rgba(22, 217, 245, 0.45);
+    border-radius: 50%;
+}
+
+.detail-ring::after {
+    inset: 30px;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+@keyframes ringRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.detail-symbol {
+    color: var(--tech-cyan);
+    font-size: 55px;
+    text-shadow: 0 0 30px var(--tech-cyan);
+    z-index: 1;
+}
+
+.detail-visual span {
+    position: absolute;
+    bottom: 0;
+    color: #7ea2b9;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+
+/* FINAL CALL TO ACTION */
+
+.tech-future {
+    text-align: center;
+    padding: 120px 20px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at center, rgba(0, 148, 220, 0.17), transparent 60%),
+        #06111d;
+}
+
+.tech-future h2 {
+    font-size: clamp(35px, 5vw, 62px);
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.tech-future > p:not(.tech-eyebrow) {
+    color: var(--tech-muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 auto 30px;
+    max-width: 480px;
+}
+
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 950px) {
+    .tech-hero {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding-top: 140px;
+    }
+
+    .tech-hero-content {
+        max-width: 650px;
+    }
+
+    .glass-dashboard {
+        justify-self: center;
+        max-width: 650px;
+    }
+
+    .tech-intro {
+        gap: 35px;
+        padding: 90px 7%;
+    }
+}
+
+@media (max-width: 650px) {
+    .tech-hero {
+        padding: 125px 6% 90px;
+        min-height: auto;
+    }
+
+    .tech-hero h1 {
+        font-size: 43px;
+    }
+
+    .glass-dashboard {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .dashboard-car {
+        height: 180px;
+    }
+
+    .dashboard-widgets {
+        gap: 8px;
+    }
+
+    .glass-widget {
+        padding: 12px;
+        min-height: 120px;
+    }
+
+    .temperature {
+        font-size: 34px;
+    }
+
+    .hero-bottom-label {
+        left: 6%;
+        right: 6%;
+        font-size: 7px;
+    }
+
+    .tech-intro {
+        grid-template-columns: 1fr;
+        padding: 80px 7%;
+        gap: 25px;
+    }
+
+    .lab-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .technology-lab {
+        padding: 80px 6%;
+    }
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .technology-card {
+        min-height: 370px;
+    }
+
+    .card-glass-content {
+        padding: 23px;
+    }
+
+    .detail-glass {
+        grid-template-columns: 1fr;
+        padding: 28px 20px;
+        text-align: center;
+    }
+
+    .detail-visual {
+        min-height: 210px;
+    }
+
+    .tech-detail-section {
+        padding: 10px 6% 80px;
+    }
+
+    .tech-future {
+        padding: 90px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-page *,
+    .tech-page *::before,
+    .tech-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 
