@@ -7680,7 +7680,7 @@ model-viewer {
     border: 2px dashed rgba(92, 238, 255, 0.65);
     transform: scale(var(--voice-scale));
     box-shadow: 0 0 calc(25px + var(--voice-glow) * 55px) rgba(18, 201, 239, var(--voice-glow));
-    animation: ringSpin 18s linear infinite;
+    animation: none;
     transition: box-shadow 0.08s ease-out;
 }
 
@@ -7716,7 +7716,7 @@ model-viewer {
     height: 150px;
     border-radius: 50%;
     border: 2px dashed rgba(92, 238, 255, 0.65);
-    animation: ringSpin 18s linear infinite;
+    animation: none;
 }
     .detail-ring-wrapper {
     position: relative;
