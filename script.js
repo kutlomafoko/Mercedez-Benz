@@ -1,20 +1,33 @@
 
 // MOBILE NAVIGATION
 
+// MOBILE NAVIGATION
+
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 if (menuToggle && navLinks) {
+
     menuToggle.addEventListener("click", () => {
+
         navLinks.classList.toggle("active");
+        navLinks.classList.toggle("show");
+
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    navLinks.querySelectorAll("a").forEach(link => {
+
         link.addEventListener("click", () => {
+
             navLinks.classList.remove("active");
+            navLinks.classList.remove("show");
+
         });
+
     });
+
 }
+
 
 // SET MINIMUM BOOKING DATE
 
@@ -189,7 +202,6 @@ function displayVehicle(id) {
 }
 
 // Model button events
-const modelOptions = document.querySelectorAll(".model-option");
 modelOptions.forEach(button => {
   button.addEventListener("click", () => {
      displayVehicle(button.dataset.model);
