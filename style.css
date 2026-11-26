@@ -7713,16 +7713,6 @@ model-viewer {
     border: 2px dashed rgba(92, 238, 255, 0.65);
     animation: ringSpin 18s linear infinite;
 }
-
-.detail-logo {
-    position: absolute;
-    top: 38px;
-    width: 74px;
-    height: 74px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(18, 201, 239, 0.5);
-}
 }
 
 /* --- Future CTA --- */
