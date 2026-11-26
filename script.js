@@ -305,77 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // =====================================
-    // 2. VEHICLE FEATURES
-    // =====================================
-
-    const features = {
-
-        dashboard: {
-            category: "INTERIOR TECHNOLOGY",
-            title: "Luxury Dashboard",
-            description: "Explore the " + "MODEL" + " dashboard, its digital displays, elegant materials and vehicle controls.",
-            specOne: "Digital Display",
-            specTwo: "Smart Technology"
-        },
-
-        steering: {
-            category: "DRIVING EXPERIENCE",
-            title: "Multifunction Steering",
-            description: "Discover the steering design and convenient driving controls of this Mercedes-Benz.",
-            specOne: "Multifunction Controls",
-            specTwo: "Driver Comfort"
-        },
-
-        seats: {
-            category: "INTERIOR COMFORT",
-            title: "Premium Seats",
-            description: "Explore the seating design, cabin materials and comfort features of this vehicle.",
-            specOne: "Premium Materials",
-            specTwo: "Comfort Design"
-        },
-
-        sunroof: {
-            category: "INTERIOR EXPERIENCE",
-            title: "Panoramic Sunroof",
-            description: "Discover the roof design and the open cabin atmosphere of this Mercedes-Benz.",
-            specOne: "Glass Roof Design",
-            specTwo: "Open Cabin Feel"
-        },
-
-        wheels: {
-            category: "EXTERIOR DESIGN",
-            title: "Alloy Wheels",
-            description: "Explore the wheel styling and exterior details of this vehicle.",
-            specOne: "Alloy Design",
-            specTwo: "Road Presence"
-        },
-
-        lighting: {
-            category: "LIGHTING TECHNOLOGY",
-            title: "Advanced Lighting",
-            description: "Discover the lighting design and distinctive Mercedes-Benz appearance.",
-            specOne: "Modern Lighting",
-            specTwo: "Exterior Styling"
-        },
-
-        exterior: {
-            category: "EXTERIOR DESIGN",
-            title: "Exterior Styling",
-            description: "Explore the body shape, curves, grille and exterior finishing of this vehicle.",
-            specOne: "Premium Finish",
-            specTwo: "Elegant Styling"
-        },
-
-        engine: {
-            category: "ENGINEERING",
-            title: "Engine & Performance",
-            description: "Explore the engineering and performance characteristics of this Mercedes-Benz model.",
-            specOne: "Engine Technology",
-            specTwo: "Driving Dynamics"
-        }
-    };
-
+    
 
     // =====================================
     // 3. GET HTML ELEMENTS
@@ -711,171 +641,176 @@ document.querySelectorAll(".tech-more").forEach(button => {
 
 });
 
+/* =========================================================
+   MERCEDES-BENZ COLLECTIONS INTERACTIVITY — collections.js
+   ========================================================= */
 
-/* ==========================================
-   MERCEDES-BENZ COLLECTION INTERACTION
-========================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const vehicleData = {
+        sclass: {
+            number: "01 / 12",
+            category: "THE FLAGSHIP SEDAN",
+            name: "S-Class",
+            description: "Experience exceptional comfort, intelligent technology, and timeless sophistication.",
+            type: "Luxury Sedan",
+            experience: "Ultimate Luxury",
+            image: "images/sclass.jpg"
+        },
+        cclass: {
+            number: "02 / 12",
+            category: "MODERN ELEGANCE",
+            name: "C-Class",
+            description: "Dynamic proportions meet digital luxury with driver-focused MBUX innovation.",
+            type: "Sport Sedan",
+            experience: "Agile Refinement",
+            image: "images/cclass.jpg"
+        },
+        eclass: {
+            number: "03 / 12",
+            category: "INTELLIGENT LUXURY",
+            name: "E-Class",
+            description: "Seamless executive poise powered by next-generation hybrid performance and AI comfort.",
+            type: "Executive Sedan",
+            experience: "Effortless Poise",
+            image: "images/eclass.jpg"
+        },
+        gclass: {
+            number: "04 / 12",
+            category: "ICONIC ADVENTURE",
+            name: "G-Wagon",
+            description: "Unmistakable silhouette engineered with legendary off-road capability and handcrafted prestige.",
+            type: "Off-Road Icon",
+            experience: "Iconic Power",
+            image: "images/gclass.jpg"
+        },
+        gle: {
+            number: "05 / 12",
+            category: "VERSATILE SOPHISTICATION",
+            name: "GLE SUV",
+            description: "Commanding road presence paired with spacious cabin tranquility and adaptive suspension.",
+            type: "Midsize Luxury SUV",
+            experience: "Versatile Poise",
+            image: "images/gle.jpg"
+        },
+        amg: {
+            number: "06 / 12",
+            category: "PURE PERFORMANCE",
+            name: "AMG GT",
+            description: "Handcrafted V8 power and motorsport aerodynamics built for visceral driving precision.",
+            type: "Performance Coupé",
+            experience: "Track-Bred Thrill",
+            image: "images/amg.jpg"
+        },
+        gls: {
+            number: "07 / 12",
+            category: "FIRST-CLASS SPACE",
+            name: "GLS",
+            description: "The S-Class of SUVs—three rows of first-class seating wrapped in commanding elegance.",
+            type: "Full-Size Luxury SUV",
+            experience: "First-Class Travel",
+            image: "images/gls.jpg"
+        },
+        eqs: {
+            number: "08 / 12",
+            category: "THE ELECTRIC FUTURE",
+            name: "EQS",
+            description: "Sculpted one-bow aerodynamics and the sweeping MBUX Hyperscreen define all-electric luxury.",
+            type: "All-Electric Flagship",
+            experience: "Zero-Emission Luxury",
+            image: "images/eqs.jpg"
+        },
+        roadster: {
+            number: "09 / 12",
+            category: "OPEN-AIR HERITAGE",
+            name: "SL Roadster",
+            description: "An iconic 2+2 convertible blending grand touring comfort with AMG performance DNA.",
+            type: "Luxury Roadster",
+            experience: "Open-Air Freedom",
+            image: "images/roadster.jpg"
+        },
+        cle: {
+            number: "10 / 12",
+            category: "SCULPTED ATHLETICISM",
+            name: "CLE Coupé",
+            description: "Expressive two-door styling with a low stance, long hood, and tailored cockpit luxury.",
+            type: "Grand Tourer Coupé",
+            experience: "Sculpted Sport",
+            image: "images/cle.jpg"
+        },
+        eqe: {
+            number: "11 / 12",
+            category: "SILENT DYNAMICS",
+            name: "EQE SUV",
+            description: "Progressive electric versatility with whisper-quiet acoustics and intelligent range management.",
+            type: "All-Electric SUV",
+            experience: "Electric Agility",
+            image: "images/eqe.jpg"
+        },
+        maybach: {
+            number: "12 / 12",
+            category: "BESPOKE PRESTIGE",
+            name: "Mercedes-Maybach",
+            description: "The pinnacle of bespoke automotive craftsmanship, chauffeur-driven serenity, and rare materials.",
+            type: "Ultra-Luxury Limousine",
+            experience: "Sovereign Prestige",
+            image: "images/maybach.jpg"
+        }
+    };
 
-const vehicleCollections = {
+    const cards = document.querySelectorAll(".collection-card");
+    const featuredGlass = document.getElementById("featuredGlass");
+    const featuredImage = document.getElementById("featuredImage");
+    const featuredCategory = document.getElementById("featuredCategory");
+    const featuredName = document.getElementById("featuredName");
+    const featuredDescription = document.getElementById("featuredDescription");
+    const featuredType = document.getElementById("featuredType");
+    const featuredExperience = document.getElementById("featuredExperience");
+    const sectionCounter = document.getElementById("sectionCounter");
 
-    sclass: {
-        name: "S-Class",
-        image: "images/sclass.jpg",
-        category: "THE FLAGSHIP SEDAN",
-        description: "Experience exceptional comfort, intelligent technology and timeless sophistication.",
-        type: "Luxury Sedan",
-        experience: "Ultimate Luxury",
-        number: "01"
-    },
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const modelKey = card.getAttribute("data-model");
+            const data = vehicleData[modelKey];
+            if (!data) return;
 
-    cclass: {
-        name: "C-Class",
-        image: "images/cclass.jpg",
-        category: "MODERN ELEGANCE",
-        description: "Discover a perfect balance of contemporary design, comfort and dynamic performance.",
-        type: "Luxury Sedan",
-        experience: "Modern Elegance",
-        number: "02"
-    },
+            // Update active card state
+            cards.forEach((c) => c.classList.remove("active"));
+            card.classList.add("active");
 
-    eclass: {
-        name: "E-Class",
-        image: "images/eclass.jpg",
-        category: "INTELLIGENT LUXURY",
-        description: "Enjoy sophisticated technology, refined interiors and a remarkable driving experience.",
-        type: "Executive Sedan",
-        experience: "Intelligent Comfort",
-        number: "03"
-    },
+            // Smooth glass transition
+            featuredGlass.classList.add("switching");
 
-    gclass: {
-        name: "G-Class",
-        image: "images/gclass.jpg",
-        category: "ICONIC ADVENTURE",
-        description: "An unmistakable icon combining legendary off-road capability with luxury.",
-        type: "Luxury SUV",
-        experience: "Powerful Adventure",
-        number: "04"
-    },
+            setTimeout(() => {
+                featuredImage.src = data.image;
+                featuredImage.alt = `Mercedes-Benz ${data.name}`;
+                featuredCategory.textContent = data.category;
+                featuredName.textContent = data.name;
+                featuredDescription.textContent = data.description;
+                featuredType.textContent = data.type;
+                featuredExperience.textContent = data.experience;
+                if (sectionCounter) sectionCounter.textContent = data.number;
 
-    gle: {
-        name: "GLE",
-        image: "images/gle.jpg",
-        category: "VERSATILE SOPHISTICATION",
-        description: "Experience versatility, advanced technology and premium SUV comfort.",
-        type: "Luxury SUV",
-        experience: "Versatile Luxury",
-        number: "05"
-    },
+                featuredGlass.classList.remove("switching");
+            }, 220);
 
-    amg: {
-        name: "AMG GT",
-        image: "images/amg.jpg",
-        category: "PURE PERFORMANCE",
-        description: "Feel the excitement of striking sports-car design and performance engineering.",
-        type: "Performance Sports Car",
-        experience: "Pure Performance",
-        number: "06"
-    },
-
-    gls: {
-        name: "GLS",
-        image: "images/gls.jpg",
-        category: "FIRST-CLASS SPACE",
-        description: "Discover spacious luxury, impressive presence and exceptional comfort.",
-        type: "Luxury SUV",
-        experience: "First-Class Comfort",
-        number: "07"
-    },
-
-    eqs: {
-        name: "EQS",
-        image: "images/eqs.jpg",
-        category: "THE ELECTRIC FUTURE",
-        description: "Explore an electric driving experience with progressive design and innovation.",
-        type: "Electric Luxury",
-        experience: "Electric Innovation",
-        number: "08"
-    }
-
-};
-
-
-/* GET HTML ELEMENTS */
-
-const collectionCards =
-    document.querySelectorAll(".collection-card");
-
-const featuredImage =
-    document.getElementById("featuredImage");
-
-const featuredName =
-    document.getElementById("featuredName");
-
-const featuredCategory =
-    document.getElementById("featuredCategory");
-
-const featuredDescription =
-    document.getElementById("featuredDescription");
-
-const featuredType =
-    document.getElementById("featuredType");
-
-const featuredExperience =
-    document.getElementById("featuredExperience");
-
-const sectionCounter =
-    document.querySelector(".section-counter");
-
-
-/* CHANGE FEATURED VEHICLE */
-
-collectionCards.forEach(card => {
-
-    card.addEventListener("click", () => {
-
-        const selectedModel = card.dataset.model;
-
-        const vehicle = vehicleCollections[selectedModel];
-
-        if (!vehicle) return;
-
-        // Update featured image
-
-        featuredImage.src = vehicle.image;
-        featuredImage.alt = "Mercedes-Benz " + vehicle.name;
-
-        // Update vehicle information
-
-        featuredName.textContent = vehicle.name;
-        featuredCategory.textContent = vehicle.category;
-        featuredDescription.textContent = vehicle.description;
-        featuredType.textContent = vehicle.type;
-        featuredExperience.textContent = vehicle.experience;
-
-        // Update collection number
-
-        sectionCounter.textContent =
-            vehicle.number + " / 08";
-
-        // Update active card
-
-        collectionCards.forEach(item => {
-            item.classList.remove("active");
+            // Smooth scroll back up to featured showcase on mobile/tablet
+            if (window.innerWidth < 860) {
+                featuredGlass.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
         });
 
-        card.classList.add("active");
+        // Subtle interactive liquid tilt on mouse move
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = `translateY(-11px) perspective(700px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg)`;
+        });
 
-        // Scroll to featured vehicle
-
-        document.getElementById("featuredGlass")
-            .scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+        });
     });
-
 });
 
 
