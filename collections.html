@@ -1,4 +1,394 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collections | Mercedes-Benz</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="collections.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION: PRESERVED -->
+<nav>
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz Logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">HOME</a>
+        <a href="models.html">OUR MODELS</a>
+        <a href="collections.html" class="active">COLLECTIONS</a>
+        <a href="technology.html">TECHNOLOGY</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
+    </div>
+</nav>
+
+
+<!-- COLLECTIONS PAGE -->
+
+<main class="collections-page">
+
+    <!-- HERO SECTION -->
+
+    <section class="collections-hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                THE MERCEDES-BENZ EXPERIENCE
+            </p>
+
+            <h1>
+                Beyond <span>Ordinary.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover a world where innovation meets elegance.
+                Explore our exclusive collection of extraordinary vehicles.
+            </p>
+
+            <a href="#collections" class="hero-button">
+                EXPLORE COLLECTIONS
+                <span>↗</span>
+            </a>
+
+        </div>
+
+        <div class="hero-decoration">
+            <span>01</span>
+            <div></div>
+            <span>THE ART OF DRIVING</span>
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED VEHICLE -->
+
+    <section class="featured-section">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-label">EXCLUSIVE SELECTION</p>
+                <h2>Featured <span>Masterpiece.</span></h2>
+            </div>
+
+            <p class="section-counter">01 / 08</p>
+        </div>
+
+
+        <div class="featured-glass" id="featuredGlass">
+
+            <div class="featured-image">
+
+                <img
+                    id="featuredImage"
+                    src="images/sclass.jpg"
+                    alt="Mercedes-Benz S-Class"
+                >
+
+                <span class="featured-tag">
+                    SIGNATURE COLLECTION
+                </span>
+
+            </div>
+
+            <div class="featured-info">
+
+                <p class="small-label" id="featuredCategory">
+                    THE FLAGSHIP SEDAN
+                </p>
+
+                <h2 id="featuredName">S-Class</h2>
+
+                <p id="featuredDescription">
+                    Experience exceptional comfort, intelligent
+                    technology and timeless sophistication.
+                </p>
+
+                <div class="featured-specs">
+
+                    <div>
+                        <span>COLLECTION</span>
+                        <strong id="featuredType">Luxury Sedan</strong>
+                    </div>
+
+                    <div>
+                        <span>EXPERIENCE</span>
+                        <strong id="featuredExperience">Ultimate Luxury</strong>
+                    </div>
+
+                </div>
+
+                <a href="models.html" class="featured-button">
+                    DISCOVER THIS MODEL ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COLLECTION CARDS -->
+
+    <section class="collection-section" id="collections">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-label">FIND YOUR PERFECT DRIVE</p>
+                <h2>Our <span>Collections.</span></h2>
+            </div>
+
+            <p class="collection-count">08 EXCLUSIVE CLASSES</p>
+
+        </div>
+
+
+        <div class="collection-grid">
+
+            <!-- S CLASS -->
+
+            <button class="collection-card active"
+                data-model="sclass">
+
+                <div class="card-image">
+                    <img src="images/sclass.jpg" alt="Mercedes S-Class">
+                    <span class="card-number">01</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>THE FLAGSHIP SEDAN</p>
+                    <h3>S-Class</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- C CLASS -->
+
+            <button class="collection-card"
+                data-model="cclass">
+
+                <div class="card-image">
+                    <img src="images/cclass.jpg" alt="Mercedes C-Class">
+                    <span class="card-number">02</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>MODERN ELEGANCE</p>
+                    <h3>C-Class</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- E CLASS -->
+
+            <button class="collection-card"
+                data-model="eclass">
+
+                <div class="card-image">
+                    <img src="images/eclass.jpg" alt="Mercedes E-Class">
+                    <span class="card-number">03</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>INTELLIGENT LUXURY</p>
+                    <h3>E-Class</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- G CLASS -->
+
+            <button class="collection-card"
+                data-model="gclass">
+
+                <div class="card-image">
+                    <img src="images/gclass.jpg" alt="Mercedes G-Class">
+                    <span class="card-number">04</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>ICONIC ADVENTURE</p>
+                    <h3>G-Class</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- GLE -->
+
+            <button class="collection-card"
+                data-model="gle">
+
+                <div class="card-image">
+                    <img src="images/gle.jpg" alt="Mercedes GLE">
+                    <span class="card-number">05</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>VERSATILE SOPHISTICATION</p>
+                    <h3>GLE</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- AMG GT -->
+
+            <button class="collection-card"
+                data-model="amg">
+
+                <div class="card-image">
+                    <img src="images/amg.jpg" alt="Mercedes AMG GT">
+                    <span class="card-number">06</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>PURE PERFORMANCE</p>
+                    <h3>AMG GT</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- GLS -->
+
+            <button class="collection-card"
+                data-model="gls">
+
+                <div class="card-image">
+                    <img src="images/gls.jpg" alt="Mercedes GLS">
+                    <span class="card-number">07</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>FIRST-CLASS SPACE</p>
+                    <h3>GLS</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+
+            <!-- EQS -->
+
+            <button class="collection-card"
+                data-model="eqs">
+
+                <div class="card-image">
+                    <img src="images/eqs.jpg" alt="Mercedes EQS">
+                    <span class="card-number">08</span>
+                    <span class="card-arrow">↗</span>
+                </div>
+
+                <div class="card-content">
+                    <p>THE ELECTRIC FUTURE</p>
+                    <h3>EQS</h3>
+                    <span>Explore Collection ↗</span>
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTTOM CALL TO ACTION -->
+
+    <section class="collection-cta">
+
+        <div class="cta-glass">
+
+            <p class="small-label">YOUR JOURNEY STARTS HERE</p>
+
+            <h2>
+                Experience the <span>Exceptional.</span>
+            </h2>
+
+            <p>
+                Discover the Mercedes-Benz that speaks to your
+                personality and your passion for driving.
+            </p>
+
+            <a href="booking.html">
+                BOOK YOUR EXPERIENCE ↗
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER: PRESERVED -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>MERCEDES<span style="color:#12c9ef">.</span>BENZ</h3>
+            <p>The Best or Nothing.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="collections.html">Collections</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+
+<!-- SCRIPTS -->
+
+<script src="script.js"></script>
+<script src="collections.js"></script>
+
+</body>
+</html>
+
 
 
 
