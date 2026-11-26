@@ -712,4 +712,170 @@ document.querySelectorAll(".tech-more").forEach(button => {
 });
 
 
+/* ==========================================
+   MERCEDES-BENZ COLLECTION INTERACTION
+========================================== */
+
+const vehicleCollections = {
+
+    sclass: {
+        name: "S-Class",
+        image: "images/sclass.jpg",
+        category: "THE FLAGSHIP SEDAN",
+        description: "Experience exceptional comfort, intelligent technology and timeless sophistication.",
+        type: "Luxury Sedan",
+        experience: "Ultimate Luxury",
+        number: "01"
+    },
+
+    cclass: {
+        name: "C-Class",
+        image: "images/cclass.jpg",
+        category: "MODERN ELEGANCE",
+        description: "Discover a perfect balance of contemporary design, comfort and dynamic performance.",
+        type: "Luxury Sedan",
+        experience: "Modern Elegance",
+        number: "02"
+    },
+
+    eclass: {
+        name: "E-Class",
+        image: "images/eclass.jpg",
+        category: "INTELLIGENT LUXURY",
+        description: "Enjoy sophisticated technology, refined interiors and a remarkable driving experience.",
+        type: "Executive Sedan",
+        experience: "Intelligent Comfort",
+        number: "03"
+    },
+
+    gclass: {
+        name: "G-Class",
+        image: "images/gclass.jpg",
+        category: "ICONIC ADVENTURE",
+        description: "An unmistakable icon combining legendary off-road capability with luxury.",
+        type: "Luxury SUV",
+        experience: "Powerful Adventure",
+        number: "04"
+    },
+
+    gle: {
+        name: "GLE",
+        image: "images/gle.jpg",
+        category: "VERSATILE SOPHISTICATION",
+        description: "Experience versatility, advanced technology and premium SUV comfort.",
+        type: "Luxury SUV",
+        experience: "Versatile Luxury",
+        number: "05"
+    },
+
+    amg: {
+        name: "AMG GT",
+        image: "images/amg.jpg",
+        category: "PURE PERFORMANCE",
+        description: "Feel the excitement of striking sports-car design and performance engineering.",
+        type: "Performance Sports Car",
+        experience: "Pure Performance",
+        number: "06"
+    },
+
+    gls: {
+        name: "GLS",
+        image: "images/gls.jpg",
+        category: "FIRST-CLASS SPACE",
+        description: "Discover spacious luxury, impressive presence and exceptional comfort.",
+        type: "Luxury SUV",
+        experience: "First-Class Comfort",
+        number: "07"
+    },
+
+    eqs: {
+        name: "EQS",
+        image: "images/eqs.jpg",
+        category: "THE ELECTRIC FUTURE",
+        description: "Explore an electric driving experience with progressive design and innovation.",
+        type: "Electric Luxury",
+        experience: "Electric Innovation",
+        number: "08"
+    }
+
+};
+
+
+/* GET HTML ELEMENTS */
+
+const collectionCards =
+    document.querySelectorAll(".collection-card");
+
+const featuredImage =
+    document.getElementById("featuredImage");
+
+const featuredName =
+    document.getElementById("featuredName");
+
+const featuredCategory =
+    document.getElementById("featuredCategory");
+
+const featuredDescription =
+    document.getElementById("featuredDescription");
+
+const featuredType =
+    document.getElementById("featuredType");
+
+const featuredExperience =
+    document.getElementById("featuredExperience");
+
+const sectionCounter =
+    document.querySelector(".section-counter");
+
+
+/* CHANGE FEATURED VEHICLE */
+
+collectionCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const selectedModel = card.dataset.model;
+
+        const vehicle = vehicleCollections[selectedModel];
+
+        if (!vehicle) return;
+
+        // Update featured image
+
+        featuredImage.src = vehicle.image;
+        featuredImage.alt = "Mercedes-Benz " + vehicle.name;
+
+        // Update vehicle information
+
+        featuredName.textContent = vehicle.name;
+        featuredCategory.textContent = vehicle.category;
+        featuredDescription.textContent = vehicle.description;
+        featuredType.textContent = vehicle.type;
+        featuredExperience.textContent = vehicle.experience;
+
+        // Update collection number
+
+        sectionCounter.textContent =
+            vehicle.number + " / 08";
+
+        // Update active card
+
+        collectionCards.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        card.classList.add("active");
+
+        // Scroll to featured vehicle
+
+        document.getElementById("featuredGlass")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+    });
+
+});
+
 
