@@ -812,5 +812,124 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+/* =========================================================
+   MERCEDES-BENZ TECHNOLOGY LAB — technology.js
+   ========================================================= */
 
+document.addEventListener("DOMContentLoaded", () => {
+    const techDetails = {
+        mbux: {
+            eyebrow: "01 / DIGITAL INTELLIGENCE",
+            title: "MBUX Digital Intelligence.",
+            description:
+                "Adaptive interfaces, natural voice interaction, and personalized driver profiles that learn your preferences across every journey.",
+            symbol: "✦",
+            caption: "MBUX COCKPIT SYSTEM",
+            tags: ["VOICE CONTROL", "ADAPTIVE DISPLAY", "CONNECTED SERVICES"]
+        },
+        safety: {
+            eyebrow: "02 / DRIVER SUPPORT",
+            title: "Intelligent Safety & Assistance.",
+            description:
+                "Multi-sensor awareness and predictive assistance systems designed to support confidence in dense traffic, highway cruising, and tight maneuvers.",
+            symbol: "◈",
+            caption: "INTELLIGENT DRIVE",
+            tags: ["SENSOR FUSION", "LANE & DISTANCE SUPPORT", "PRE-SAFE PROTECTION"]
+        },
+        electric: {
+            eyebrow: "03 / ELECTRIC FUTURE",
+            title: "Electric Mobility Architecture.",
+            description:
+                "High-efficiency electric powertrains, intelligent energy recuperation, and aerodynamic engineering built for calm, responsive long-range driving.",
+            symbol: "⚡",
+            caption: "ELECTRIC POWERTRAIN",
+            tags: ["ENERGY RECUPERATION", "AERODYNAMIC EFFICIENCY", "FAST CHARGING"]
+        },
+        light: {
+            eyebrow: "04 / LIGHTING INNOVATION",
+            title: "DIGITAL LIGHT Precision.",
+            description:
+                "High-definition adaptive illumination that shapes light distribution around oncoming traffic and highlights key road cues in low visibility.",
+            symbol: "❖",
+            caption: "ADAPTIVE MATRIX LIGHT",
+            tags: ["ADAPTIVE BEAM", "NIGHT VISIBILITY", "PRECISION OPTICS"]
+        }
+    };
+
+    const cards = document.querySelectorAll(".technology-card");
+    const buttons = document.querySelectorAll(".tech-more");
+    const detailGlass = document.querySelector(".detail-glass");
+    const detailEyebrow = document.getElementById("detail-eyebrow");
+    const detailTitle = document.getElementById("detail-title");
+    const detailDescription = document.getElementById("detail-description");
+    const detailSymbol = document.getElementById("detail-symbol");
+    const detailCaption = document.getElementById("detail-caption");
+    const detailTags = document.getElementById("detail-tags");
+
+    function selectTechnology(key, shouldScroll = false) {
+        const info = techDetails[key];
+        if (!info || !detailGlass) return;
+
+        cards.forEach((card) => {
+            card.classList.toggle("active", card.getAttribute("data-target") === key);
+        });
+
+        detailGlass.classList.add("updating");
+
+        setTimeout(() => {
+            if (detailEyebrow) detailEyebrow.textContent = info.eyebrow;
+            if (detailTitle) detailTitle.textContent = info.title;
+            if (detailDescription) detailDescription.textContent = info.description;
+            if (detailSymbol) detailSymbol.textContent = info.symbol;
+            if (detailCaption) detailCaption.textContent = info.caption;
+
+            if (detailTags) {
+                detailTags.innerHTML = info.tags
+                    .map((tag) => `<span>${tag}</span>`)
+                    .join("");
+            }
+
+            detailGlass.classList.remove("updating");
+        }, 180);
+
+        if (shouldScroll) {
+            detailGlass.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+    }
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const target = btn.getAttribute("data-target");
+            selectTechnology(target, true);
+        });
+    });
+
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+            const target = card.getAttribute("data-target");
+            selectTechnology(target, false);
+        });
+    });
+
+    // Smooth scroll reveal observer
+    const revealEls = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && revealEls.length > 0) {
+        revealEls.forEach((el) => el.classList.add("reveal-hidden"));
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove("reveal-hidden");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12 }
+        );
+
+        revealEls.forEach((el) => observer.observe(el));
+    }
+});
 
