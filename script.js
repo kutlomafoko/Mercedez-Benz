@@ -1084,4 +1084,34 @@ const homeObserver = new IntersectionObserver((entries) => {
 homeRevealElements.forEach(element => {
     homeObserver.observe(element);
 });
+----home---
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Cursor-reactive specular highlight on liquid glass panels
+    const specularCards = document.querySelectorAll(".specular-card");
+    specularCards.forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty("--mouse-x", `${x}%`);
+            card.style.setProperty("--mouse-y", `${y}%`);
+        });
+    });
+
+    // 2. Smooth scroll reveal for .home-reveal blocks
+    const revealItems = document.querySelectorAll(".home-reveal");
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.12 }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+});
 
