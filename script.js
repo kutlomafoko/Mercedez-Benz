@@ -189,10 +189,10 @@ function displayVehicle(id) {
 }
 
 // Model button events
+const modelOptions = document.querySelectorAll(".model-option");
 modelOptions.forEach(button => {
-
-    button.addEventListener("click", () => {
-        displayVehicle(button.dataset.model);
+  button.addEventListener("click", () => {
+     displayVehicle(button.dataset.model);
     });
 
 });
