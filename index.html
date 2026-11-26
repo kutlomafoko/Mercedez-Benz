@@ -2,31 +2,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mercedes-Benz | Home</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<nav>
-<a href="index.html" class="logo">
-    <img src="logo.jpg" alt="Mercedes-Benz Logo">
-</a> 
-<button class="menu-toggle" id="menuToggle">☰</button>
-<div class="nav-links" id="navLinks">
-<a href="index.html" class="active">HOME</a>
-<a href="models.html">OUR MODELS</a>
-<a href="collections.html">COLLECTIONS</a>
-<a href="technology.html">TECHNOLOGY</a>
-<a href="about.html">ABOUT US</a>
-<a href="contact.html">CONTACT</a>
-<a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
-</div>
+    <title>Mercedes-Benz | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body class="home-page">
+
+<!-- NAVIGATION -->
+<nav class="home-nav">
+
+    <a href="index.html" class="logo">
+        <img src="logo.jpg" alt="Mercedes-Benz Logo">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">HOME</a>
+        <a href="models.html">OUR MODELS</a>
+        <a href="collections.html">COLLECTIONS</a>
+        <a href="technology.html">TECHNOLOGY</a>
+        <a href="about.html">ABOUT US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="booking.html" class="nav-btn">BOOK A TEST DRIVE ↗</a>
+    </div>
+
 </nav>
 
 
-
+<!-- HERO SECTION -->
 <header class="home-hero">
 
     <!-- Background Video -->
@@ -34,100 +43,280 @@
         <source src="ssstik.io_1795427754338.mp4" type="video/mp4">
     </video>
 
-    <!-- Dark overlay -->
+    <!-- Overlays -->
     <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
 
-    <!-- Homepage content -->
+    <!-- Floating glow effects -->
+    <div class="home-glow home-glow-one"></div>
+    <div class="home-glow home-glow-two"></div>
+
+    <!-- Hero content -->
     <div class="home-content">
-        <p class="section-label">WELCOME TO MERCEDES-BENZ</p>
 
-        <h1>The Best<br>or <span>Nothing.</span></h1>
+        <div class="hero-glass-label">
+            <span class="status-dot"></span>
+            WELCOME TO MERCEDES-BENZ
+        </div>
+
+        <h1>
+            The Best<br>
+            or <span>Nothing.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Experience the perfect balance of luxury,
+            innovation and extraordinary performance.
+        </p>
 
         <div class="home-buttons">
-            <a href="models.html" class="primary-btn">EXPLORE MODELS →</a>
+            <a href="models.html" class="primary-btn">
+                EXPLORE MODELS <span>↗</span>
+            </a>
         </div>
+
+        <div class="hero-bottom-info">
+            <span>ENGINEERED TO INSPIRE</span>
+            <span>01 — THE MERCEDES EXPERIENCE</span>
+        </div>
+
+    </div>
+
+    <!-- Floating glass information panel -->
+    <div class="hero-floating-card">
+
+        <div class="floating-card-top">
+            <span>THE MERCEDES EXPERIENCE</span>
+            <span class="floating-live">● LIVE</span>
+        </div>
+
+        <div class="floating-card-main">
+            <div class="floating-icon">✦</div>
+
+            <div>
+                <h3>Beyond Ordinary.</h3>
+                <p>Luxury without compromise.</p>
+            </div>
+        </div>
+
+        <div class="floating-progress">
+            <span></span>
+        </div>
+
+        <div class="floating-card-bottom">
+            <span>PRECISION</span>
+            <span>INNOVATION</span>
+            <span>EXCELLENCE</span>
+        </div>
+
+    </div>
+
+    <div class="hero-scroll">
+        <span></span>
+        SCROLL TO EXPLORE
     </div>
 
 </header>
 
-<section class="content-section">
-<p class="section-label">THE MERCEDES EXPERIENCE</p>
-<h2 class="section-title">Luxury Beyond Expectations</h2>
-<p class="section-intro">
-Discover a world where elegant design, innovative
-technology and outstanding performance come together.
-</p>
 
+<!-- MERCEDES EXPERIENCE -->
+<section class="home-experience">
 
-<div class="car-card">
+    <div class="experience-heading home-reveal">
 
-    <video class="card-video" autoplay muted loop playsinline>
-        <source src="ssstik.io_1795444765600.mp4" type="video/mp4">
-        Your browser does not support video.
-    </video>
+        <p class="home-label">THE MERCEDES EXPERIENCE</p>
 
-    <div class="car-info">
-        <h3>Luxury Design</h3>
-        <p>Beautifully crafted vehicles with timeless elegance.</p>
-        <a href="collections.html" class="details-link">
-            EXPLORE COLLECTIONS →
-        </a>
+        <h2>
+            Luxury Beyond<br>
+            <span>Expectations.</span>
+        </h2>
+
+        <p class="home-intro">
+            Discover a world where elegant design, innovative
+            technology and outstanding performance come together.
+        </p>
+
     </div>
 
-</div>
+
+    <!-- FEATURE CARDS -->
+    <div class="home-cards">
+
+        <!-- LUXURY DESIGN -->
+        <article class="home-card home-card-large home-reveal">
+
+            <div class="home-card-image">
+                <video class="card-video" autoplay muted loop playsinline>
+                    <source src="ssstik.io_1795444765600.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+
+            <div class="card-glass">
+
+                <div class="card-top-line">
+                    <span>01 / DESIGN</span>
+                    <span>✦</span>
+                </div>
+
+                <div class="card-info">
+                    <h3>Luxury Design</h3>
+
+                    <p>
+                        Beautifully crafted vehicles with timeless elegance.
+                    </p>
+
+                    <a href="collections.html" class="details-link">
+                        EXPLORE COLLECTIONS <span>↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
 
 
-<div class="car-card">
-<img src="🚗 Mercedes-Benz E-Class EV Launch Date Revealed! ⚡️__Exciting news for luxury EV enthusiasts! Mercedes-Benz has announced the launch date for their highly anticipated E-Class EV_ Discover all the details about this luxurious .jpg" alt="Mercedes technology">
-<div class="car-info">
-<h3>Intelligent Innovation</h3>
-<p>Discover technology that transforms every journey.</p>
-<a href="technology.html" class="details-link">DISCOVER TECHNOLOGY →</a>
-</div>
-</div>
+        <!-- INTELLIGENT INNOVATION -->
+        <article class="home-card home-reveal">
 
-<div class="car-card">
-<img src="jpg(3)" alt="Mercedes performance">
-<div class="car-info">
-<h3>Exceptional Performance</h3>
-<p>Engineering designed for an unforgettable drive.</p>
-<a href="models.html" class="details-link">VIEW OUR MODELS →</a>
-</div>
-</div>
+            <div class="home-card-image">
+                <img
+                    src="🚗 Mercedes-Benz E-Class EV Launch Date Revealed! ⚡️__Exciting news for luxury EV enthusiasts! Mercedes-Benz has announced the launch date for their highly anticipated E-Class EV_ Discover all the details about this luxurious .jpg"
+                    alt="Mercedes technology">
+            </div>
 
-</div>
+            <div class="card-glass">
+
+                <div class="card-top-line">
+                    <span>02 / INNOVATION</span>
+                    <span>✦</span>
+                </div>
+
+                <div class="card-info">
+                    <h3>Intelligent Innovation</h3>
+
+                    <p>
+                        Discover technology that transforms every journey.
+                    </p>
+
+                    <a href="technology.html" class="details-link">
+                        DISCOVER TECHNOLOGY <span>↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- EXCEPTIONAL PERFORMANCE -->
+        <article class="home-card home-reveal">
+
+            <div class="home-card-image">
+                <img src="jpg(3)" alt="Mercedes performance">
+            </div>
+
+            <div class="card-glass">
+
+                <div class="card-top-line">
+                    <span>03 / PERFORMANCE</span>
+                    <span>✦</span>
+                </div>
+
+                <div class="card-info">
+                    <h3>Exceptional Performance</h3>
+
+                    <p>
+                        Engineering designed for an unforgettable drive.
+                    </p>
+
+                    <a href="models.html" class="details-link">
+                        VIEW OUR MODELS <span>↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
 </section>
 
-<section>
-<p class="section-label">YOUR NEXT JOURNEY</p>
-<h2 class="section-title">Experience It Yourself.</h2>
-<p class="section-intro">Book a test drive and discover Mercedes-Benz firsthand.</p>
-<br>
-<a href="booking.html" class="primary-btn">BOOK YOUR TEST DRIVE →</a>
+
+<!-- TEST DRIVE SECTION -->
+<section class="home-testdrive">
+
+    <div class="testdrive-glow"></div>
+
+    <div class="testdrive-content home-reveal">
+
+        <p class="home-label">YOUR NEXT JOURNEY</p>
+
+        <h2>
+            Experience It<br>
+            <span>Yourself.</span>
+        </h2>
+
+        <p>
+            Book a test drive and discover Mercedes-Benz firsthand.
+        </p>
+
+        <a href="booking.html" class="primary-btn">
+            BOOK YOUR TEST DRIVE <span>↗</span>
+        </a>
+
+    </div>
+
+    <div class="testdrive-decoration">
+        <span>THE BEST OR NOTHING.</span>
+    </div>
+
 </section>
 
+
+<!-- FOOTER -->
 <footer>
-<div class="footer-top">
-<div>
-<h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3>
-<p>The Best or Nothing.</p>
-</div>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="models.html">Models</a>
-<a href="collections.html">Collections</a>
-<a href="technology.html">Technology</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-<div class="copyright">
-<p>© 2026 Mercedes-Benz Dealership Concept. All Rights Reserved.</p>
-<p>Independent dealership website concept. Not an official Mercedes-Benz website.</p>
-</div>
+
+    <div class="footer-top">
+
+        <div>
+            <h3>MERCEDES<span style="color:#168cff">.</span>BENZ</h3>
+            <p>The Best or Nothing.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="models.html">Models</a>
+            <a href="collections.html">Collections</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Mercedes-Benz Dealership Concept.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Independent dealership website concept.
+            Not an official Mercedes-Benz website.
+        </p>
+
+    </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+<script src="home.js"></script>
+
 </body>
 </html>
+
 
