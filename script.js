@@ -628,3 +628,88 @@ if (liquidDock) {
 }
 
 
+// TECHNOLOGY PAGE SCROLL ANIMATIONS
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+
+// TECHNOLOGY CARD INTERACTIONS
+
+const technologyInfo = {
+    mbux: {
+        title: "Intelligence in Every Detail.",
+        description: "MBUX brings together digital displays, voice interaction, navigation and connected infotainment features to create a more personalised driving experience.",
+        symbol: "✦",
+        caption: "MBUX DIGITAL INTELLIGENCE"
+    },
+
+    safety: {
+        title: "Confidence Through Innovation.",
+        description: "Driver assistance technologies use sensors, cameras and intelligent systems to support the driver and help improve awareness on the road.",
+        symbol: "◈",
+        caption: "ADVANCED DRIVER ASSISTANCE"
+    },
+
+    electric: {
+        title: "A New Era of Mobility.",
+        description: "Electric mobility combines electric drive systems, battery technology and charging solutions to create new ways of travelling.",
+        symbol: "⚡",
+        caption: "ELECTRIC MOBILITY"
+    },
+
+    light: {
+        title: "Lighting the Way Forward.",
+        description: "Advanced lighting systems are designed to adapt illumination to driving conditions and help improve visibility.",
+        symbol: "◎",
+        caption: "DIGITAL LIGHT TECHNOLOGY"
+    }
+};
+
+
+// UPDATE DETAIL PANEL
+
+document.querySelectorAll(".tech-more").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const selectedTechnology = technologyInfo[button.dataset.target];
+
+        if (!selectedTechnology) return;
+
+        document.getElementById("detail-title").textContent =
+            selectedTechnology.title;
+
+        document.getElementById("detail-description").textContent =
+            selectedTechnology.description;
+
+        document.getElementById("detail-symbol").textContent =
+            selectedTechnology.symbol;
+
+        document.getElementById("detail-caption").textContent =
+            selectedTechnology.caption;
+
+        document.querySelector(".tech-detail-section").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+
