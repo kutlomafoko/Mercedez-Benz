@@ -197,699 +197,934 @@ section {
     line-height: 1.9;
 }
 
-/* =========================================================
-   MERCEDES-BENZ LIQUID GLASSMORPHISM HOME — home.css
-   ========================================================= */
 
-:root {
-    --bg-midnight: #040b16;
-    --bg-deep-navy: #071528;
-    --cyan-bright: #33e1ff;
-    --cyan-mid: #12c9ef;
-    --text-primary: #f4f9ff;
-    --text-secondary: rgba(214, 232, 248, 0.78);
-    --glass-fill: linear-gradient(
-        140deg,
-        rgba(255, 255, 255, 0.14) 0%,
-        rgba(51, 225, 255, 0.06) 45%,
-        rgba(6, 17, 33, 0.62) 100%
-    );
-    --glass-border: rgba(145, 232, 255, 0.28);
-    --glass-border-bright: rgba(175, 242, 255, 0.62);
-}
+/* =========================================
+   MERCEDES-BENZ LIQUID GLASS HOMEPAGE
+========================================= */
 
-body.home-page {
-    background: radial-gradient(circle at 18% 12%, #0b223f 0%, var(--bg-midnight) 55%, #02060d 100%);
-    color: var(--text-primary);
+.home-page {
+    --cyan: #20e5ff;
+    --blue: #168cff;
+    --navy: #03111f;
+    --white: #f5faff;
+    --muted: #b6c9d8;
+
+    background: #020912;
+    color: var(--white);
     overflow-x: hidden;
 }
 
-/* =========================================================
-   CORE LIQUID GLASS SURFACE + SPECULAR SHEEN
-   ========================================================= */
-.liquid-glass {
-    position: relative;
-    background: var(--glass-fill);
-    backdrop-filter: blur(22px) saturate(155%);
-    -webkit-backdrop-filter: blur(22px) saturate(155%);
-    border: 1px solid var(--glass-border);
-    box-shadow:
-        0 24px 55px rgba(0, 5, 14, 0.62),
-        inset 0 1.5px 1px rgba(255, 255, 255, 0.48),
-        inset 0 -2px 8px rgba(0, 8, 20, 0.35);
-    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+.home-page * {
+    box-sizing: border-box;
 }
 
-.specular-card::before {
+.home-page a {
+    text-decoration: none;
+}
+
+/* GLASSMORPHISM */
+
+.home-page .liquid-glass {
+    background: linear-gradient(
+        135deg,
+        rgba(145, 220, 255, 0.15),
+        rgba(15, 65, 91, 0.35),
+        rgba(3, 17, 34, 0.72)
+    );
+
+    border: 1px solid rgba(123, 220, 255, 0.32);
+
+    backdrop-filter: blur(25px) saturate(150%);
+    -webkit-backdrop-filter: blur(25px) saturate(150%);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.18),
+        inset 0 -1px 1px rgba(40, 180, 255, 0.12);
+
+    position: relative;
+}
+
+/* GLASS REFLECTION */
+
+.home-page .liquid-glass::before {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: inherit;
     pointer-events: none;
-    background: radial-gradient(
-        420px circle at var(--mouse-x, 50%) var(--mouse-y, 20%),
-        rgba(140, 238, 255, 0.18),
-        transparent 60%
+    border-radius: inherit;
+
+    background: linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.09) 45%,
+        transparent 65%
     );
-    opacity: 0;
-    transition: opacity 0.3s ease;
+
+    transform: translateX(-120%);
+    transition: transform 1s ease;
 }
 
-.specular-card:hover::before {
-    opacity: 1;
+.home-page .liquid-glass:hover::before {
+    transform: translateX(120%);
 }
 
-.specular-card:hover {
-    border-color: var(--glass-border-bright);
-    box-shadow:
-        0 28px 65px rgba(0, 6, 18, 0.72),
-        0 0 28px rgba(18, 201, 239, 0.18),
-        inset 0 1.5px 1.5px rgba(255, 255, 255, 0.68),
-        inset 0 -2px 10px rgba(0, 8, 20, 0.4);
-}
+/* =========================================
+   NAVIGATION
+========================================= */
 
-/* =========================================================
-   FLOATING CAPSULE NAVIGATION
-   ========================================================= */
-nav.home-nav {
-    position: fixed;
-    top: 1.15rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(1260px, calc(100% - 2rem));
+.home-page .home-nav {
+    position: absolute;
+    top: 20px;
+    left: 4%;
+    width: 92%;
     z-index: 1000;
-    border-radius: 999px;
-    padding: 0.65rem 1.35rem;
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background: rgba(7, 20, 38, 0.58);
+    align-items: center;
+
+    padding: 13px 25px;
+    min-height: 70px;
+    border-radius: 50px;
+
+    animation: navEnter 1s ease;
 }
 
-nav.home-nav .logo img {
-    height: 38px;
-    width: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+@keyframes navEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-nav.home-nav .nav-links {
+.home-page .home-nav .logo img {
+    max-height: 43px;
+    width: auto;
+    display: block;
+}
+
+.home-page .home-nav .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.35rem;
+    gap: 23px;
 }
 
-nav.home-nav .nav-links a {
-    font-size: 0.76rem;
-    letter-spacing: 0.12em;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.25s ease;
-}
-
-nav.home-nav .nav-links a:hover,
-nav.home-nav .nav-links a.active {
-    color: var(--cyan-bright);
-}
-
-nav.home-nav .nav-btn {
-    padding: 0.55rem 1.1rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, rgba(51, 225, 255, 0.28), rgba(18, 201, 239, 0.12));
-    border: 1px solid rgba(115, 236, 255, 0.55);
-    color: #ffffff !important;
+.home-page .home-nav .nav-links a {
+    color: #dcecf6;
+    font-size: 10px;
     font-weight: 600;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-/* =========================================================
-   HERO SECTION OVER VIDEO
-   ========================================================= */
-.home-hero {
+.home-page .home-nav .nav-links a:hover,
+.home-page .home-nav .nav-links a.active {
+    color: var(--cyan);
+}
+
+.home-page .home-nav .nav-links .nav-btn {
+    padding: 13px 18px;
+    border: 1px solid var(--cyan);
+    border-radius: 30px;
+    background: rgba(24, 220, 245, 0.1);
+}
+
+.home-page .home-nav .nav-links .nav-btn:hover {
+    background: var(--cyan);
+    color: #03111b;
+    box-shadow: 0 0 25px rgba(24, 220, 245, 0.5);
+}
+
+.home-page .menu-toggle {
+    display: none;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.home-page .home-hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 790px;
     display: flex;
     align-items: center;
-    padding: 7.5rem 5% 4.5rem;
+    padding: 145px 7% 90px;
     overflow: hidden;
+    isolation: isolate;
+
+    background: #020912;
+    border-radius: 0 0 35px 35px;
 }
 
-.hero-video {
+.home-page .hero-video {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
+    z-index: -3;
 }
 
-.hero-overlay {
+.home-page .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        115deg,
-        rgba(3, 10, 22, 0.78) 0%,
-        rgba(5, 16, 34, 0.48) 52%,
-        rgba(3, 10, 22, 0.82) 100%
-    );
-    z-index: 1;
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(1, 8, 17, 0.95),
+            rgba(2, 13, 25, 0.68),
+            rgba(2, 10, 18, 0.28)
+        ),
+        linear-gradient(
+            0deg,
+            #020912,
+            transparent 55%
+        );
 }
 
-.hero-grid {
+.home-page .hero-grid {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: -1;
+    pointer-events: none;
+
     background-image:
-        linear-gradient(rgba(82, 224, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(82, 224, 255, 0.05) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+        linear-gradient(rgba(65, 190, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(65, 190, 255, 0.055) 1px, transparent 1px);
+
+    background-size: 55px 55px;
 }
 
-.home-glow {
+/* GLOWING BACKGROUND */
+
+.home-page .home-glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
+    filter: blur(85px);
     pointer-events: none;
-    z-index: 1;
+    animation: glowMove 8s ease-in-out infinite alternate;
 }
 
-.home-glow-one {
-    width: 360px;
-    height: 360px;
-    top: 14%;
-    left: 6%;
-    background: rgba(18, 201, 239, 0.24);
-}
-
-.home-glow-two {
+.home-page .home-glow-one {
     width: 320px;
     height: 320px;
-    bottom: 10%;
-    right: 8%;
-    background: rgba(51, 140, 255, 0.22);
+    top: 8%;
+    right: 20%;
+    background: rgba(0, 150, 255, 0.25);
 }
 
-.hero-stage {
+.home-page .home-glow-two {
+    width: 250px;
+    height: 250px;
+    bottom: 2%;
+    left: 30%;
+    background: rgba(0, 238, 255, 0.15);
+    animation-delay: 2s;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(35px, -25px);
+    }
+}
+
+/* HERO LAYOUT */
+
+.home-page .hero-stage {
     position: relative;
     z-index: 2;
-    width: min(1240px, 100%);
-    margin: 0 auto;
+    width: 100%;
+
     display: grid;
-    grid-template-columns: 1.35fr 0.85fr;
-    gap: 2rem;
-    align-items: end;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: center;
+    gap: 45px;
 }
 
-/* Main Hero Glass Card */
-.home-content {
-    border-radius: 30px;
-    padding: 2.75rem 3rem;
+/* HERO GLASS PANEL */
+
+.home-page .home-content {
+    max-width: 650px;
+    padding: 32px;
+    border-radius: 25px;
+
+    animation: heroEnter 1.2s ease both;
 }
 
-.hero-glass-label {
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-page .hero-glass-label {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.42rem 0.95rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(145, 232, 255, 0.35);
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    color: var(--cyan-bright);
-    margin-bottom: 1.35rem;
+    gap: 10px;
+
+    padding: 11px 16px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(24, 220, 245, 0.3);
+    border-radius: 30px;
+    background: rgba(5, 34, 52, 0.6);
+
+    color: #d7f5ff;
+    font-size: 9px;
+    letter-spacing: 2px;
 }
 
-.status-dot {
+.home-page .status-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--cyan-bright);
-    box-shadow: 0 0 12px var(--cyan-bright);
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    animation: pulse 2s infinite;
 }
 
-.home-content h1 {
-    font-size: clamp(2.6rem, 5.2vw, 4.5rem);
-    line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin: 0 0 1.15rem;
+@keyframes pulse {
+    50% {
+        box-shadow: 0 0 22px 6px rgba(24, 220, 245, 0.3);
+    }
 }
 
-.home-content h1 span {
-    background: linear-gradient(90deg, #ffffff 0%, var(--cyan-bright) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.home-page .home-content h1 {
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -3px;
+    margin: 0 0 23px;
 }
 
-.hero-subtitle {
-    max-width: 500px;
-    color: var(--text-secondary);
-    font-size: 1.02rem;
-    line-height: 1.65;
-    margin-bottom: 1.85rem;
+.home-page .home-content h1 span {
+    color: var(--cyan);
+    font-style: italic;
+    text-shadow: 0 0 30px rgba(24, 220, 245, 0.3);
 }
 
-/* Liquid Glass Primary CTA Button */
-.primary-btn {
+.home-page .hero-subtitle {
+    max-width: 430px;
+    color: #c2d3df;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+/* BUTTON */
+
+.home-page .primary-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-    padding: 0.9rem 1.75rem;
-    border-radius: 999px;
-    background: linear-gradient(
-        135deg,
-        rgba(51, 225, 255, 0.34) 0%,
-        rgba(18, 201, 239, 0.14) 100%
-    );
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(155, 240, 255, 0.65);
-    box-shadow:
-        0 12px 30px rgba(0, 12, 28, 0.45),
-        inset 0 1.5px 1px rgba(255, 255, 255, 0.65);
-    color: #ffffff;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    gap: 15px;
+
+    padding: 15px 23px;
+    border: 1px solid var(--cyan);
+    border-radius: 40px;
+
+    color: white;
+    background: rgba(24, 220, 245, 0.1);
+    backdrop-filter: blur(15px);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.35s ease;
 }
 
-.primary-btn:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(
-        135deg,
-        rgba(51, 225, 255, 0.48) 0%,
-        rgba(18, 201, 239, 0.24) 100%
-    );
-    box-shadow:
-        0 16px 36px rgba(18, 201, 239, 0.32),
-        inset 0 1.5px 1px rgba(255, 255, 255, 0.85);
+.home-page .primary-btn:hover {
+    color: #03111b;
+    background: var(--cyan);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(24, 220, 245, 0.45);
 }
 
-.hero-bottom-info {
-    margin-top: 2.2rem;
-    padding-top: 1.15rem;
-    border-top: 1px solid rgba(145, 232, 255, 0.18);
+.home-page .hero-bottom-info {
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    color: var(--text-secondary);
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 45px;
+
+    color: #9eb5c7;
+    font-size: 8px;
+    letter-spacing: 1.6px;
 }
 
-/* Floating Live Info Glass Card */
-.hero-floating-card {
-    border-radius: 26px;
-    padding: 1.65rem 1.75rem;
+/* FLOATING GLASS CARD */
+
+.home-page .hero-floating-card {
+    width: 100%;
+    padding: 22px;
+    border-radius: 21px;
+
+    animation: floating 6s ease-in-out infinite;
 }
 
-.floating-card-top {
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+.home-page .floating-card-top,
+.home-page .floating-card-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    color: var(--text-secondary);
-    margin-bottom: 1.25rem;
 }
 
-.floating-live {
-    color: var(--cyan-bright);
-    font-weight: 600;
+.home-page .floating-card-top {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(170, 225, 255, 0.18);
+    color: #c3dbea;
+    font-size: 8px;
+    letter-spacing: 1px;
 }
 
-.floating-card-main {
+.home-page .floating-live {
+    color: #49edac;
+}
+
+.home-page .floating-card-main {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.35rem;
+    gap: 14px;
+    margin: 27px 0;
 }
 
-.floating-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 16px;
+.home-page .floating-icon {
     display: grid;
     place-items: center;
-    font-size: 1.35rem;
-    color: var(--cyan-bright);
-    background: rgba(51, 225, 255, 0.12);
-    border: 1px solid rgba(145, 232, 255, 0.4);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    width: 53px;
+    height: 53px;
+
+    border: 1px solid rgba(24, 220, 245, 0.4);
+    border-radius: 16px;
+    background: rgba(24, 220, 245, 0.12);
+
+    color: var(--cyan);
+    font-size: 28px;
 }
 
-.floating-card-main h3 {
-    margin: 0 0 0.25rem;
-    font-size: 1.15rem;
+.home-page .floating-card-main h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
 }
 
-.floating-card-main p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
+.home-page .floating-card-main p {
+    color: var(--muted);
+    font-size: 10px;
 }
 
-.floating-progress {
-    height: 4px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
+.home-page .floating-progress {
+    height: 5px;
+    border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.floating-progress span {
+.home-page .floating-progress span {
     display: block;
-    width: 68%;
+    width: 72%;
     height: 100%;
     border-radius: inherit;
-    background: linear-gradient(90deg, var(--cyan-mid), var(--cyan-bright));
-    box-shadow: 0 0 12px var(--cyan-bright);
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    box-shadow: 0 0 15px var(--cyan);
+    animation: progressGlow 3s ease-in-out infinite alternate;
 }
 
-.floating-card-bottom {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.66rem;
-    letter-spacing: 0.16em;
-    color: var(--text-secondary);
+@keyframes progressGlow {
+    to {
+        filter: brightness(1.6);
+        box-shadow: 0 0 23px var(--cyan);
+    }
 }
 
-.hero-scroll {
+.home-page .floating-card-bottom {
+    margin-top: 17px;
+    color: #9eb8c9;
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+/* SCROLL INDICATOR */
+
+.home-page .hero-scroll {
     position: absolute;
-    bottom: 1.35rem;
+    bottom: 23px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    color: var(--text-secondary);
-}
 
-.hero-scroll span {
-    width: 24px;
-    height: 1px;
-    background: var(--cyan-bright);
-}
-
-/* =========================================================
-   MERCEDES EXPERIENCE BENTO SECTION
-   ========================================================= */
-.home-experience {
-    width: min(1240px, 100%);
-    margin: 0 auto;
-    padding: 5.5rem 5% 4rem;
-}
-
-.experience-heading {
-    border-radius: 28px;
-    padding: 2.4rem 2.75rem;
-    margin-bottom: 2.25rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem 2.5rem;
-    align-items: center;
-}
-
-.home-label {
-    grid-column: 1 / -1;
-    margin: 0;
-    font-size: 0.74rem;
-    letter-spacing: 0.24em;
-    color: var(--cyan-bright);
-}
-
-.experience-heading h2 {
-    margin: 0;
-    font-size: clamp(2rem, 3.6vw, 3rem);
-    line-height: 1.1;
-}
-
-.experience-heading h2 span {
-    color: var(--cyan-bright);
-}
-
-.home-intro {
-    margin: 0;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: 1rem;
-}
-
-/* Bento Grid Layout */
-.home-cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.75rem;
-}
-
-.home-card {
-    grid-column: span 6;
-    border-radius: 26px;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 9px;
+
+    color: #b8d1df;
+    font-size: 8px;
+    letter-spacing: 2px;
 }
 
-.home-card-large {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: 1.25fr 0.95fr;
-}
-
-.home-card-image {
+.home-page .hero-scroll span {
+    width: 19px;
+    height: 30px;
+    border: 1px solid var(--cyan);
+    border-radius: 15px;
     position: relative;
-    min-height: 270px;
+}
+
+.home-page .hero-scroll span::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    width: 3px;
+    height: 7px;
+    border-radius: 5px;
+    background: var(--cyan);
+    animation: scrollMove 1.5s infinite;
+}
+
+@keyframes scrollMove {
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* =========================================
+   EXPERIENCE SECTION
+========================================= */
+
+.home-page .home-experience {
+    padding: 105px 7%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(0, 135, 205, 0.14),
+            transparent 55%
+        ),
+        #040d17;
+}
+
+.home-page .experience-heading {
+    max-width: 780px;
+    padding: 30px;
+    margin: 0 auto 45px;
+    text-align: center;
+    border-radius: 22px;
+}
+
+.home-page .home-label {
+    color: var(--cyan);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 17px;
+}
+
+.home-page .experience-heading h2,
+.home-page .testdrive-content h2 {
+    font-size: clamp(35px, 4.8vw, 58px);
+    line-height: 1.13;
+    font-weight: 500;
+    margin-bottom: 17px;
+}
+
+.home-page .experience-heading h2 span,
+.home-page .testdrive-content h2 span {
+    color: var(--cyan);
+}
+
+.home-page .home-intro {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 570px;
+    margin: auto;
+}
+
+/* FEATURE CARDS */
+
+.home-page .home-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.home-page .home-card {
+    position: relative;
+    min-height: 370px;
+    border-radius: 21px;
+    overflow: hidden;
+
+    transition: 0.45s ease;
+}
+
+.home-page .home-card-large {
+    grid-column: 1 / -1;
+    min-height: 420px;
+}
+
+.home-page .home-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(24, 220, 245, 0.8);
+
+    box-shadow:
+        0 25px 65px rgba(0, 142, 255, 0.16),
+        0 0 22px rgba(24, 220, 245, 0.1);
+}
+
+.home-page .home-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     overflow: hidden;
 }
 
-.home-card-large .home-card-image {
-    min-height: 360px;
-}
-
-.home-card-image .card-video,
-.home-card-image img {
+.home-page .home-card-image img,
+.home-page .home-card-image video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    object-fit: cover;
+    transition: transform 0.8s ease;
 }
 
-.home-card:hover .home-card-image .card-video,
-.home-card:hover .home-card-image img {
-    transform: scale(1.04);
+.home-page .home-card:hover .home-card-image img,
+.home-page .home-card:hover .home-card-image video {
+    transform: scale(1.07);
 }
 
-.card-glass {
-    padding: 1.85rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1.25rem;
-    background: rgba(6, 17, 33, 0.55);
-    border-top: 1px solid rgba(145, 232, 255, 0.2);
-}
-
-.home-card-large .card-glass {
-    border-top: none;
-    border-left: 1px solid rgba(145, 232, 255, 0.22);
-    padding: 2.35rem;
-}
-
-.card-top-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    color: var(--cyan-bright);
-}
-
-.card-info h3 {
-    margin: 0 0 0.6rem;
-    font-size: 1.45rem;
-}
-
-.card-info p {
-    margin: 0 0 1.35rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.details-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 1.05rem;
-    border-radius: 999px;
-    background: rgba(51, 225, 255, 0.1);
-    border: 1px solid rgba(145, 232, 255, 0.35);
-    color: var(--cyan-bright);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-decoration: none;
-    transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.details-link:hover {
-    background: rgba(51, 225, 255, 0.22);
-    transform: translateX(3px);
-}
-
-/* =========================================================
-   TEST DRIVE LIQUID GLASS SHOWCASE
-   ========================================================= */
-.home-testdrive {
-    width: min(1240px, 100%);
-    margin: 0 auto;
-    padding: 2rem 5% 5.5rem;
-}
-
-.testdrive-shell {
-    position: relative;
-    border-radius: 30px;
-    padding: 3.25rem 3.5rem;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.testdrive-glow {
+.home-page .home-card-image::after {
+    content: "";
     position: absolute;
-    width: 340px;
-    height: 340px;
-    right: -60px;
-    top: -80px;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(1, 8, 17, 0.97),
+        rgba(2, 14, 25, 0.4),
+        rgba(2, 14, 25, 0.04)
+    );
+}
+
+.home-page .card-glass {
+    position: absolute;
+    z-index: 1;
+    inset: auto 0 0;
+    padding: 25px;
+
+    background: linear-gradient(
+        to top,
+        rgba(5, 25, 42, 0.94),
+        rgba(5, 25, 42, 0.15)
+    );
+
+    backdrop-filter: blur(8px);
+}
+
+.home-page .card-top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--cyan);
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.home-page .card-top-line span:last-child {
+    font-size: 17px;
+}
+
+.home-page .card-info h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.home-page .card-info p {
+    max-width: 440px;
+    color: #c3d3df;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 17px;
+}
+
+.home-page .details-link {
+    display: inline-block;
+    color: var(--cyan);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    transition: 0.3s;
+}
+
+.home-page .details-link:hover {
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   TEST DRIVE SECTION
+========================================= */
+
+.home-page .home-testdrive {
+    padding: 30px 7% 100px;
+    background: #040d17;
+}
+
+.home-page .testdrive-shell {
+    position: relative;
+    min-height: 310px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 55px 25px;
+    border-radius: 24px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.home-page .testdrive-glow {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(51, 225, 255, 0.28), transparent 70%);
-    pointer-events: none;
+    background: rgba(0, 170, 255, 0.17);
+    filter: blur(90px);
 }
 
-.testdrive-content h2 {
-    margin: 0.5rem 0 0.85rem;
-    font-size: clamp(2rem, 3.8vw, 3.1rem);
-    line-height: 1.08;
+.home-page .testdrive-content {
+    position: relative;
+    z-index: 2;
 }
 
-.testdrive-content h2 span {
-    color: var(--cyan-bright);
+.home-page .testdrive-content > p:not(.home-label) {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0 auto 25px;
 }
 
-.testdrive-content p {
-    color: var(--text-secondary);
-    margin-bottom: 1.65rem;
-    max-width: 480px;
+.home-page .testdrive-decoration {
+    position: absolute;
+    bottom: 17px;
+    right: 22px;
+    color: rgba(170, 220, 245, 0.42);
+    font-size: 8px;
+    letter-spacing: 2px;
 }
 
-.testdrive-decoration span {
-    writing-mode: vertical-rl;
-    font-size: 0.72rem;
-    letter-spacing: 0.32em;
-    color: rgba(175, 235, 255, 0.42);
-}
-
-/* =========================================================
+/* =========================================
    FOOTER
-   ========================================================= */
-footer.home-footer {
-    background: rgba(4, 12, 24, 0.78);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid var(--glass-border);
+========================================= */
+
+.home-page .home-footer {
+    background: #020810;
+    border-top: 1px solid rgba(24, 220, 245, 0.2);
 }
 
-/* =========================================================
-   SCROLL REVEAL ANIMATION
-   ========================================================= */
-.home-reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+.home-page .home-footer .footer-top,
+.home-page .home-footer .copyright {
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
-.home-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .home-page .home-nav .nav-links {
+        gap: 13px;
+    }
+
+    .home-page .home-nav .nav-links a {
+        font-size: 8px;
+    }
+
+    .home-page .hero-stage {
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 25px;
+    }
+
 }
 
-/* =========================================================
-   RESPONSIVE BREAKPOINTS
-   ========================================================= */
-@media (max-width: 980px) {
-    .hero-stage {
-        grid-template-columns: 1fr;
+@media (max-width: 850px) {
+
+    .home-page .home-nav {
+        left: 3%;
+        width: 94%;
+        border-radius: 17px;
     }
 
-    .experience-heading {
-        grid-template-columns: 1fr;
+    .home-page .menu-toggle {
+        display: block;
     }
 
-    .home-card-large {
-        grid-template-columns: 1fr;
-    }
-
-    .home-card-large .card-glass {
-        border-left: none;
-        border-top: 1px solid rgba(145, 232, 255, 0.22);
-    }
-
-    .home-card {
-        grid-column: span 12;
-    }
-
-    .testdrive-shell {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 2.35rem 2rem;
-    }
-
-    .testdrive-decoration span {
-        writing-mode: horizontal-tb;
-    }
-}
-
-@media (max-width: 768px) {
-    nav.home-nav {
-        border-radius: 22px;
-        flex-wrap: wrap;
-    }
-
-    nav.home-nav .nav-links {
+    .home-page .home-nav .nav-links {
         display: none;
-        width: 100%;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+
         flex-direction: column;
-        align-items: flex-start;
-        padding-top: 1rem;
-        gap: 0.85rem;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 15px;
+        border: 1px solid rgba(123, 220, 255, 0.3);
+        border-radius: 18px;
+
+        background: rgba(3, 17, 30, 0.96);
+        backdrop-filter: blur(25px);
     }
 
-    nav.home-nav .nav-links.open {
+    .home-page .home-nav .nav-links.active {
         display: flex;
     }
 
-    .home-content {
-        padding: 2rem 1.6rem;
+    .home-page .home-nav .nav-links a {
+        padding: 13px 10px;
+        font-size: 11px;
     }
 
-    .hero-bottom-info {
-        flex-direction: column;
+    .home-page .home-nav .nav-links .nav-btn {
+        text-align: center;
+        margin-top: 8px;
     }
+
+    .home-page .home-hero {
+        min-height: 950px;
+        padding: 140px 6% 110px;
+    }
+
+    .home-page .hero-stage {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .home-page .hero-floating-card {
+        width: min(100%, 350px);
+        justify-self: end;
+    }
+
 }
 
+@media (max-width: 600px) {
 
+    .home-page .home-hero {
+        min-height: 1000px;
+        padding: 130px 5% 100px;
+    }
 
+    .home-page .home-content {
+        padding: 20px;
+    }
 
+    .home-page .home-content h1 {
+        font-size: clamp(48px, 12vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .home-page .hero-subtitle {
+        font-size: 12px;
+    }
+
+    .home-page .hero-bottom-info {
+        gap: 12px;
+        font-size: 7px;
+        line-height: 1.8;
+    }
+
+    .home-page .hero-floating-card {
+        justify-self: center;
+        width: min(100%, 320px);
+    }
+
+    .home-page .home-experience {
+        padding: 75px 5%;
+    }
+
+    .home-page .experience-heading {
+        padding: 22px 15px;
+    }
+
+    .home-page .home-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .home-card,
+    .home-page .home-card-large {
+        grid-column: auto;
+        min-height: 360px;
+    }
+
+    .home-page .home-card-large {
+        min-height: 390px;
+    }
+
+    .home-page .card-glass {
+        padding: 20px;
+    }
+
+    .home-page .home-testdrive {
+        padding: 20px 5% 75px;
+    }
+
+    .home-page .testdrive-shell {
+        min-height: 340px;
+        padding: 45px 17px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
 
 /* MODELS */
 
