@@ -1060,3 +1060,28 @@ const voiceBtn = document.getElementById("voiceToggleBtn");
         }
     });
 
+/* HOMEPAGE SCROLL REVEAL */
+
+const homeRevealElements = document.querySelectorAll(".home-reveal");
+
+const homeObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            homeObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+homeRevealElements.forEach(element => {
+    homeObserver.observe(element);
+});
+
