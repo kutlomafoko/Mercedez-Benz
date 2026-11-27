@@ -507,16 +507,17 @@ document.addEventListener("DOMContentLoaded", function () {
     // 8. CLOSE BUTTON EVENT
     // =====================================
 
+   if (closeFeatureBtn) {
     closeFeatureBtn.addEventListener("click", closeFeature);
+}
 
 
     // =====================================
     // 9. INITIAL VEHICLE
     // =====================================
-
+if (mainCar && carName && carTagline) {
     changeModel("sclass");
-
-});
+}
 
 /* =====================================
    LIQUID GLASS DOCK INTERACTION
