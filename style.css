@@ -8679,81 +8679,59 @@ model-viewer {
     color: var(--cyan-bright);
     text-shadow: 0 0 22px rgba(18, 201, 239, 0.7);
 }
-
-.detail-visual span {
-    margin-top: 4.8rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--text-secondary);
-
-    .detail-visual {
+.detail-visual {
     position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+    --voice-scale: 1;
+    --voice-glow: 0.22;
 }
 
-.detail-ring {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 2px dashed rgba(92, 238, 255, 0.65);
-    animation: none;
-}
-    .detail-ring-wrapper {
+.detail-ring-wrapper {
     position: relative;
     width: 150px;
     height: 150px;
     display: grid;
     place-items: center;
     margin-bottom: 0.35rem;
-}
-}
-
-/* --- Future CTA --- */
-.future-glass {
-    padding: 3.5rem 2rem;
-    text-align: center;
-}
-
-.future-glass > p {
-    max-width: 520px;
-    margin: 1rem auto 2rem;
-}
-
-/* --- Scroll Reveal --- */
-.reveal {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
-.reveal.reveal-hidden {
-    opacity: 0;
-    transform: translateY(24px);
-}
-
-/* --- Responsive --- */
-@media (max-width: 960px) {
-    .tech-hero,
-    .intro-glass,
-    .technology-grid,
-    .detail-glass {
-        grid-template-columns: 1fr;
-    }
-}
-.detail-visual {
-    --voice-scale: 1;
-    --voice-glow: 0.22;
+    pointer-events: none;
 }
 
 .detail-ring {
-    transform: scale(var(--voice-scale));
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed rgba(92, 238, 255, 0.65);
     box-shadow: 0 0 calc(25px + var(--voice-glow) * 55px) rgba(18, 201, 239, var(--voice-glow));
+    animation: ringSpin 18s linear infinite;
     transition: box-shadow 0.08s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ringSpin {
+    from {
+        transform: rotate(0deg) scale(var(--voice-scale, 1));
+    }
+    to {
+        transform: rotate(360deg) scale(var(--voice-scale, 1));
+    }
+}
+
+.detail-symbol {
+    font-size: 2.4rem;
+    color: var(--cyan-bright);
+    text-shadow: 0 0 22px rgba(18, 201, 239, 0.7);
+    pointer-events: none;
+}
+
+.detail-visual span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
 }
 
 .detail-visual.listening .detail-ring {
@@ -8762,8 +8740,11 @@ model-viewer {
 }
 
 .voice-btn {
-    margin-top: 1rem;
-    padding: 0.55rem 1.15rem;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    margin-top: 0.65rem;
+    padding: 0.6rem 1.25rem;
     border-radius: 999px;
     border: 1px solid var(--glass-border);
     background: rgba(18, 201, 239, 0.16);
@@ -8783,11 +8764,12 @@ model-viewer {
 }
 
 .voice-status {
-    margin-top: 0.55rem;
+    margin-top: 0.45rem;
     font-size: 0.72rem;
     color: var(--text-secondary);
     text-align: center;
-    max-width: 240px;
-    min-height: 1.1em;
+    max-width: 260px;
+    min-height: 1.2em;
 }
+
 
