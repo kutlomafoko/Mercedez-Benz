@@ -1121,7 +1121,8 @@ const homeObserver = new IntersectionObserver((entries) => {
 homeRevealElements.forEach(element => {
     homeObserver.observe(element);
 });
-----home---
+
+    
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Cursor-reactive specular highlight on liquid glass panels
     const specularCards = document.querySelectorAll(".specular-card");
