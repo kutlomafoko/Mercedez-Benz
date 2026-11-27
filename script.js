@@ -792,7 +792,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 /* =========================================================
-   MERCEDES-BENZ TECHNOLOGY LAB — technology.js
+   MERCEDES-BENZ TECHNOLOGY LAB & MBUX VOICE
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -891,7 +891,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Smooth scroll reveal observer
     const revealEls = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window && revealEls.length > 0) {
         revealEls.forEach((el) => el.classList.add("reveal-hidden"));
@@ -910,131 +909,197 @@ document.addEventListener("DOMContentLoaded", () => {
 
         revealEls.forEach((el) => observer.observe(el));
     }
-});
 
-const voiceBtn = document.getElementById("voiceToggleBtn");
-const voiceStatus = document.getElementById("voiceStatus");
-const detailVisual = document.querySelector(".detail-visual");
+    const voiceBtn = document.getElementById("voiceToggleBtn");
+    const voiceStatus = document.getElementById("voiceStatus");
+    const detailVisual = document.querySelector(".detail-visual");
 
-let audioCtx = null;
-let analyser = null;
-let micStream = null;
-let rafId = null;
-let recognition = null;
-let isListening = false;
+    const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let recognition = null;
+    let audioCtx = null;
+    let analyser = null;
+    let micStream = null;
+    let rafId = null;
+    let pulseTimer = null;
+    let isListening = false;
 
-function updateVoiceRing() {
-    if (!analyser || !detailVisual) return;
-
-    const dataArray = new Uint8Array(analyser.frequencyBinCount);
-    analyser.getByteFrequencyData(dataArray);
-
-    let sum = 0;
-    for (let i = 0; i < dataArray.length; i++) {
-        sum += dataArray[i];
+    function setRingLevel(level) {
+        if (!detailVisual) return;
+        const clamped = Math.max(0, Math.min(level, 1));
+        detailVisual.style.setProperty("--voice-scale", (1 + clamped * 0.35).toFixed(3));
+        detailVisual.style.setProperty("--voice-glow", (0.22 + clamped * 0.65).toFixed(2));
     }
-    const avg = sum / dataArray.length;
-    const normalized = Math.min(avg / 90, 1);
 
-    const scale = (1 + normalized * 0.35).toFixed(3);
-    const glow = (0.22 + normalized * 0.65).toFixed(2);
-
-    detailVisual.style.setProperty("--voice-scale", scale);
-    detailVisual.style.setProperty("--voice-glow", glow);
-
-    rafId = requestAnimationFrame(updateVoiceRing);
-}
-
-function handleSpokenCommand(transcript) {
-    const text = transcript.toLowerCase();
-    if (text.includes("mbux") || text.includes("voice") || text.includes("intelligence")) {
-        selectTechnology("mbux", false);
-    } else if (text.includes("safety") || text.includes("assist") || text.includes("drive")) {
-        selectTechnology("safety", false);
-    } else if (text.includes("electric") || text.includes("battery") || text.includes("charge")) {
-        selectTechnology("electric", false);
-    } else if (text.includes("light") || text.includes("lamp") || text.includes("beam")) {
-        selectTechnology("light", false);
+    function pulseSpeechRing() {
+        setRingLevel(0.65);
+        clearTimeout(pulseTimer);
+        pulseTimer = setTimeout(() => {
+            if (isListening) setRingLevel(0.18);
+        }, 260);
     }
-}
 
-async function startVoiceInput() {
-    try {
-        micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        audioCtx = new AudioContextClass();
-        const source = audioCtx.createMediaStreamSource(micStream);
+    function handleSpokenCommand(transcript) {
+        const text = transcript.toLowerCase();
+        if (text.includes("mbux") || text.includes("voice") || text.includes("intelligence")) {
+            selectTechnology("mbux", false);
+        } else if (text.includes("safety") || text.includes("assist") || text.includes("drive")) {
+            selectTechnology("safety", false);
+        } else if (text.includes("electric") || text.includes("battery") || text.includes("charge")) {
+            selectTechnology("electric", false);
+        } else if (text.includes("light") || text.includes("lamp") || text.includes("beam")) {
+            selectTechnology("light", false);
+        }
+    }
 
-        analyser = analyser || audioCtx.createAnalyser();
-        analyser.fftSize = 256;
-        source.connect(analyser);
+    function updateAnalyserRing() {
+        if (!analyser || !isListening) return;
+        const dataArray = new Uint8Array(analyser.frequencyBinCount);
+        analyser.getByteFrequencyData(dataArray);
+        let sum = 0;
+        for (let i = 0; i < dataArray.length; i++) {
+            sum += dataArray[i];
+        }
+        const avg = sum / dataArray.length;
+        setRingLevel(avg / 85);
+        rafId = requestAnimationFrame(updateAnalyserRing);
+    }
 
-        isListening = true;
-        voiceBtn?.classList.add("active");
-        detailVisual?.classList.add("listening");
-        if (voiceBtn) voiceBtn.textContent = "⏹ STOP LISTENING";
-        if (voiceStatus) voiceStatus.textContent = "Listening... say MBUX, Safety, Electric, or Light";
+    async function startAudioFallback(statusPrefix = "Listening for sound...") {
+        try {
+            micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContextClass();
+            const source = audioCtx.createMediaStreamSource(micStream);
+            analyser = audioCtx.createAnalyser();
+            analyser.fftSize = 256;
+            source.connect(analyser);
+            if (voiceStatus) voiceStatus.textContent = statusPrefix;
+            updateAnalyserRing();
+        } catch {
+            stopVoiceInput("Microphone access blocked or unavailable.");
+        }
+    }
 
-        updateVoiceRing();
+    function setListeningUI(active, statusMessage) {
+        isListening = active;
+        voiceBtn?.classList.toggle("active", active);
+        detailVisual?.classList.toggle("listening", active);
+        if (voiceBtn) {
+            voiceBtn.textContent = active ? "⏹ STOP LISTENING" : "🎙️ SPEAK TO MBUX";
+        }
+        if (voiceStatus && statusMessage) {
+            voiceStatus.textContent = statusMessage;
+        }
+        if (!active) {
+            setRingLevel(0);
+        }
+    }
 
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (SpeechRecognition) {
-            recognition = new SpeechRecognition();
-            recognition.continuous = true;
-            recognition.interimResults = true;
-            recognition.lang = "en-US";
+    function stopVoiceInput(message = "Click to enable microphone") {
+        clearTimeout(pulseTimer);
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+        if (recognition) {
+            recognition.onresult = null;
+            recognition.onerror = null;
+            recognition.onend = null;
+            try {
+                recognition.stop();
+            } catch {
+                // Ignore already-stopped recognizer
+            }
+            recognition = null;
+        }
+        if (micStream) {
+            micStream.getTracks().forEach((track) => track.stop());
+            micStream = null;
+        }
+        if (audioCtx) {
+            audioCtx.close().catch(() => {});
+            audioCtx = null;
+            analyser = null;
+        }
+        setListeningUI(false, message);
+    }
 
-            recognition.onresult = (event) => {
-                let liveText = "";
-                for (let i = event.resultIndex; i < event.results.length; i++) {
-                    liveText += event.results[i][0].transcript;
+    async function startVoiceInput() {
+        if (!window.isSecureContext && location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+            if (voiceStatus) {
+                voiceStatus.textContent = "Use HTTPS or localhost (Live Server) for microphone access.";
+            }
+            return;
+        }
+
+        setListeningUI(true, "Listening... say MBUX, Safety, Electric, or Light");
+
+        if (!SpeechRecognitionAPI) {
+            await startAudioFallback("Speech API unavailable here — listening to mic sound level.");
+            return;
+        }
+
+        recognition = new SpeechRecognitionAPI();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = "en-US";
+
+        recognition.onsoundstart = () => pulseSpeechRing();
+        recognition.onspeechstart = () => setRingLevel(0.75);
+        recognition.onspeechend = () => {
+            if (isListening) setRingLevel(0.15);
+        };
+
+        recognition.onresult = (event) => {
+            pulseSpeechRing();
+            let liveText = "";
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                liveText += event.results[i][0].transcript;
+            }
+            const clean = liveText.trim();
+            if (clean && voiceStatus) {
+                voiceStatus.textContent = `“${clean}”`;
+            }
+            handleSpokenCommand(clean);
+        };
+
+        recognition.onerror = (event) => {
+            if (event.error === "not-allowed" || event.error === "service-not-allowed") {
+                stopVoiceInput("Microphone permission blocked in browser settings.");
+            } else if (event.error === "no-speech") {
+                if (isListening && voiceStatus) {
+                    voiceStatus.textContent = "No speech detected yet — keep speaking or say MBUX.";
                 }
-                if (voiceStatus) voiceStatus.textContent = `“${liveText.trim()}”`;
-                handleSpokenCommand(liveText);
-            };
+            } else if (event.error === "network" || event.error === "audio-capture") {
+                stopVoiceInput(`Voice error (${event.error}). Check mic & network.`);
+            }
+        };
 
-            recognition.onerror = () => {};
+        recognition.onend = () => {
+            if (isListening && recognition) {
+                try {
+                    recognition.start();
+                } catch {
+                    stopVoiceInput("Click to enable microphone");
+                }
+            }
+        };
+
+        try {
             recognition.start();
-        }
-    } catch (err) {
-        if (voiceStatus) {
-            voiceStatus.textContent = "Microphone access blocked or unavailable.";
+        } catch {
+            await startAudioFallback("Listening to mic sound...");
         }
     }
-}
 
-function stopVoiceInput() {
-    isListening = false;
-    if (rafId) cancelAnimationFrame(rafId);
-    if (recognition) {
-        recognition.stop();
-        recognition = null;
-    }
-    if (micStream) {
-        micStream.getTracks().forEach((track) => track.stop());
-        micStream = null;
-    }
-    if (audioCtx) {
-        audioCtx.close();
-        audioCtx = null;
-    }
-
-    detailVisual?.classList.remove("listening");
-    detailVisual?.style.setProperty("--voice-scale", "1");
-    detailVisual?.style.setProperty("--voice-glow", "0.22");
-    voiceBtn?.classList.remove("active");
-    if (voiceBtn) voiceBtn.textContent = "🎙️ SPEAK TO MBUX";
-    if (voiceStatus) voiceStatus.textContent = "Click to enable microphone";
-}
-
-voiceBtn?.addEventListener("click", () => {
-    if (isListening) {
-        stopVoiceInput();
-    } else {
-        startVoiceInput();
-    }
+    voiceBtn?.addEventListener("click", () => {
+        if (isListening) {
+            stopVoiceInput();
+        } else {
+            startVoiceInput();
+        }
+    });
 });
-
 /* HOMEPAGE SCROLL REVEAL */
 
 const homeRevealElements = document.querySelectorAll(".home-reveal");
