@@ -589,6 +589,52 @@ section {
 
 }
 
+@media (max-width: 850px) {
+
+    .home-nav {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .home-nav .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+        cursor: pointer;
+    }
+
+    .home-nav .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        z-index: 1001;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 15px;
+        border-radius: 18px;
+
+        background: rgba(3, 17, 30, 0.97);
+        border: 1px solid rgba(100, 200, 255, 0.3);
+
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+    }
+
+    .home-nav .nav-links.active {
+        display: flex;
+    }
+
+    .home-nav .nav-links a {
+        padding: 14px 10px;
+    }
+}
+
+
 
 /* BUTTON */
 
