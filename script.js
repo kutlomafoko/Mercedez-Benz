@@ -1059,7 +1059,66 @@ document.addEventListener("DOMContentLoaded", () => {
         revealEls.forEach((el) => observer.observe(el));
     }
 });
+/* =========================================================
+   MOBILE GRID & TEXT OVERFLOW FIX
+   ========================================================= */
+.home-page,
+.home-page body {
+    max-width: 100%;
+    overflow-x: clip;
+}
 
+.technology-grid,
+.cards-grid,
+.home-cards,
+.purpose-grid,
+.choose-grid {
+    width: 100%;
+    max-width: 100%;
+}
+
+.technology-grid > *,
+.cards-grid > *,
+.home-cards > *,
+.purpose-grid > *,
+.choose-grid > *,
+.detail-glass > *,
+.hero-glass-box > *,
+.testdrive-box > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.technology-card h3,
+.technology-card p,
+.showroom-card h3,
+.showroom-card p,
+.detail-glass h2,
+.detail-glass p,
+.voice-status {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .technology-grid,
+    .cards-grid,
+    .home-cards,
+    .purpose-grid,
+    .choose-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem;
+    }
+
+    .technology-card,
+    .showroom-card,
+    .detail-glass,
+    .hero-glass-box,
+    .testdrive-box {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+    }
+}
 /* HOMEPAGE SCROLL REVEAL */
 
 const homeRevealElements = document.querySelectorAll(".home-reveal");
